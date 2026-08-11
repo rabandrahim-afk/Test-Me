@@ -1,1669 +1,1731 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color"
-      content="#293fd0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2946d8">
 
 <title>TEST ME — By Vivek Singh</title>
 
 <style>
 
-/* =====================================================
-   TEST ME — MAIN APP
-   By Vivek Singh
-===================================================== */
-
 :root{
-
-    --bg:#f3f5fb;
-    --white:#ffffff;
-    --text:#172033;
-    --muted:#70788a;
-
-    --blue:#2946d8;
-    --purple:#6428d8;
-    --green:#079668;
-    --gold:#f2ad16;
-    --pink:#df397d;
-
-    --line:#dfe4ef;
-
-    --shadow:
-    0 7px 22px rgba(28,42,86,.09);
-
+--bg:#f2f4fa;
+--white:#ffffff;
+--text:#172033;
+--muted:#70798b;
+--blue:#2946d8;
+--purple:#6528d8;
+--green:#079668;
+--gold:#f2ad16;
+--pink:#df397d;
+--line:#dce2ed;
+--shadow:0 7px 22px rgba(28,42,86,.09);
 }
 
-
-/* =====================================================
-   RESET
-===================================================== */
-
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    background:var(--bg);
-
-    color:var(--text);
-
-    padding-bottom:78px;
-
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:var(--text);
+padding-bottom:76px;
 }
 
 button{
-
-    font:inherit;
-
-    border:0;
-
-    cursor:pointer;
-
+font:inherit;
+border:0;
+cursor:pointer;
 }
 
 .app{
-
-    width:100%;
-
-    max-width:1100px;
-
-    margin:auto;
-
+width:100%;
+max-width:1100px;
+margin:auto;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* =========================
+HEADER
+========================= */
 
 .top-strip{
 
-    min-height:88px;
+min-height:88px;
 
-    padding:10px 18px;
+padding:10px 18px;
 
-    color:white;
+color:white;
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    1fr 1.2fr 1fr;
+grid-template-columns:1fr 1.2fr 1fr;
 
-    align-items:center;
+align-items:center;
 
-    gap:12px;
+gap:12px;
 
-    background:
+background:
+radial-gradient(
+circle at 10% 10%,
+rgba(255,255,255,.18),
+transparent 25%
+),
+radial-gradient(
+circle at 90% 20%,
+rgba(0,211,255,.15),
+transparent 28%
+),
+linear-gradient(
+110deg,
+#3d20d2,
+#293fc8,
+#17429f
+);
 
-    radial-gradient(
-        circle at 10% 10%,
-        rgba(255,255,255,.18),
-        transparent 25%
-    ),
-
-    radial-gradient(
-        circle at 90% 20%,
-        rgba(0,211,255,.15),
-        transparent 28%
-    ),
-
-    linear-gradient(
-        110deg,
-        #3d20d2,
-        #293fc8,
-        #17429f
-    );
-
-    box-shadow:
-    0 8px 24px rgba(39,49,160,.22);
-
+box-shadow:
+0 8px 24px rgba(39,49,160,.22);
 }
-
 
 .top-left{
 
-    font-size:13px;
+font-size:13px;
 
-    font-weight:800;
+font-weight:800;
 
-    line-height:1.35;
+white-space:nowrap;
 
+overflow:hidden;
+
+text-overflow:ellipsis;
 }
 
+.top-left span{
 
-.top-left .cap{
+font-size:25px;
 
-    font-size:24px;
+margin-right:7px;
 
-    margin-right:6px;
-
+vertical-align:middle;
 }
-
 
 .brand{
 
-    text-align:center;
+text-align:center;
 
-    line-height:1;
-
+line-height:1;
 }
-
 
 .brand h1{
 
-    font-size:39px;
+font-size:39px;
 
-    letter-spacing:-1.5px;
+letter-spacing:-1.5px;
 
-    font-weight:950;
-
+font-weight:950;
 }
-
 
 .brand h1 span{
 
-    color:#ffd21b;
-
+color:#ffd21b;
 }
-
 
 .brand small{
 
-    display:block;
+display:block;
 
-    margin-top:6px;
+margin-top:5px;
 
-    font-size:11px;
+font-size:11px;
 
-    font-weight:700;
+font-weight:700;
 
+opacity:.92;
 }
-
 
 .top-right{
 
-    display:flex;
+display:flex;
 
-    justify-content:flex-end;
+justify-content:flex-end;
 
-    gap:8px;
-
+gap:8px;
 }
-
 
 .info-pill{
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    gap:6px;
+gap:6px;
 
-    border:
-    1px solid
-    rgba(255,255,255,.42);
+border:1px solid rgba(255,255,255,.42);
 
-    border-radius:11px;
+border-radius:11px;
 
-    padding:8px 10px;
+padding:8px 10px;
 
-    font-size:11px;
+font-size:11px;
 
-    font-weight:700;
+font-weight:700;
 
-    white-space:nowrap;
-
+white-space:nowrap;
 }
-
 
 .info-pill b{
 
-    display:block;
+display:block;
 
-    margin-top:2px;
-
+margin-top:2px;
 }
 
-
-/* =====================================================
-   MAIN
-===================================================== */
+/* =========================
+MAIN
+========================= */
 
 main{
 
-    padding:13px 14px;
-
+padding:13px 14px;
 }
-
-
-.panel{
-
-    display:none;
-
-}
-
-
-.panel.active{
-
-    display:block;
-
-}
-
 
 .strip{
 
-    background:white;
+background:white;
 
-    border:
-    1px solid
-    var(--line);
+border:1px solid var(--line);
 
-    border-radius:17px;
+border-radius:17px;
 
-    box-shadow:var(--shadow);
+box-shadow:var(--shadow);
 
-    margin-bottom:13px;
-
+margin-bottom:13px;
 }
 
-
-/* =====================================================
-   MOTIVATION
-===================================================== */
+/* =========================
+MOTIVATION
+========================= */
 
 .motivation{
 
-    min-height:53px;
+min-height:53px;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    gap:13px;
+gap:13px;
 
-    padding:8px 15px;
+padding:8px 15px;
 
-    background:
-    linear-gradient(
-        90deg,
-        #fff9dc,
-        #ffffff,
-        #fff9dc
-    );
-
+background:
+linear-gradient(
+90deg,
+#fff9dc,
+#fff,
+#fff9dc
+);
 }
-
 
 .motivation strong{
 
-    font-size:18px;
+font-size:18px;
 
-    white-space:nowrap;
+white-space:nowrap;
 
-    background:
-    linear-gradient(
-        90deg,
-        #d11d72,
-        #4d30d9,
-        #1765d7
-    );
+background:
+linear-gradient(
+90deg,
+#d11d72,
+#4d30d9,
+#1765d7
+);
 
-    -webkit-background-clip:text;
+-webkit-background-clip:text;
 
-    background-clip:text;
+background-clip:text;
 
-    color:transparent;
-
+color:transparent;
 }
 
-
-.motivation span{
-
-    font-size:20px;
-
-}
-
-
-/* =====================================================
-   STUDENT INFORMATION
-===================================================== */
+/* =========================
+STUDENT
+========================= */
 
 .student-row{
 
-    display:flex;
+display:flex;
 
-    gap:8px;
+gap:8px;
 
-    overflow-x:auto;
+overflow-x:auto;
 
-    scrollbar-width:none;
+scrollbar-width:none;
 
-    padding:8px;
-
+padding:8px;
 }
-
 
 .student-row::-webkit-scrollbar{
 
-    display:none;
-
+display:none;
 }
-
 
 .info-card{
 
-    flex:0 0 auto;
+flex:0 0 auto;
 
-    min-width:190px;
+min-width:190px;
 
-    height:52px;
+height:52px;
 
-    padding:7px 12px;
+padding:7px 12px;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    gap:9px;
+gap:9px;
 
-    border:
-    1px solid
-    var(--line);
+border:1px solid var(--line);
 
-    border-radius:13px;
+border-radius:13px;
 
-    background:
-    linear-gradient(
-        135deg,
-        #ffffff,
-        #f7f8ff
-    );
-
+background:
+linear-gradient(
+135deg,
+#fff,
+#f7f8ff
+);
 }
-
 
 .info-card .icon{
 
-    font-size:22px;
-
+font-size:22px;
 }
-
 
 .info-card b{
 
-    display:block;
+font-size:12px;
 
-    font-size:12px;
-
+display:block;
 }
-
 
 .info-card small{
 
-    display:block;
+font-size:10px;
 
-    color:var(--muted);
-
-    font-size:10px;
-
-    margin-top:3px;
-
+color:var(--muted);
 }
 
-
-/* =====================================================
-   TEST SECTION
-===================================================== */
+/* =========================
+HOME SECTIONS
+========================= */
 
 .section{
 
-    padding:
-    0 9px
-    11px;
+padding:0 9px 11px;
 
-    margin-bottom:14px;
+margin-bottom:13px;
 
-    background:
-    rgba(255,255,255,.58);
+background:
+rgba(255,255,255,.52);
 
-    border:
-    1px dashed
-    #aab3c6;
+border:1px dashed #aab3c6;
 
-    border-radius:19px;
-
+border-radius:19px;
 }
-
 
 .section-title{
 
-    position:relative;
+position:relative;
 
-    top:-10px;
+top:-10px;
 
-    width:max-content;
+width:max-content;
 
-    max-width:90%;
+max-width:90%;
 
-    margin:
-    0 auto
-    -2px;
+margin:0 auto -2px;
 
-    padding:
-    7px 22px;
+padding:7px 22px;
 
-    border-radius:20px;
+border-radius:20px;
 
-    color:white;
+color:white;
 
-    font-size:18px;
+font-size:18px;
 
-    font-weight:900;
+font-weight:900;
 
-    box-shadow:
-    0 6px 14px
-    rgba(35,49,135,.15);
-
+box-shadow:
+0 6px 14px rgba(35,49,135,.15);
 }
-
 
 .mock .section-title{
 
-    background:
-    linear-gradient(
-        90deg,
-        #7422dd,
-        #522bd1
-    );
-
+background:
+linear-gradient(
+90deg,
+#7422dd,
+#522bd1
+);
 }
-
 
 .pyq .section-title{
 
-    background:
-    linear-gradient(
-        90deg,
-        #2469dd,
-        #1959c5
-    );
-
+background:
+linear-gradient(
+90deg,
+#2469dd,
+#1959c5
+);
 }
-
 
 .sectional .section-title{
 
-    background:
-    linear-gradient(
-        90deg,
-        #079668,
-        #0b9c77
-    );
-
+background:
+linear-gradient(
+90deg,
+#079668,
+#0b9c77
+);
 }
-
 
 .exam-row{
 
-    display:flex;
+display:flex;
 
-    gap:9px;
+gap:9px;
 
-    overflow-x:auto;
+overflow-x:auto;
 
-    scrollbar-width:none;
+scrollbar-width:none;
 
-    padding:1px;
-
+padding:1px;
 }
-
 
 .exam-row::-webkit-scrollbar{
 
-    display:none;
-
+display:none;
 }
-
 
 .exam-box{
 
-    flex:
-    0 0
-    150px;
+flex:1 0 150px;
 
-    min-height:100px;
+min-height:100px;
 
-    border:
-    1px solid
-    #d8deeb;
+border:1px solid #d8deeb;
 
-    border-radius:15px;
+border-radius:15px;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    flex-direction:column;
+gap:8px;
 
-    gap:8px;
+flex-direction:column;
 
-    box-shadow:
-    0 4px 12px
-    rgba(30,45,90,.05);
+box-shadow:
+0 4px 12px rgba(30,45,90,.05);
 
-    transition:.18s;
-
+transition:.18s;
 }
-
 
 .exam-box:active{
 
-    transform:scale(.96);
-
+transform:scale(.97);
 }
-
 
 .exam-box .eicon{
 
-    font-size:31px;
-
+font-size:31px;
 }
-
 
 .exam-box b{
 
-    font-size:14px;
-
+font-size:14px;
 }
-
 
 .ssc{
 
-    background:#f2eeff;
-
+background:#f2eeff;
 }
-
 
 .rail{
 
-    background:#edf6ff;
-
+background:#edf6ff;
 }
-
 
 .bank{
 
-    background:#edfff6;
-
+background:#edfff6;
 }
-
 
 .state{
 
-    background:#fff5e7;
-
+background:#fff5e7;
 }
-
 
 .more{
 
-    background:#fff0f7;
-
+background:#fff0f7;
 }
 
+/* =========================
+PANELS
+========================= */
 
-/* =====================================================
-   SUB PAGES
-===================================================== */
+.panel{
+
+display:none;
+
+animation:in .2s ease;
+}
+
+.panel.active{
+
+display:block;
+}
+
+@keyframes in{
+
+from{
+
+opacity:.4;
+
+transform:translateY(4px);
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+}
+
+}
 
 .subpage{
 
-    background:white;
+background:white;
 
-    border:
-    1px solid
-    var(--line);
+border:1px solid var(--line);
 
-    border-radius:20px;
+border-radius:20px;
 
-    padding:18px;
+padding:18px;
 
-    box-shadow:var(--shadow);
-
+box-shadow:var(--shadow);
 }
-
 
 .page-head{
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    gap:12px;
+gap:12px;
 
-    margin-bottom:15px;
-
+margin-bottom:12px;
 }
 
+.subpage h2{
 
-.page-head h2{
-
-    font-size:25px;
-
+font-size:25px;
 }
-
 
 .desc{
 
-    color:var(--muted);
+color:var(--muted);
 
-    font-size:13px;
+font-size:13px;
 
-    margin-top:6px;
-
+margin:6px 0 18px;
 }
-
 
 .head-badge{
 
-    padding:7px 10px;
+padding:7px 10px;
 
-    border-radius:9px;
+border-radius:9px;
 
-    background:#eeeaff;
+background:#eeeaff;
 
-    color:#5527c8;
+color:#5527c8;
 
-    font-size:9px;
+font-size:9px;
 
-    font-weight:900;
+font-weight:900;
 
+white-space:nowrap;
 }
 
+/* =========================
+EXAM BROWSER
+========================= */
 
-/* =====================================================
-   CALCULATOR
-===================================================== */
+.browser-top{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+margin-bottom:8px;
+}
+
+.back-btn{
+
+background:#edf0f5;
+
+color:#172033;
+
+padding:11px 18px;
+
+border-radius:12px;
+
+font-weight:900;
+}
+
+.breadcrumb{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:6px;
+
+align-items:center;
+
+color:var(--muted);
+
+font-size:11px;
+
+margin-bottom:15px;
+}
+
+.breadcrumb button{
+
+background:transparent;
+
+color:var(--blue);
+
+font-weight:800;
+
+padding:0;
+}
+
+.breadcrumb .current{
+
+color:var(--text);
+}
+
+.exam-list{
+
+display:grid;
+
+gap:10px;
+}
+
+.exam-list-card{
+
+width:100%;
+
+min-height:76px;
+
+padding:13px;
+
+display:flex;
+
+align-items:center;
+
+gap:13px;
+
+text-align:left;
+
+background:
+linear-gradient(
+135deg,
+#fff,
+#f8f9fd
+);
+
+border:1px solid var(--line);
+
+border-radius:16px;
+
+box-shadow:
+0 4px 12px rgba(30,45,90,.04);
+}
+
+.exam-list-card:active{
+
+transform:scale(.99);
+}
+
+.exam-list-card .big{
+
+width:52px;
+
+height:52px;
+
+flex:0 0 52px;
+
+display:grid;
+
+place-items:center;
+
+border-radius:13px;
+
+background:#eef1ff;
+
+font-size:26px;
+}
+
+.exam-list-card .card-text{
+
+flex:1;
+
+min-width:0;
+}
+
+.exam-list-card b{
+
+display:block;
+
+font-size:16px;
+}
+
+.exam-list-card small{
+
+display:block;
+
+color:var(--muted);
+
+font-size:11px;
+
+margin-top:4px;
+}
+
+.card-arrow{
+
+font-size:24px;
+
+color:var(--blue);
+
+font-weight:900;
+}
+
+.year-card .big{
+
+background:#eef1ff;
+}
+
+.date-card .big{
+
+background:#fff7df;
+}
+
+.shift-card .big{
+
+background:#eafff5;
+}
+
+.no-data,
+.error-box{
+
+padding:18px;
+
+text-align:center;
+
+border-radius:15px;
+
+background:#fff8df;
+
+color:#75601b;
+
+border:1px solid #f0d887;
+
+font-size:13px;
+}
+
+.error-box{
+
+background:#fff0f0;
+
+color:#a72b2b;
+
+border-color:#f0b8b8;
+
+text-align:left;
+}
+
+.loading-box{
+
+padding:25px;
+
+text-align:center;
+
+color:var(--muted);
+
+border:1px dashed #c8cfdd;
+
+border-radius:15px;
+}
+
+/* =========================
+CALCULATOR
+========================= */
 
 .quick-tools{
 
-    display:flex;
+display:flex;
 
-    gap:8px;
+gap:8px;
 
-    overflow-x:auto;
+overflow-x:auto;
 
-    margin-bottom:15px;
-
+margin-bottom:15px;
 }
-
 
 .quick{
 
-    flex:
-    0 0
-    110px;
+flex:0 0 110px;
 
-    padding:12px 8px;
+padding:12px 8px;
 
-    border:
-    1px solid
-    var(--line);
+border:1px solid var(--line);
 
-    border-radius:13px;
+border-radius:13px;
 
-    background:#f8f9fc;
+background:#f8f9fc;
 
-    color:#4c5568;
+color:#4c5568;
 
-    font-weight:800;
+font-weight:800;
 
-    font-size:18px;
-
+font-size:18px;
 }
-
 
 .quick span{
 
-    display:block;
+display:block;
 
-    font-size:10px;
+font-size:10px;
 
-    margin-top:4px;
-
+margin-top:4px;
 }
-
 
 .quick.active{
 
-    background:#eceaff;
+background:#eceaff;
 
-    color:#4b29c5;
+color:#4b29c5;
 
-    border-color:#cfc7ff;
-
+border-color:#cfc7ff;
 }
 
+.calc-tool{
+
+display:none;
+}
+
+.calc-tool.active{
+
+display:block;
+}
 
 .calc{
 
-    max-width:430px;
+max-width:430px;
 
-    margin:auto;
-
+margin:auto;
 }
-
 
 .display{
 
-    background:#10182e;
+background:#10182e;
 
-    color:white;
+color:white;
 
-    min-height:75px;
+min-height:75px;
 
-    border-radius:15px;
+border-radius:15px;
 
-    padding:18px;
+padding:18px;
 
-    text-align:right;
+text-align:right;
 
-    font-size:31px;
+font-size:31px;
 
-    overflow:auto;
+overflow:auto;
 
-    margin-bottom:10px;
-
+margin-bottom:10px;
 }
-
 
 .calc-grid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(4,1fr);
+grid-template-columns:
+repeat(4,1fr);
 
-    gap:8px;
-
+gap:8px;
 }
-
 
 .calc-grid button{
 
-    padding:16px 6px;
+padding:16px 6px;
 
-    border-radius:12px;
+border-radius:12px;
 
-    background:#eef1f7;
+background:#eef1f7;
 
-    font-weight:800;
-
+font-weight:800;
 }
-
 
 .calc-grid .op{
 
-    background:#e9eaff;
+background:#e9eaff;
 
-    color:#402bbd;
-
+color:#402bbd;
 }
-
 
 .calc-grid .eq{
 
-    background:#2946d8;
+background:#2946d8;
 
-    color:white;
-
+color:white;
 }
-
 
 .calc-grid .danger{
 
-    background:#ffe8ed;
+background:#ffe8ed;
 
-    color:#c51c47;
-
+color:#c51c47;
 }
 
+.utility-box{
 
-/* =====================================================
-   PDF
-===================================================== */
+max-width:560px;
+
+margin:auto;
+
+background:#f8f9fc;
+
+border:1px solid var(--line);
+
+border-radius:17px;
+
+padding:18px;
+}
+
+.utility-box h3{
+
+font-size:19px;
+}
+
+.utility-box p{
+
+font-size:12px;
+
+color:var(--muted);
+
+margin:4px 0 13px;
+}
+
+.utility-box input{
+
+width:100%;
+
+padding:13px;
+
+border:1px solid #d6dce8;
+
+border-radius:11px;
+
+outline:0;
+
+background:white;
+}
+
+.two-inputs{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:9px;
+}
+
+.utility-btn{
+
+margin-top:9px;
+
+padding:12px;
+
+border-radius:11px;
+
+background:#2946d8;
+
+color:white;
+
+font-weight:800;
+
+width:100%;
+}
+
+.result-box{
+
+margin-top:10px;
+
+padding:13px;
+
+border-radius:11px;
+
+background:white;
+
+border:1px dashed #cbd2df;
+
+color:#4c5568;
+
+font-weight:750;
+
+min-height:45px;
+}
+
+/* =========================
+PDF
+========================= */
 
 .pdf-tabs{
 
-    display:flex;
+display:flex;
 
-    gap:7px;
+gap:7px;
 
-    overflow-x:auto;
+overflow-x:auto;
 
-    margin-bottom:14px;
-
+margin-bottom:13px;
 }
-
 
 .pdf-tab{
 
-    flex:0 0 auto;
+flex:0 0 auto;
 
-    padding:8px 14px;
+padding:8px 14px;
 
-    border-radius:20px;
+border-radius:20px;
 
-    background:#f0f2f7;
+background:#f0f2f7;
 
-    color:#596174;
+color:#596174;
 
-    font-size:11px;
+font-size:11px;
 
-    font-weight:800;
-
+font-weight:800;
 }
-
 
 .pdf-tab.active{
 
-    background:#2946d8;
+background:#2946d8;
 
-    color:white;
-
+color:white;
 }
-
 
 .pdf-list{
 
-    display:grid;
+display:grid;
 
-    gap:9px;
-
+gap:9px;
 }
-
 
 .pdf-card{
 
-    width:100%;
+width:100%;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    gap:11px;
+gap:11px;
 
-    padding:12px;
+padding:12px;
 
-    border:
-    1px solid
-    var(--line);
+border:1px solid var(--line);
 
-    border-radius:14px;
+border-radius:14px;
 
-    background:white;
+background:white;
 
-    text-align:left;
-
+text-align:left;
 }
-
 
 .pdf-icon{
 
-    width:42px;
+width:42px;
 
-    height:42px;
+height:42px;
 
-    display:grid;
+display:grid;
 
-    place-items:center;
+place-items:center;
 
-    border-radius:11px;
+border-radius:11px;
 
-    background:#eef1ff;
+background:#eef1ff;
 
-    font-size:23px;
-
+font-size:23px;
 }
-
 
 .pdf-info{
 
-    flex:1;
-
+flex:1;
 }
-
 
 .pdf-info b{
 
-    display:block;
+display:block;
 
-    font-size:13px;
-
+font-size:13px;
 }
-
 
 .pdf-info small{
 
-    display:block;
+display:block;
 
-    color:var(--muted);
+color:var(--muted);
 
-    font-size:10px;
+font-size:10px;
 
-    margin-top:3px;
-
+margin-top:3px;
 }
 
-
-/* =====================================================
-   SCORE
-===================================================== */
+/* =========================
+SCORE
+========================= */
 
 .score-summary{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(4,1fr);
+grid-template-columns:
+repeat(4,1fr);
 
-    gap:8px;
+gap:8px;
 
-    margin:14px 0;
-
+margin:14px 0;
 }
-
 
 .score-card{
 
-    border-radius:15px;
+border-radius:15px;
 
-    padding:13px;
+padding:13px;
 
-    color:white;
+color:white;
 
-    min-height:90px;
-
+min-height:90px;
 }
-
 
 .score-card span{
 
-    font-size:10px;
+font-size:10px;
 
-    font-weight:800;
-
+font-weight:800;
 }
-
 
 .score-card strong{
 
-    display:block;
+display:block;
 
-    font-size:25px;
+font-size:25px;
 
-    margin:4px 0;
-
+margin:4px 0;
 }
-
 
 .score-card small{
 
-    font-size:9px;
-
+font-size:9px;
 }
-
 
 .purple-card{
 
-    background:
-    linear-gradient(
-        135deg,
-        #6b29d8,
-        #4d29b7
-    );
-
+background:
+linear-gradient(
+135deg,
+#6b29d8,
+#4d29b7
+);
 }
-
 
 .blue-card{
 
-    background:
-    linear-gradient(
-        135deg,
-        #2c68dc,
-        #2151b8
-    );
-
+background:
+linear-gradient(
+135deg,
+#2c68dc,
+#2151b8
+);
 }
-
 
 .green-card{
 
-    background:
-    linear-gradient(
-        135deg,
-        #0b9b6a,
-        #087e59
-    );
-
+background:
+linear-gradient(
+135deg,
+#0b9b6a,
+#087e59
+);
 }
-
 
 .gold-card{
 
-    background:
-    linear-gradient(
-        135deg,
-        #e7a51c,
-        #c77d0b
-    );
-
+background:
+linear-gradient(
+135deg,
+#e7a51c,
+#c77d0b
+);
 }
 
+.analysis-box{
 
-/* =====================================================
-   PROFILE
-===================================================== */
+margin-top:10px;
+
+padding:15px;
+
+border:1px solid var(--line);
+
+border-radius:15px;
+
+background:#f9faff;
+}
+
+.progress{
+
+height:11px;
+
+background:#e8ebf3;
+
+border-radius:20px;
+
+overflow:hidden;
+}
+
+.progress i{
+
+display:block;
+
+width:0%;
+
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+#6328d9,
+#2472db
+);
+
+border-radius:20px;
+}
+
+/* =========================
+PROFILE
+========================= */
 
 .profile-cover{
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    gap:12px;
+gap:12px;
 
-    padding:15px;
+padding:15px;
 
-    border-radius:17px;
+border-radius:17px;
 
-    background:
-    linear-gradient(
-        110deg,
-        #eef0ff,
-        #f4f8ff
-    );
+background:
+linear-gradient(
+110deg,
+#eef0ff,
+#f4f8ff
+);
 
-    margin-bottom:15px;
-
+margin-bottom:15px;
 }
-
-
-.avatar{
-
-    width:58px;
-
-    height:58px;
-
-    border-radius:50%;
-
-    display:grid;
-
-    place-items:center;
-
-    color:white;
-
-    font-size:27px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #6428d8,
-        #2370dc
-    );
-
-}
-
 
 .profile-cover h2{
 
-    font-size:22px;
-
+font-size:22px;
 }
-
 
 .profile-cover p{
 
-    color:var(--muted);
+font-size:11px;
 
-    font-size:11px;
+color:var(--muted);
 
-    margin-top:3px;
-
+margin-top:3px;
 }
 
+.avatar{
+
+width:58px;
+
+height:58px;
+
+border-radius:50%;
+
+display:grid;
+
+place-items:center;
+
+color:white;
+
+font-size:27px;
+
+background:
+linear-gradient(
+135deg,
+#6428d8,
+#2370dc
+);
+}
 
 .profile-grid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    1fr 1fr;
+grid-template-columns:
+1fr 1fr;
 
-    gap:
-    4px 12px;
-
+gap:4px 12px;
 }
-
 
 .field{
 
-    margin:10px 0;
-
+margin:10px 0;
 }
-
 
 .field label{
 
-    display:block;
+display:block;
 
-    font-weight:750;
+font-weight:750;
 
-    font-size:13px;
+font-size:13px;
 
-    margin-bottom:5px;
-
+margin-bottom:5px;
 }
-
 
 .field input,
 .field select{
 
-    width:100%;
+width:100%;
 
-    padding:12px;
+padding:12px;
 
-    border:
-    1px solid
-    #d8deea;
+border:1px solid #d8deea;
 
-    border-radius:11px;
+border-radius:11px;
 
-    outline:0;
-
+outline:0;
 }
-
 
 .save{
 
-    padding:
-    12px 18px;
+padding:12px 18px;
 
-    border-radius:11px;
+border-radius:11px;
 
-    background:#2946d8;
+background:#2946d8;
 
-    color:white;
+color:white;
 
-    font-weight:800;
-
+font-weight:800;
 }
 
-
-/* =====================================================
-   BOTTOM NAVIGATION
-===================================================== */
+/* =========================
+BOTTOM NAV
+========================= */
 
 .bottom{
 
-    position:fixed;
+position:fixed;
 
-    z-index:80;
+z-index:80;
 
-    bottom:0;
+bottom:0;
 
-    left:0;
+left:0;
 
-    right:0;
+right:0;
 
-    background:
-    rgba(255,255,255,.97);
+background:
+rgba(255,255,255,.96);
 
-    backdrop-filter:blur(14px);
+backdrop-filter:blur(14px);
 
-    border-top:
-    1px solid
-    var(--line);
+border-top:1px solid var(--line);
 
-    box-shadow:
-    0 -6px 20px
-    rgba(30,45,90,.08);
-
+box-shadow:
+0 -6px 20px rgba(30,45,90,.08);
 }
-
 
 .bottom-inner{
 
-    max-width:1100px;
+max-width:1100px;
 
-    margin:auto;
+margin:auto;
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(5,1fr);
-
+grid-template-columns:
+repeat(5,1fr);
 }
-
 
 .nav{
 
-    background:transparent;
+background:transparent;
 
-    color:#697184;
+color:#697184;
 
-    padding:
-    7px 2px 6px;
+padding:7px 2px 6px;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    align-items:center;
+align-items:center;
 
-    gap:2px;
+gap:2px;
 
-    font-weight:750;
-
+font-weight:750;
 }
-
 
 .nav .ni{
 
-    font-size:22px;
+font-size:22px;
 
-    line-height:22px;
-
+line-height:22px;
 }
-
 
 .nav span:last-child{
 
-    font-size:10px;
-
+font-size:10px;
 }
-
 
 .nav.active{
 
-    color:#3926c9;
-
+color:#3926c9;
 }
 
-
-/* =====================================================
-   MODAL
-===================================================== */
+/* =========================
+MODAL
+========================= */
 
 .modal{
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    background:
-    rgba(10,16,35,.58);
+background:
+rgba(10,16,35,.55);
 
-    display:none;
+display:none;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    padding:18px;
+padding:18px;
 
-    z-index:100;
-
+z-index:100;
 }
-
 
 .modal.show{
 
-    display:flex;
-
+display:flex;
 }
-
 
 .modal-box{
 
-    width:
-    min(440px,100%);
+width:min(440px,100%);
 
-    background:white;
+background:white;
 
-    border-radius:22px;
+border-radius:20px;
 
-    padding:22px;
+padding:21px;
 
-    box-shadow:
-    0 25px 70px
-    rgba(0,0,0,.25);
-
+box-shadow:
+0 25px 70px rgba(0,0,0,.25);
 }
-
 
 .modal-box h3{
 
-    font-size:22px;
-
+font-size:21px;
 }
-
 
 .modal-box p{
 
-    color:var(--muted);
+color:var(--muted);
 
-    font-size:14px;
+font-size:13px;
 
-    line-height:1.5;
+line-height:1.5;
 
-    margin-top:8px;
-
+margin-top:7px;
 }
-
 
 .modal-actions{
 
-    display:flex;
+display:flex;
 
-    gap:9px;
+gap:8px;
 
-    margin-top:18px;
-
+margin-top:17px;
 }
-
 
 .modal-actions button{
 
-    flex:1;
+flex:1;
 
-    padding:13px;
+padding:12px;
 
-    border-radius:12px;
+border-radius:11px;
 
-    font-weight:800;
-
+font-weight:800;
 }
-
 
 .close{
 
-    background:#edf0f5;
-
+background:#edf0f5;
 }
-
 
 .primary{
 
-    background:#2946d8;
+background:#2946d8;
 
-    color:white;
-
+color:white;
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:650px){
 
-    .top-strip{
+.top-strip{
 
-        min-height:70px;
+min-height:70px;
 
-        padding:
-        8px 9px;
+padding:8px 9px;
 
-        grid-template-columns:
-        .9fr 1.15fr 1fr;
+grid-template-columns:
+.9fr 1.15fr 1fr;
 
-        gap:5px;
-
-    }
-
-    .top-left{
-
-        font-size:8px;
-
-    }
-
-    .top-left .cap{
-
-        font-size:17px;
-
-    }
-
-    .brand h1{
-
-        font-size:28px;
-
-    }
-
-    .brand small{
-
-        font-size:8px;
-
-        margin-top:4px;
-
-    }
-
-    .top-right{
-
-        gap:4px;
-
-    }
-
-    .info-pill{
-
-        padding:
-        6px 5px;
-
-        font-size:8px;
-
-        border-radius:8px;
-
-    }
-
-    .info-pill b{
-
-        font-size:7px;
-
-    }
-
-    main{
-
-        padding:
-        10px 7px;
-
-    }
-
-    .motivation{
-
-        min-height:45px;
-
-        padding:
-        7px 8px;
-
-        gap:7px;
-
-    }
-
-    .motivation strong{
-
-        font-size:12px;
-
-    }
-
-    .motivation span{
-
-        font-size:15px;
-
-    }
-
-    .student-row{
-
-        padding:6px;
-
-    }
-
-    .info-card{
-
-        min-width:155px;
-
-        height:45px;
-
-    }
-
-    .info-card .icon{
-
-        font-size:19px;
-
-    }
-
-    .info-card b{
-
-        font-size:10px;
-
-    }
-
-    .info-card small{
-
-        font-size:8px;
-
-    }
-
-    .section{
-
-        padding:
-        0 6px 9px;
-
-        border-radius:15px;
-
-    }
-
-    .section-title{
-
-        font-size:13px;
-
-        padding:
-        6px 15px;
-
-    }
-
-    .exam-box{
-
-        flex:
-        0 0
-        112px;
-
-        min-height:80px;
-
-        border-radius:12px;
-
-        gap:5px;
-
-    }
-
-    .exam-box .eicon{
-
-        font-size:24px;
-
-    }
-
-    .exam-box b{
-
-        font-size:11px;
-
-    }
-
-    .score-summary{
-
-        grid-template-columns:
-        repeat(4,120px);
-
-        overflow-x:auto;
-
-    }
-
-    .profile-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
+gap:5px;
 }
 
+.top-left{
 
-/* =====================================================
-   SMALL PHONES
-===================================================== */
+font-size:8px;
+}
 
-@media(max-width:380px){
+.top-left span{
 
-    .brand h1{
+font-size:18px;
 
-        font-size:24px;
+margin-right:3px;
+}
 
-    }
+.brand h1{
 
-    .exam-box{
+font-size:28px;
+}
 
-        flex-basis:105px;
+.brand small{
 
-    }
+font-size:8px;
+
+margin-top:3px;
+}
+
+.top-right{
+
+gap:4px;
+}
+
+.info-pill{
+
+padding:6px 5px;
+
+font-size:8px;
+
+border-radius:8px;
+}
+
+.info-pill b{
+
+display:block;
+}
+
+main{
+
+padding:10px 7px;
+}
+
+.motivation{
+
+min-height:45px;
+
+padding:7px 8px;
+
+gap:7px;
+}
+
+.motivation strong{
+
+font-size:12px;
+}
+
+.student-row{
+
+padding:6px;
+}
+
+.info-card{
+
+min-width:155px;
+
+height:45px;
+}
+
+.info-card .icon{
+
+font-size:19px;
+}
+
+.info-card b{
+
+font-size:10px;
+}
+
+.info-card small{
+
+font-size:8px;
+}
+
+.section{
+
+padding:0 6px 9px;
+
+border-radius:15px;
+}
+
+.section-title{
+
+font-size:13px;
+
+padding:6px 15px;
+}
+
+.exam-box{
+
+flex:0 0 112px;
+
+min-height:80px;
+
+border-radius:12px;
+
+gap:5px;
+}
+
+.exam-box .eicon{
+
+font-size:24px;
+}
+
+.exam-box b{
+
+font-size:11px;
+}
+
+.subpage{
+
+padding:14px;
+}
+
+.subpage h2{
+
+font-size:23px;
+}
+
+.score-summary{
+
+grid-template-columns:
+repeat(4,120px);
+
+overflow-x:auto;
+}
+
+.profile-grid{
+
+grid-template-columns:1fr;
+}
+
+.exam-list-card{
+
+min-height:72px;
+
+padding:11px;
+}
+
+.exam-list-card b{
+
+font-size:15px;
+}
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="app">
 
-
-<!-- =================================================
-     HEADER
-================================================= -->
+<!-- =========================
+HEADER
+========================= -->
 
 <header class="top-strip">
 
-
 <div class="top-left">
 
-<span class="cap">🎓</span>
+<span>🎓</span>
 
 Exam/Subscription<br>
-
 Name.
 
 </div>
-
 
 <div class="brand">
 
@@ -1677,64 +1739,45 @@ By – Vivek Singh.
 
 </div>
 
-
 <div class="top-right">
-
 
 <div class="info-pill">
 
 📅
 
 <span>
-
 Date
-
-<b id="date">
---/--/----
-</b>
-
+<b id="date">--/--/----</b>
 </span>
 
 </div>
-
 
 <div class="info-pill">
 
 ◷
 
 <span>
-
 Validity
-
-<b>
-Left day.
-</b>
-
+<b>Active</b>
 </span>
 
 </div>
-
 
 </div>
 
 </header>
 
 
-
 <main>
 
-
-<!-- =================================================
-     HOME
-================================================= -->
+<!-- =========================
+HOME
+========================= -->
 
 <section
 id="home"
 class="panel active"
 >
-
-
-<!-- MOTIVATION -->
 
 <div class="strip motivation">
 
@@ -1749,10 +1792,7 @@ Daily Motivation Quotes Updated.
 </div>
 
 
-<!-- STUDENT INFORMATION -->
-
 <div class="strip student-row">
-
 
 <button
 class="info-card"
@@ -1849,17 +1889,12 @@ Revision
 
 </button>
 
-
 </div>
 
 
-
-<!-- =================================================
-     FULL MOCK TEST
-================================================= -->
+<!-- FULL MOCK -->
 
 <section class="section mock">
-
 
 <h2 class="section-title">
 
@@ -1867,15 +1902,11 @@ Revision
 
 </h2>
 
-
 <div class="exam-row">
-
-
-<!-- SSC -->
 
 <button
 class="exam-box ssc"
-onclick="openExam('SSC CGL Full Mock Test','ssc_cgl')"
+onclick="openCategory('ssc','mock')"
 >
 
 <span class="eicon">
@@ -1889,11 +1920,9 @@ SSC
 </button>
 
 
-<!-- RAILWAY -->
-
 <button
 class="exam-box rail"
-onclick="openExam('Railway Full Mock Test','railway_full')"
+onclick="openCategory('railway','mock')"
 >
 
 <span class="eicon">
@@ -1907,11 +1936,9 @@ Railways
 </button>
 
 
-<!-- BANKING -->
-
 <button
 class="exam-box bank"
-onclick="openExam('Banking Full Mock Test','banking_full')"
+onclick="openCategory('banking','mock')"
 >
 
 <span class="eicon">
@@ -1925,11 +1952,9 @@ Banking
 </button>
 
 
-<!-- STATE -->
-
 <button
 class="exam-box state"
-onclick="openExam('State Full Mock Test','state_full')"
+onclick="openCategory('state','mock')"
 >
 
 <span class="eicon">
@@ -1943,11 +1968,9 @@ State
 </button>
 
 
-<!-- MORE -->
-
 <button
 class="exam-box more"
-onclick="showMessage('More exams will be added soon.')"
+onclick="message('More exam categories will be added through data files.')"
 >
 
 <span class="eicon">
@@ -1960,19 +1983,14 @@ More.
 
 </button>
 
-
 </div>
 
 </section>
 
 
-
-<!-- =================================================
-     FULL PYQ TEST
-================================================= -->
+<!-- FULL PYQ -->
 
 <section class="section pyq">
-
 
 <h2 class="section-title">
 
@@ -1980,13 +1998,11 @@ More.
 
 </h2>
 
-
 <div class="exam-row">
-
 
 <button
 class="exam-box ssc"
-onclick="openExam('SSC CGL Full PYQ Test','ssc_cgl_pyq')"
+onclick="openCategory('ssc','pyq')"
 >
 
 <span class="eicon">
@@ -2002,7 +2018,7 @@ SSC
 
 <button
 class="exam-box rail"
-onclick="openExam('Railway Full PYQ Test','railway_pyq')"
+onclick="openCategory('railway','pyq')"
 >
 
 <span class="eicon">
@@ -2018,7 +2034,7 @@ Railways
 
 <button
 class="exam-box bank"
-onclick="openExam('Banking Full PYQ Test','banking_pyq')"
+onclick="openCategory('banking','pyq')"
 >
 
 <span class="eicon">
@@ -2034,7 +2050,7 @@ Banking
 
 <button
 class="exam-box state"
-onclick="openExam('State Full PYQ Test','state_pyq')"
+onclick="openCategory('state','pyq')"
 >
 
 <span class="eicon">
@@ -2050,7 +2066,7 @@ State
 
 <button
 class="exam-box more"
-onclick="showMessage('More PYQ exams will be added soon.')"
+onclick="message('More PYQ categories will be added through data files.')"
 >
 
 <span class="eicon">
@@ -2063,19 +2079,14 @@ More.
 
 </button>
 
-
 </div>
 
 </section>
 
 
-
-<!-- =================================================
-     SECTIONAL PYQ
-================================================= -->
+<!-- SECTIONAL -->
 
 <section class="section sectional">
-
 
 <h2 class="section-title">
 
@@ -2083,13 +2094,11 @@ More.
 
 </h2>
 
-
 <div class="exam-row">
-
 
 <button
 class="exam-box ssc"
-onclick="openExam('SSC CGL Sectional PYQ','ssc_cgl_sectional')"
+onclick="openCategory('ssc','sectional')"
 >
 
 <span class="eicon">
@@ -2105,7 +2114,7 @@ SSC
 
 <button
 class="exam-box rail"
-onclick="openExam('Railway Sectional PYQ','railway_sectional')"
+onclick="openCategory('railway','sectional')"
 >
 
 <span class="eicon">
@@ -2121,7 +2130,7 @@ Railways
 
 <button
 class="exam-box bank"
-onclick="openExam('Banking Sectional PYQ','banking_sectional')"
+onclick="openCategory('banking','sectional')"
 >
 
 <span class="eicon">
@@ -2137,7 +2146,7 @@ Banking
 
 <button
 class="exam-box state"
-onclick="openExam('State Sectional PYQ','state_sectional')"
+onclick="openCategory('state','sectional')"
 >
 
 <span class="eicon">
@@ -2153,7 +2162,7 @@ State
 
 <button
 class="exam-box more"
-onclick="showMessage('More sectional exams will be added soon.')"
+onclick="message('More sectional categories will be added through data files.')"
 >
 
 <span class="eicon">
@@ -2166,28 +2175,84 @@ More.
 
 </button>
 
+</div>
+
+</section>
+
+</section>
+
+
+<!-- =========================
+EXAM PAGE
+========================= -->
+
+<section
+id="examPage"
+class="panel"
+>
+
+<div class="subpage">
+
+<div class="browser-top">
+
+<button
+class="back-btn"
+onclick="browserBack()"
+>
+← Back
+</button>
+
+<div>
+
+<h2 id="examPageTitle">
+Exams
+</h2>
+
+<p
+id="examPageDesc"
+class="desc"
+>
+Select an examination.
+</p>
+
+</div>
+
+</div>
+
+
+<div
+id="breadcrumb"
+class="breadcrumb"
+>
+</div>
+
+
+<div
+id="examList"
+class="exam-list"
+>
+
+<div class="loading-box">
+Loading...
+</div>
+
+</div>
 
 </div>
 
 </section>
 
 
-</section>
-
-
-
-<!-- =================================================
-     CALCULATION
-================================================= -->
+<!-- =========================
+CALCULATION
+========================= -->
 
 <section
 id="calculation"
 class="panel"
 >
 
-
 <div class="subpage">
-
 
 <div class="page-head">
 
@@ -2212,62 +2277,37 @@ QUICK TOOLS
 
 <div class="quick-tools">
 
-
 <button
 class="quick active"
-onclick="calcTool('calculator',this)"
+onclick="showCalcTool('calculator',this)"
 >
-
 🧮
-
-<span>
-Calculator
-</span>
-
+<span>Calculator</span>
 </button>
-
 
 <button
 class="quick"
-onclick="calcTool('percentage',this)"
+onclick="showCalcTool('percent',this)"
 >
-
-%
-
-<span>
-Percentage
-</span>
-
+％
+<span>Percentage</span>
 </button>
-
 
 <button
 class="quick"
-onclick="calcTool('square',this)"
+onclick="showCalcTool('square',this)"
 >
-
 ²√
-
-<span>
-Square / Root
-</span>
-
+<span>Square / Root</span>
 </button>
-
 
 <button
 class="quick"
-onclick="calcTool('ratio',this)"
+onclick="showCalcTool('ratio',this)"
 >
-
 a:b
-
-<span>
-Ratio
-</span>
-
+<span>Ratio</span>
 </button>
-
 
 </div>
 
@@ -2275,7 +2315,8 @@ Ratio
 <!-- CALCULATOR -->
 
 <div
-id="calculator"
+id="calculatorTool"
+class="calc-tool active"
 >
 
 <div class="calc">
@@ -2287,9 +2328,7 @@ class="display"
 0
 </div>
 
-
 <div class="calc-grid">
-
 
 <button
 class="danger"
@@ -2313,7 +2352,6 @@ onclick="inputCalc('/')"
 ÷
 </button>
 
-
 <button onclick="inputCalc('7')">
 7
 </button>
@@ -2332,7 +2370,6 @@ onclick="inputCalc('*')"
 >
 ×
 </button>
-
 
 <button onclick="inputCalc('4')">
 4
@@ -2353,7 +2390,6 @@ onclick="inputCalc('-')"
 −
 </button>
 
-
 <button onclick="inputCalc('1')">
 1
 </button>
@@ -2373,7 +2409,6 @@ onclick="inputCalc('+')"
 +
 </button>
 
-
 <button onclick="inputCalc('0')">
 0
 </button>
@@ -2388,11 +2423,10 @@ onclick="inputCalc('+')"
 
 <button
 class="eq"
-onclick="calculate()"
+onclick="equalCalc()"
 >
 =
 </button>
-
 
 </div>
 
@@ -2404,48 +2438,45 @@ onclick="calculate()"
 <!-- PERCENTAGE -->
 
 <div
-id="percentage"
-style="display:none"
+id="percentTool"
+class="calc-tool"
 >
 
-<div class="subpage">
+<div class="utility-box">
 
 <h3>
-Percentage Calculator
+Percentage
 </h3>
 
-<br>
+<p>
+Find percentage of a number.
+</p>
 
 <input
-id="percentValue"
+id="percentA"
 type="number"
-placeholder="Value"
-style="width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;"
+placeholder="Percentage e.g. 25"
 >
-
-<br><br>
 
 <input
-id="percentRate"
+id="percentB"
 type="number"
-placeholder="Percentage"
-style="width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;"
+placeholder="Number e.g. 240"
+style="margin-top:9px"
 >
-
-<br>
 
 <button
-class="save"
-style="margin-top:10px;width:100%;"
-onclick="percentageCalc()"
+class="utility-btn"
+onclick="calcPercent()"
 >
 Calculate
 </button>
 
 <div
 id="percentResult"
-style="margin-top:12px;font-weight:800;"
+class="result-box"
 >
+Result will appear here.
 </div>
 
 </div>
@@ -2456,39 +2487,54 @@ style="margin-top:12px;font-weight:800;"
 <!-- SQUARE -->
 
 <div
-id="square"
-style="display:none"
+id="squareTool"
+class="calc-tool"
 >
 
-<div class="subpage">
+<div class="utility-box">
 
 <h3>
 Square / Square Root
 </h3>
 
-<br>
+<p>
+Quick calculation.
+</p>
 
 <input
-id="squareValue"
+id="squareInput"
 type="number"
 placeholder="Enter number"
-style="width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;"
 >
 
-<br>
+<div
+style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:9px"
+>
 
 <button
-class="save"
-style="margin-top:10px;width:100%;"
-onclick="squareCalc()"
+class="utility-btn"
+onclick="calcSquare()"
 >
-Calculate
+Square
 </button>
+
+<button
+class="utility-btn"
+onclick="calcRoot()"
+>
+√ Root
+</button>
+
+</div>
 
 <div
 id="squareResult"
-style="margin-top:12px;font-weight:800;"
+class="result-box"
 >
+Result will appear here.
 </div>
 
 </div>
@@ -2499,66 +2545,62 @@ style="margin-top:12px;font-weight:800;"
 <!-- RATIO -->
 
 <div
-id="ratio"
-style="display:none"
+id="ratioTool"
+class="calc-tool"
 >
 
-<div class="subpage">
+<div class="utility-box">
 
 <h3>
 Ratio Simplifier
 </h3>
 
-<br>
+<p>
+Enter two positive numbers.
+</p>
 
-<div
-style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"
->
+<div class="two-inputs">
 
 <input
 id="ratioA"
 type="number"
 placeholder="A"
-style="padding:13px;border:1px solid #ddd;border-radius:10px;"
 >
 
 <input
 id="ratioB"
 type="number"
 placeholder="B"
-style="padding:13px;border:1px solid #ddd;border-radius:10px;"
 >
 
 </div>
 
 <button
-class="save"
-style="margin-top:10px;width:100%;"
-onclick="ratioCalc()"
+class="utility-btn"
+onclick="calcRatio()"
 >
 Simplify Ratio
 </button>
 
 <div
 id="ratioResult"
-style="margin-top:12px;font-weight:800;"
+class="result-box"
 >
+Result will appear here.
 </div>
 
 </div>
 
 </div>
-
 
 </div>
 
 </section>
 
 
-
-<!-- =================================================
-     PDF
-================================================= -->
+<!-- =========================
+PDF
+========================= -->
 
 <section
 id="pdf"
@@ -2572,137 +2614,125 @@ class="panel"
 <div>
 
 <h2>
-📄 PDF
+📄 PDF Library
 </h2>
 
 <p class="desc">
-Study material and exam PDFs.
+Study material and notes.
 </p>
 
 </div>
 
 <span class="head-badge">
-STUDY MATERIAL
+LIBRARY
 </span>
 
 </div>
 
-
 <div class="pdf-tabs">
 
-<button
-class="pdf-tab active"
->
+<button class="pdf-tab active">
+All
+</button>
+
+<button class="pdf-tab">
 SSC
 </button>
 
-<button
-class="pdf-tab"
->
+<button class="pdf-tab">
 Railway
 </button>
 
-<button
-class="pdf-tab"
->
-Banking
-</button>
-
-<button
-class="pdf-tab"
->
+<button class="pdf-tab">
 State
 </button>
 
 </div>
 
-
 <div class="pdf-list">
 
-
 <button
 class="pdf-card"
-onclick="showMessage('SSC CGL PDF section ready.')"
+onclick="message('Add your PDF file link in the PDF data section.')"
 >
 
-<div class="pdf-icon">
+<span class="pdf-icon">
 📕
-</div>
+</span>
 
-<div class="pdf-info">
+<span class="pdf-info">
 
 <b>
-SSC CGL Notes
+SSC Study Material
 </b>
 
 <small>
-GK • Maths • Reasoning • English
+PDF link can be connected later.
 </small>
 
-</div>
+</span>
 
-<div>
-›
-</div>
+<span>
+→
+</span>
 
 </button>
 
 
 <button
 class="pdf-card"
-onclick="showMessage('SSC PYQ PDF section ready.')"
+onclick="message('Add your PDF file link in the PDF data section.')"
 >
 
-<div class="pdf-icon">
+<span class="pdf-icon">
 📘
-</div>
+</span>
 
-<div class="pdf-info">
+<span class="pdf-info">
 
 <b>
-SSC Previous Year Questions
+Railway Study Material
 </b>
 
 <small>
-PYQ Study Material
+PDF link can be connected later.
 </small>
 
-</div>
+</span>
 
-<div>
-›
-</div>
+<span>
+→
+</span>
 
 </button>
 
 
 <button
 class="pdf-card"
-onclick="showMessage('More PDFs will be added soon.')"
+onclick="message('Add your PDF file link in the PDF data section.')"
 >
 
-<div class="pdf-icon">
-📚
-</div>
+<span class="pdf-icon">
+📗
+</span>
 
-<div class="pdf-info">
+<span class="pdf-info">
 
 <b>
-More Study Material
+State Exam Notes
 </b>
 
 <small>
-Coming soon
+PDF link can be connected later.
 </small>
 
-</div>
+</span>
 
-<div>
-›
-</div>
+<span>
+→
+</span>
 
 </button>
-
 
 </div>
 
@@ -2711,10 +2741,9 @@ Coming soon
 </section>
 
 
-
-<!-- =================================================
-     SCORE
-================================================= -->
+<!-- =========================
+SCORE
+========================= -->
 
 <section
 id="score"
@@ -2728,17 +2757,17 @@ class="panel"
 <div>
 
 <h2>
-📊 Score
+🏅 Performance
 </h2>
 
 <p class="desc">
-Your test performance.
+Your test performance will appear here.
 </p>
 
 </div>
 
 <span class="head-badge">
-PERFORMANCE
+SCORE
 </span>
 
 </div>
@@ -2746,14 +2775,13 @@ PERFORMANCE
 
 <div class="score-summary">
 
-
 <div class="score-card purple-card">
 
 <span>
 TESTS
 </span>
 
-<strong id="totalTests">
+<strong id="scoreTests">
 0
 </strong>
 
@@ -2767,15 +2795,15 @@ Completed
 <div class="score-card blue-card">
 
 <span>
-BEST
+ATTEMPTED
 </span>
 
-<strong id="bestScore">
+<strong id="scoreAttempted">
 0
 </strong>
 
 <small>
-Score
+Questions
 </small>
 
 </div>
@@ -2784,10 +2812,27 @@ Score
 <div class="score-card green-card">
 
 <span>
+CORRECT
+</span>
+
+<strong id="scoreCorrect">
+0
+</strong>
+
+<small>
+Answers
+</small>
+
+</div>
+
+
+<div class="score-card gold-card">
+
+<span>
 ACCURACY
 </span>
 
-<strong id="accuracy">
+<strong id="scoreAccuracy">
 0%
 </strong>
 
@@ -2797,51 +2842,44 @@ Overall
 
 </div>
 
-
-<div class="score-card gold-card">
-
-<span>
-LAST
-</span>
-
-<strong id="lastScore">
-0
-</strong>
-
-<small>
-Score
-</small>
-
 </div>
 
 
-</div>
-
-
-<div class="subpage">
-
-<h3>
-Performance Analysis
-</h3>
-
-<br>
-
-<p class="desc">
-Complete tests will appear here automatically.
-</p>
+<div class="analysis-box">
 
 <div
 style="
-margin-top:15px;
-padding:15px;
-background:#f8f9fc;
-border-radius:14px;
-"
+display:flex;
+justify-content:space-between;
+font-size:13px"
 >
 
-No test submitted yet.
+<b>
+Preparation progress
+</b>
+
+<b id="progressText">
+0%
+</b>
 
 </div>
+
+<div
+class="progress"
+style="margin-top:8px"
+>
+
+<i id="progressBar">
+</i>
+
+</div>
+
+<p
+class="desc"
+style="margin-bottom:0"
+>
+Results are stored locally until a database is connected.
+</p>
 
 </div>
 
@@ -2850,10 +2888,9 @@ No test submitted yet.
 </section>
 
 
-
-<!-- =================================================
-     PROFILE
-================================================= -->
+<!-- =========================
+PROFILE
+========================= -->
 
 <section
 id="profile"
@@ -2861,7 +2898,6 @@ class="panel"
 >
 
 <div class="subpage">
-
 
 <div class="profile-cover">
 
@@ -2871,12 +2907,12 @@ class="panel"
 
 <div>
 
-<h2>
-Student Profile
+<h2 id="profileNameDisplay">
+Student Name
 </h2>
 
 <p>
-Your TEST ME account
+TEST ME Student Profile
 </p>
 
 </div>
@@ -2886,7 +2922,6 @@ Your TEST ME account
 
 <div class="profile-grid">
 
-
 <div class="field">
 
 <label>
@@ -2894,38 +2929,9 @@ Student Name
 </label>
 
 <input
-id="studentName"
+id="profileName"
 placeholder="Enter your name"
 >
-
-</div>
-
-
-<div class="field">
-
-<label>
-Exam
-</label>
-
-<select id="studentExam">
-
-<option>
-SSC
-</option>
-
-<option>
-Railway
-</option>
-
-<option>
-Banking
-</option>
-
-<option>
-State Exams
-</option>
-
-</select>
 
 </div>
 
@@ -2936,38 +2942,27 @@ State Exams
 Target Exam
 </label>
 
-<input
-id="targetExam"
-placeholder="Example: SSC CGL"
->
-
-</div>
-
-
-<div class="field">
-
-<label>
-Preparation Level
-</label>
-
-<select id="level">
+<select id="profileExam">
 
 <option>
-Beginner
+SSC
 </option>
 
 <option>
-Intermediate
+Railway
 </option>
 
 <option>
-Advanced
+State Exams
+</option>
+
+<option>
+SSC CGL
 </option>
 
 </select>
 
 </div>
-
 
 </div>
 
@@ -2979,24 +2974,20 @@ onclick="saveProfile()"
 Save Profile
 </button>
 
-
 </div>
 
 </section>
 
-
 </main>
 
 
-<!-- =================================================
-     BOTTOM NAV
-================================================= -->
+<!-- =========================
+BOTTOM NAV
+========================= -->
 
 <nav class="bottom">
 
-
 <div class="bottom-inner">
-
 
 <button
 class="nav active"
@@ -3082,40 +3073,28 @@ Profile
 
 </button>
 
-
 </div>
 
 </nav>
 
 
-</div>
-
-
-
-<!-- =================================================
-     EXAM MODAL
-================================================= -->
+<!-- MODAL -->
 
 <div
 id="modal"
 class="modal"
 >
 
-
 <div class="modal-box">
-
 
 <h3>
 TEST ME
 </h3>
 
-
 <p id="modalText">
 </p>
 
-
 <div class="modal-actions">
-
 
 <button
 class="close"
@@ -3124,584 +3103,1709 @@ onclick="closeModal()"
 Close
 </button>
 
-
 <button
 class="primary"
-onclick="startExam()"
+onclick="closeModal()"
 >
-Continue
+OK
 </button>
 
-
 </div>
 
 </div>
 
 </div>
-
 
 
 <script>
 
-/* =====================================================
-   DATE
-===================================================== */
+/* =========================================
+TEST ME — LOCKED DATA ARCHITECTURE
+=========================================
 
-function setDate(){
+HOME UI
+  ↓
+CATEGORY
+  ↓
+EXAM
+  ↓
+YEAR
+  ↓
+DATE
+  ↓
+SHIFT / PAPER
+  ↓
+QUESTION BANK
 
-    const d = new Date();
+UI और DATA अलग रखे गए हैं।
 
-    const day =
-    String(d.getDate()).padStart(2,"0");
+नया साल जोड़ने के लिए index.html बदलने की
+जरूरत नहीं होगी।
 
-    const month =
-    String(d.getMonth()+1).padStart(2,"0");
+Expected structure:
 
-    const year =
-    d.getFullYear();
+data/
+│
+├── exams.json
+│
+├── ssc/
+│   ├── exams.json
+│   │
+│   ├── cgl/
+│   │   ├── years.json
+│   │   │
+│   │   ├── 2026/
+│   │   │   ├── papers.json
+│   │   │   └── questions/
+│   │   │
+│   │   ├── 2025/
+│   │   │   ├── papers.json
+│   │   │   └── questions/
+│   │
+│   ├── chsl/
+│   ├── mts/
+│   ├── gd/
+│   ├── cpo/
+│   └── ...
+│
+├── railway/
+│   ├── exams.json
+│   ├── ntpc/
+│   ├── group-d/
+│   ├── alp/
+│   └── ...
+│
+├── state/
+│   ├── exams.json
+│   ├── up/
+│   ├── bihar/
+│   └── ...
+*/
 
-    document.getElementById("date").textContent =
-    day + "/" + month + "/" + year;
+const FALLBACK_EXAMS={
+
+ssc:[
+
+{
+code:"cgl",
+name:"SSC CGL",
+icon:"🎓"
+},
+
+{
+code:"chsl",
+name:"SSC CHSL",
+icon:"📚"
+},
+
+{
+code:"mts",
+name:"SSC MTS",
+icon:"📝"
+},
+
+{
+code:"gd",
+name:"SSC GD",
+icon:"🛡️"
+},
+
+{
+code:"cpo",
+name:"SSC CPO",
+icon:"👮"
+},
+
+{
+code:"stenographer",
+name:"SSC Stenographer",
+icon:"⌨️"
+},
+
+{
+code:"selection-post",
+name:"SSC Selection Post",
+icon:"📋"
+},
+
+{
+code:"je",
+name:"SSC JE",
+icon:"🔧"
+}
+
+],
+
+railway:[
+
+{
+code:"ntpc",
+name:"Railway NTPC",
+icon:"🚆"
+},
+
+{
+code:"group-d",
+name:"Railway Group D",
+icon:"🚉"
+},
+
+{
+code:"alp",
+name:"Railway ALP",
+icon:"🚄"
+},
+
+{
+code:"technician",
+name:"Railway Technician",
+icon:"🔧"
+},
+
+{
+code:"rpf",
+name:"RPF",
+icon:"👮"
+}
+
+],
+
+banking:[
+
+{
+code:"ibps-po",
+name:"IBPS PO",
+icon:"🏦"
+},
+
+{
+code:"ibps-clerk",
+name:"IBPS Clerk",
+icon:"💳"
+},
+
+{
+code:"sbi-po",
+name:"SBI PO",
+icon:"🏦"
+},
+
+{
+code:"sbi-clerk",
+name:"SBI Clerk",
+icon:"💰"
+}
+
+],
+
+state:[
+
+{
+code:"upsssc-pet",
+name:"UPSSSC PET",
+icon:"🏛️"
+},
+
+{
+code:"upsi",
+name:"UP Police SI",
+icon:"👮"
+},
+
+{
+code:"up-constable",
+name:"UP Police Constable",
+icon:"🛡️"
+},
+
+{
+code:"up-lekhpal",
+name:"UP Lekhpal",
+icon:"📋"
+},
+
+{
+code:"bpsc",
+name:"BPSC",
+icon:"🏛️"
+},
+
+{
+code:"bssc",
+name:"BSSC",
+icon:"📚"
+},
+
+{
+code:"bihar-police",
+name:"Bihar Police",
+icon:"👮"
+}
+
+]
+
+};
+
+
+/* FALLBACK YEARS */
+
+const FALLBACK_YEARS={
+
+cgl:[2026,2025,2024,2023,2022,2021],
+
+chsl:[2026,2025,2024,2023,2022,2021],
+
+mts:[2026,2025,2024,2023,2022,2021],
+
+gd:[2026,2025,2024,2023,2022,2021],
+
+cpo:[2026,2025,2024,2023,2022,2021],
+
+stenographer:[2026,2025,2024,2023,2022,2021],
+
+"selection-post":[2026,2025,2024,2023,2022,2021],
+
+je:[2026,2025,2024,2023,2022,2021],
+
+ntpc:[2026,2025,2024,2023,2022,2021],
+
+"group-d":[2026,2025,2022,2019,2018],
+
+alp:[2026,2025,2024,2023,2022],
+
+technician:[2026,2025,2024,2023],
+
+rpf:[2026,2025,2024,2023],
+
+"upsssc-pet":[2026,2025,2024,2023,2022,2021],
+
+upsi:[2026,2025,2024,2021],
+
+"up-constable":[2026,2024,2019,2018],
+
+"up-lekhpal":[2026,2025,2022,2019],
+
+bpsc:[2026,2025,2024,2023,2022,2021],
+
+bssc:[2026,2025,2024,2023,2022],
+
+"bihar-police":[2026,2025,2024,2023,2022]
+
+};
+
+
+/* CURRENT BROWSER STATE */
+
+let browser={
+
+category:null,
+
+exam:null,
+
+type:null,
+
+year:null,
+
+date:null,
+
+shift:null,
+
+level:"category"
+
+};
+
+
+/* DATE */
+
+function today(){
+
+const d=new Date();
+
+const dd=String(
+d.getDate()
+).padStart(2,"0");
+
+const mm=String(
+d.getMonth()+1
+).padStart(2,"0");
+
+return `${dd}/${mm}/${d.getFullYear()}`;
 
 }
 
-setDate();
+document.getElementById("date").textContent=today();
 
 
-
-/* =====================================================
-   PAGE NAVIGATION
-===================================================== */
+/* PAGE NAVIGATION */
 
 function go(page){
 
-    document
-    .querySelectorAll(".panel")
-    .forEach(function(panel){
+document
+.querySelectorAll(".panel")
+.forEach(
+p=>p.classList.remove("active")
+);
 
-        panel.classList.remove("active");
+const target=
+document.getElementById(page);
 
-    });
+if(target){
 
+target.classList.add("active");
 
-    const target =
-    document.getElementById(page);
+}
 
-    if(target){
+document
+.querySelectorAll(".nav")
+.forEach(n=>{
 
-        target.classList.add("active");
+n.classList.toggle(
+"active",
+n.dataset.page===page
+);
 
-    }
+});
 
-
-    document
-    .querySelectorAll(".nav")
-    .forEach(function(nav){
-
-        nav.classList.remove("active");
-
-    });
-
-
-    const activeNav =
-    document.querySelector(
-        '.nav[data-page="' + page + '"]'
-    );
-
-    if(activeNav){
-
-        activeNav.classList.add("active");
-
-    }
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
 
+function openPageWithoutNav(page){
 
-/* =====================================================
-   EXAM SELECTION
-===================================================== */
+document
+.querySelectorAll(".panel")
+.forEach(
+p=>p.classList.remove("active")
+);
 
-let selectedExamId = "";
+document
+.getElementById(page)
+.classList.add("active");
 
-let selectedExamName = "";
+document
+.querySelectorAll(".nav")
+.forEach(
+n=>n.classList.remove("active")
+);
 
-
-function openExam(name,id){
-
-    selectedExamName = name;
-
-    selectedExamId = id;
-
-
-    document.getElementById("modalText").textContent =
-    name +
-    " selected. Continue to start the test.";
-
-
-    document
-    .getElementById("modal")
-    .classList.add("show");
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
 
+/* JSON LOADER */
 
-/* =====================================================
-   START TEST
-===================================================== */
+async function loadJson(url){
 
-function startExam(){
+const r=
+await fetch(
+url,
+{
+cache:"no-store"
+}
+);
 
-    if(!selectedExamId){
+if(!r.ok){
 
-        return;
+throw new Error(
+`HTTP ${r.status}`
+);
 
-    }
+}
 
-
-    /*
-       IMPORTANT
-
-       test.html receives:
-
-       ?exam=ssc_cgl
-
-    */
-
-    window.location.href =
-    "test.html?exam=" +
-    encodeURIComponent(selectedExamId);
+return await r.json();
 
 }
 
 
+/* LOAD EXAMS */
 
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
+async function loadCategoryExams(category){
 
-function closeModal(){
+try{
 
-    document
-    .getElementById("modal")
-    .classList.remove("show");
+const data=
+await loadJson(
+`data/${category}/exams.json`
+);
+
+if(
+Array.isArray(data)
+){
+
+return data;
+
+}
+
+if(
+Array.isArray(data.exams)
+){
+
+return data.exams;
+
+}
+
+}catch(e){}
+
+return FALLBACK_EXAMS[category]||[];
 
 }
 
 
+/* OPEN CATEGORY */
 
-/* =====================================================
-   MESSAGE
-===================================================== */
+async function openCategory(
+category,
+type
+){
 
-function showMessage(message){
+browser={
 
-    document.getElementById("modalText").textContent =
-    message;
+category,
 
-    document
-    .getElementById("modal")
-    .classList.add("show");
+exam:null,
+
+type,
+
+year:null,
+
+date:null,
+
+shift:null,
+
+level:"category"
+
+};
+
+setBrowser(
+
+"Exams",
+
+`Select an examination for ${typeLabel(type)}.`
+
+);
+
+setBreadcrumb();
+
+showLoading();
+
+const exams=
+await loadCategoryExams(
+category
+);
+
+if(!exams.length){
+
+showError(
+`No exams are configured for "${category}". Add data/${category}/exams.json.`
+);
+
+return;
+
+}
+
+renderExams(exams);
+
+openPageWithoutNav(
+"examPage"
+);
 
 }
 
 
+/* RENDER EXAMS */
 
-/* =====================================================
-   CALCULATOR
-===================================================== */
+function renderExams(exams){
 
-let calcExpression = "";
+const list=
+document.getElementById(
+"examList"
+);
+
+list.innerHTML="";
+
+exams.forEach(exam=>{
+
+const card=
+document.createElement(
+"button"
+);
+
+card.className=
+"exam-list-card";
+
+card.innerHTML=`
+
+<span class="big">
+${exam.icon||"🎓"}
+</span>
+
+<span class="card-text">
+
+<b>
+${escapeHtml(
+exam.name||
+exam.title||
+exam.code
+)}
+</b>
+
+<small>
+Exam Code:
+${escapeHtml(
+exam.code||""
+)}
+</small>
+
+</span>
+
+<span class="card-arrow">
+→
+</span>
+
+`;
+
+card.onclick=
+()=>openExam(exam);
+
+list.appendChild(card);
+
+});
+
+openPageWithoutNav(
+"examPage"
+);
+
+}
 
 
-function inputCalc(value){
+/* OPEN EXAM */
 
-    calcExpression += value;
+async function openExam(exam){
 
-    document.getElementById("display").textContent =
-    calcExpression || "0";
+browser.exam=exam;
+
+browser.level="year";
+
+browser.year=null;
+
+setBrowser(
+
+exam.name,
+
+`Select Year for ${typeLabel(browser.type)}.`
+
+);
+
+setBreadcrumb();
+
+showLoading();
+
+let years=[];
+
+try{
+
+const data=
+await loadJson(
+
+`data/${browser.category}/${exam.code}/years.json`
+
+);
+
+years=
+Array.isArray(data)
+?data
+:Array.isArray(data.years)
+?data.years
+:[];
+
+}catch(e){
+
+years=
+FALLBACK_YEARS[
+exam.code
+]||[];
+
+}
+
+years=
+years
+.map(
+x=>
+typeof x==="object"
+?(x.year??x.value)
+:x
+)
+.filter(Boolean)
+.sort(
+(a,b)=>
+Number(b)-Number(a)
+);
+
+if(!years.length){
+
+showError(
+
+`No years configured for ${exam.name}.
+
+Add:
+data/${browser.category}/${exam.code}/years.json`
+
+);
+
+return;
+
+}
+
+renderYears(years);
+
+}
+
+
+/* RENDER YEARS */
+
+function renderYears(years){
+
+const list=
+document.getElementById(
+"examList"
+);
+
+list.innerHTML="";
+
+years.forEach(year=>{
+
+const card=
+document.createElement(
+"button"
+);
+
+card.className=
+"exam-list-card year-card";
+
+card.innerHTML=`
+
+<span class="big">
+📅
+</span>
+
+<span class="card-text">
+
+<b>
+${escapeHtml(
+String(year)
+)}
+</b>
+
+<small>
+${escapeHtml(
+browser.exam.name
+)}
+Question Papers
+</small>
+
+</span>
+
+<span class="card-arrow">
+→
+</span>
+
+`;
+
+card.onclick=
+()=>openYear(year);
+
+list.appendChild(card);
+
+});
+
+}
+
+
+/* OPEN YEAR */
+
+async function openYear(year){
+
+browser.year=year;
+
+browser.date=null;
+
+browser.shift=null;
+
+browser.level="date";
+
+setBrowser(
+
+`${browser.exam.name} — ${year}`,
+
+"Select Paper Date."
+
+);
+
+setBreadcrumb();
+
+showLoading();
+
+let papers=[];
+
+try{
+
+const data=
+await loadJson(
+
+`data/${browser.category}/${browser.exam.code}/${year}/papers.json`
+
+);
+
+papers=
+Array.isArray(data)
+?data
+:Array.isArray(data.papers)
+?data.papers
+:[];
+
+}catch(e){
+
+papers=[];
+
+}
+
+if(!papers.length){
+
+showError(
+
+`Year ${year} is visible, but paper data is not connected yet.
+
+Expected file:
+
+data/${browser.category}/${browser.exam.code}/${year}/papers.json`
+
+);
+
+return;
+
+}
+
+renderDates(papers);
+
+}
+
+
+/* RENDER DATES */
+
+function renderDates(papers){
+
+const groups={};
+
+papers.forEach(p=>{
+
+const date=
+p.date||
+p.examDate||
+p.paperDate||
+"Unknown Date";
+
+if(!groups[date]){
+
+groups[date]=[];
+
+}
+
+groups[date].push(p);
+
+});
+
+
+const list=
+document.getElementById(
+"examList"
+);
+
+list.innerHTML="";
+
+
+Object.keys(groups)
+.forEach(date=>{
+
+const arr=
+groups[date];
+
+const card=
+document.createElement(
+"button"
+);
+
+card.className=
+"exam-list-card date-card";
+
+card.innerHTML=`
+
+<span class="big">
+📅
+</span>
+
+<span class="card-text">
+
+<b>
+${escapeHtml(
+String(date)
+)}
+</b>
+
+<small>
+${arr.length}
+paper/shift option
+${arr.length>1?"s":""}
+</small>
+
+</span>
+
+<span class="card-arrow">
+→
+</span>
+
+`;
+
+card.onclick=
+()=>openDate(
+date,
+arr
+);
+
+list.appendChild(card);
+
+});
+
+}
+
+
+/* OPEN DATE */
+
+function openDate(
+date,
+papers
+){
+
+browser.date=date;
+
+browser.level="shift";
+
+setBrowser(
+
+`${browser.exam.name} — ${browser.year}`,
+
+"Select Shift / Paper."
+
+);
+
+setBreadcrumb();
+
+const list=
+document.getElementById(
+"examList"
+);
+
+list.innerHTML="";
+
+
+papers.forEach(
+(paper,i)=>{
+
+const shift=
+paper.shift||
+paper.shiftNo||
+paper.slot||
+`Paper ${i+1}`;
+
+const card=
+document.createElement(
+"button"
+);
+
+card.className=
+"exam-list-card shift-card";
+
+card.innerHTML=`
+
+<span class="big">
+📝
+</span>
+
+<span class="card-text">
+
+<b>
+${escapeHtml(
+String(shift)
+)}
+</b>
+
+<small>
+${escapeHtml(
+String(browser.date)
+)}
+•
+${browser.year}
+</small>
+
+</span>
+
+<span class="card-arrow">
+→
+</span>
+
+`;
+
+card.onclick=
+()=>openPaper(paper);
+
+list.appendChild(card);
+
+});
+
+}
+
+
+/* OPEN PAPER */
+
+function openPaper(paper){
+
+browser.shift=
+paper.shift||
+paper.shiftNo||
+paper.slot||
+"";
+
+browser.level="paper";
+
+const file=
+paper.questionFile||
+paper.questionsFile||
+paper.file;
+
+if(!file){
+
+showError(
+"This paper has no questionFile configured in papers.json."
+);
+
+return;
+
+}
+
+const base=
+`data/${browser.category}/${browser.exam.code}/${browser.year}/`;
+
+const url=
+normalizeDataPath(
+base,
+file
+);
+
+
+const params=
+new URLSearchParams({
+
+category:
+browser.category,
+
+exam:
+browser.exam.code,
+
+type:
+browser.type,
+
+year:
+String(browser.year),
+
+date:
+String(browser.date||""),
+
+shift:
+String(browser.shift||""),
+
+questionFile:
+url
+
+});
+
+
+window.location.href=
+`test.html?${params.toString()}`;
+
+}
+
+
+/* BACK */
+
+function browserBack(){
+
+if(
+browser.level==="year"||
+browser.level==="category"
+){
+
+go("home");
+
+return;
+
+}
+
+if(
+browser.level==="date"
+){
+
+openExam(browser.exam);
+
+return;
+
+}
+
+if(
+browser.level==="shift"
+){
+
+openYear(browser.year);
+
+return;
+
+}
+
+if(
+browser.level==="paper"
+){
+
+go("home");
+
+return;
+
+}
+
+go("home");
+
+}
+
+
+/* UI HELPERS */
+
+function setBrowser(
+title,
+desc
+){
+
+document
+.getElementById(
+"examPageTitle"
+)
+.textContent=title;
+
+document
+.getElementById(
+"examPageDesc"
+)
+.textContent=desc;
+
+}
+
+
+function showLoading(){
+
+document
+.getElementById(
+"examList"
+)
+.innerHTML=
+'<div class="loading-box">Loading...</div>';
+
+}
+
+
+function showError(text){
+
+document
+.getElementById(
+"examList"
+)
+.innerHTML=
+
+`<div class="error-box">
+
+${escapeHtml(text)
+.replace(/\n/g,"<br>")}
+
+</div>`;
+
+}
+
+
+function setBreadcrumb(){
+
+const b=
+document.getElementById(
+"breadcrumb"
+);
+
+const parts=[
+[
+"Home",
+()=>go("home")
+]
+];
+
+
+if(browser.category){
+
+parts.push([
+browser.category.toUpperCase(),
+()=>openCategory(
+browser.category,
+browser.type
+)
+]);
+
+}
+
+
+if(browser.exam){
+
+parts.push([
+browser.exam.name,
+()=>openExam(
+browser.exam
+)
+]);
+
+}
+
+
+if(browser.year){
+
+parts.push([
+String(browser.year),
+()=>openYear(
+browser.year
+)
+]);
+
+}
+
+
+if(browser.date){
+
+parts.push([
+String(browser.date),
+()=>{}
+]);
+
+}
+
+
+b.innerHTML="";
+
+
+parts.forEach(
+(p,i)=>{
+
+const el=
+document.createElement(
+i===parts.length-1
+?"span"
+:"button"
+);
+
+el.textContent=p[0];
+
+if(
+i===parts.length-1
+){
+
+el.className=
+"current";
+
+}else{
+
+el.onclick=p[1];
+
+}
+
+b.appendChild(el);
+
+
+if(
+i<parts.length-1
+){
+
+const s=
+document.createElement(
+"span"
+);
+
+s.textContent="›";
+
+b.appendChild(s);
+
+}
+
+});
+
+}
+
+
+function typeLabel(type){
+
+return type==="mock"
+?"Full Mock Test"
+
+:type==="pyq"
+?"Full PYQ Test"
+
+:"Sectional PYQ Test";
+
+}
+
+
+function normalizeDataPath(
+base,
+file
+){
+
+if(
+/^https?:\/\//i.test(file)
+){
+
+return file;
+
+}
+
+return(
+base+file
+)
+.replace(
+/\/+/g,
+"/"
+);
+
+}
+
+
+function escapeHtml(v){
+
+return String(v)
+.replace(
+/[&<>"']/g,
+m=>({
+
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+
+}[m])
+);
+
+}
+
+
+/* =========================
+CALCULATOR
+========================= */
+
+let calcValue="";
+
+
+function inputCalc(v){
+
+calcValue+=v;
+
+document
+.getElementById(
+"display"
+)
+.textContent=
+calcValue||"0";
 
 }
 
 
 function clearCalc(){
 
-    calcExpression = "";
+calcValue="";
 
-    document.getElementById("display").textContent =
-    "0";
+document
+.getElementById(
+"display"
+)
+.textContent="0";
 
 }
 
 
 function backCalc(){
 
-    calcExpression =
-    calcExpression.slice(0,-1);
-
-    document.getElementById("display").textContent =
-    calcExpression || "0";
-
-}
-
-
-function calculate(){
-
-    try{
-
-        /*
-          Only mathematical characters
-        */
-
-        if(!/^[0-9+\-*/().\s]+$/.test(calcExpression)){
-
-            throw new Error();
-
-        }
-
-
-        const result =
-        Function(
-            '"use strict";return (' +
-            calcExpression +
-            ')'
-        )();
-
-
-        calcExpression =
-        String(result);
-
-        document.getElementById("display").textContent =
-        calcExpression;
-
-    }
-
-    catch{
-
-        document.getElementById("display").textContent =
-        "Error";
-
-        calcExpression = "";
-
-    }
-
-}
-
-
-
-/* =====================================================
-   CALCULATION TOOLS
-===================================================== */
-
-function calcTool(tool,button){
-
-    [
-        "calculator",
-        "percentage",
-        "square",
-        "ratio"
-    ]
-    .forEach(function(id){
-
-        const el =
-        document.getElementById(id);
-
-        if(el){
-
-            el.style.display =
-            id === tool
-            ? "block"
-            : "none";
-
-        }
-
-    });
-
-
-    document
-    .querySelectorAll(".quick")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-
-    if(button){
-
-        button.classList.add("active");
-
-    }
-
-}
-
-
-
-/* =====================================================
-   PERCENTAGE
-===================================================== */
-
-function percentageCalc(){
-
-    const value =
-    Number(
-        document.getElementById("percentValue").value
-    );
-
-    const rate =
-    Number(
-        document.getElementById("percentRate").value
-    );
-
-
-    if(
-        !Number.isFinite(value) ||
-        !Number.isFinite(rate)
-    ){
-
-        document.getElementById("percentResult").textContent =
-        "Enter valid values.";
-
-        return;
-
-    }
-
-
-    const answer =
-    value * rate / 100;
-
-
-    document.getElementById("percentResult").textContent =
-    rate + "% of " + value + " = " + answer;
-
-}
-
-
-
-/* =====================================================
-   SQUARE
-===================================================== */
-
-function squareCalc(){
-
-    const value =
-    Number(
-        document.getElementById("squareValue").value
-    );
-
-
-    if(!Number.isFinite(value)){
-
-        document.getElementById("squareResult").textContent =
-        "Enter a valid number.";
-
-        return;
-
-    }
-
-
-    const square =
-    value * value;
-
-
-    const root =
-    Math.sqrt(value);
-
-
-    document.getElementById("squareResult").innerHTML =
-    "Square = " +
-    square +
-    "<br>Square Root = " +
-    root.toFixed(4);
-
-}
-
-
-
-/* =====================================================
-   RATIO
-===================================================== */
-
-function ratioCalc(){
-
-    let a =
-    Number(
-        document.getElementById("ratioA").value
-    );
-
-    let b =
-    Number(
-        document.getElementById("ratioB").value
-    );
-
-
-    if(
-        !Number.isFinite(a) ||
-        !Number.isFinite(b) ||
-        a === 0 ||
-        b === 0
-    ){
-
-        document.getElementById("ratioResult").textContent =
-        "Enter valid values.";
-
-        return;
-
-    }
-
-
-    function gcd(x,y){
-
-        x = Math.abs(x);
-
-        y = Math.abs(y);
-
-        while(y){
-
-            let temp = y;
-
-            y = x % y;
-
-            x = temp;
-
-        }
-
-        return x;
-
-    }
-
-
-    const g = gcd(a,b);
-
-
-    document.getElementById("ratioResult").textContent =
-    "Simplified Ratio = " +
-    (a/g) +
-    " : " +
-    (b/g);
-
-}
-
-
-
-/* =====================================================
-   PROFILE
-===================================================== */
-
-function saveProfile(){
-
-    const data = {
-
-        name:
-        document.getElementById("studentName").value,
-
-        exam:
-        document.getElementById("studentExam").value,
-
-        target:
-        document.getElementById("targetExam").value,
-
-        level:
-        document.getElementById("level").value
-
-    };
-
-
-    localStorage.setItem(
-        "testMeProfile",
-        JSON.stringify(data)
-    );
-
-
-    alert("Profile saved successfully.");
-
-}
-
-
-
-/* =====================================================
-   LOAD PROFILE
-===================================================== */
-
-function loadProfile(){
-
-    const saved =
-    localStorage.getItem("testMeProfile");
-
-
-    if(!saved){
-
-        return;
-
-    }
-
-
-    try{
-
-        const data =
-        JSON.parse(saved);
-
-
-        document.getElementById("studentName").value =
-        data.name || "";
-
-
-        document.getElementById("studentExam").value =
-        data.exam || "SSC";
-
-
-        document.getElementById("targetExam").value =
-        data.target || "";
-
-
-        document.getElementById("level").value =
-        data.level || "Beginner";
-
-    }
-
-    catch{
-
-        console.log(
-            "Profile data could not be loaded."
-        );
-
-    }
-
-}
-
-
-loadProfile();
-
-
-
-/* =====================================================
-   MODAL OUTSIDE CLICK
-===================================================== */
+calcValue=
+calcValue.slice(0,-1);
 
 document
-.getElementById("modal")
-.addEventListener(
-    "click",
-    function(e){
+.getElementById(
+"display"
+)
+.textContent=
+calcValue||"0";
 
-        if(e.target === this){
+}
 
-            closeModal();
 
-        }
+function equalCalc(){
 
-    }
+try{
+
+if(
+!/^[0-9+\-*/().\s]+$/
+.test(calcValue)
+){
+
+throw new Error();
+
+}
+
+const result=
+Function(
+'"use strict";return ('+
+calcValue+
+')'
+)();
+
+calcValue=
+String(result);
+
+document
+.getElementById(
+"display"
+)
+.textContent=
+calcValue;
+
+}catch(e){
+
+document
+.getElementById(
+"display"
+)
+.textContent=
+"Error";
+
+calcValue="";
+
+}
+
+}
+
+
+/* CALC TOOLS */
+
+function showCalcTool(
+name,
+btn
+){
+
+document
+.querySelectorAll(
+".calc-tool"
+)
+.forEach(
+x=>x.classList.remove(
+"active"
+)
+);
+
+document
+.getElementById(
+name+"Tool"
+)
+.classList.add(
+"active"
+);
+
+document
+.querySelectorAll(
+".quick"
+)
+.forEach(
+x=>x.classList.remove(
+"active"
+)
+);
+
+btn.classList.add(
+"active"
+);
+
+}
+
+
+function calcPercent(){
+
+const a=
+Number(
+document.getElementById(
+"percentA"
+).value
+);
+
+const b=
+Number(
+document.getElementById(
+"percentB"
+).value
+);
+
+document
+.getElementById(
+"percentResult"
+)
+.textContent=
+
+Number.isFinite(a)&&
+Number.isFinite(b)
+
+?
+
+`${a}% of ${b} = ${a*b/100}`
+
+:
+
+"Enter valid numbers.";
+
+}
+
+
+function calcSquare(){
+
+const n=
+Number(
+document.getElementById(
+"squareInput"
+).value
+);
+
+document
+.getElementById(
+"squareResult"
+)
+.textContent=
+
+Number.isFinite(n)
+
+?
+
+`${n}² = ${n*n}`
+
+:
+
+"Enter a valid number.";
+
+}
+
+
+function calcRoot(){
+
+const n=
+Number(
+document.getElementById(
+"squareInput"
+).value
+);
+
+document
+.getElementById(
+"squareResult"
+)
+.textContent=
+
+n>=0
+
+?
+
+`√${n} = ${Math.sqrt(n)}`
+
+:
+
+"Enter a non-negative number.";
+
+}
+
+
+function calcRatio(){
+
+const a=
+Math.abs(
+Number(
+document.getElementById(
+"ratioA"
+).value
+)
+);
+
+const b=
+Math.abs(
+Number(
+document.getElementById(
+"ratioB"
+).value
+)
+);
+
+if(!a||!b){
+
+document
+.getElementById(
+"ratioResult"
+)
+.textContent=
+"Enter two positive numbers.";
+
+return;
+
+}
+
+
+const gcd=(x,y)=>
+y
+?gcd(y,x%y)
+:x;
+
+
+const g=
+gcd(
+Math.round(a),
+Math.round(b)
 );
 
 
+document
+.getElementById(
+"ratioResult"
+)
+.textContent=
+
+`Simplified ratio = ${a/g} : ${b/g}`;
+
+}
+
+
+/* =========================
+PROFILE
+========================= */
+
+function saveProfile(){
+
+const name=
+document
+.getElementById(
+"profileName"
+)
+.value
+.trim();
+
+if(name){
+
+localStorage.setItem(
+"testme_student_name",
+name
+);
+
+document
+.getElementById(
+"profileNameDisplay"
+)
+.textContent=name;
+
+message(
+"Profile saved successfully."
+);
+
+}else{
+
+message(
+"Please enter your name."
+);
+
+}
+
+}
+
+
+(function(){
+
+const name=
+localStorage.getItem(
+"testme_student_name"
+);
+
+if(name){
+
+document
+.getElementById(
+"profileName"
+)
+.value=name;
+
+document
+.getElementById(
+"profileNameDisplay"
+)
+.textContent=name;
+
+}
+
+})();
+
+
+/* =========================
+MODAL
+========================= */
+
+function message(text){
+
+document
+.getElementById(
+"modalText"
+)
+.textContent=text;
+
+document
+.getElementById(
+"modal"
+)
+.classList.add(
+"show"
+);
+
+}
+
+
+function closeModal(){
+
+document
+.getElementById(
+"modal"
+)
+.classList.remove(
+"show"
+);
+
+}
+
 </script>
+
+</div>
 
 </body>
 </html>
