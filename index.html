@@ -1,16 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Test-Me</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Test-Me | SSC Preparation</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #172033;
+}
+
+.header {
+    background: #173b8f;
+    color: white;
+    padding: 22px 18px;
+    border-radius: 0 0 22px 22px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.subtitle {
+    margin-top: 6px;
+    opacity: 0.9;
+}
+
+.container {
+    padding: 18px;
+}
+
+.welcome {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.welcome h2 {
+    margin-bottom: 8px;
+}
+
+.section-title {
+    margin: 20px 0 12px;
+    font-size: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.card h3 {
+    margin-bottom: 7px;
+}
+
+.card p {
+    color: #667085;
+    font-size: 14px;
+}
+
+.mock {
+    background: #173b8f;
+    color: white;
+}
+
+.mock p {
+    color: #dbe5ff;
+}
+
+.bottom {
+    margin-top: 25px;
+    background: white;
+    padding: 15px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.bottom div {
+    font-size: 13px;
+    color: #475467;
+}
+</style>
 </head>
 
 <body>
 
-    <h1>Test-Me</h1>
+<div class="header">
+    <div class="logo">Test-Me</div>
+    <div class="subtitle">SSC Preparation Platform</div>
+</div>
 
-    <p>SSC CGL Test Platform</p>
+<div class="container">
 
-    <button>Start Test</button>
+    <div class="welcome">
+        <h2>SSC CGL</h2>
+        <p>Practice smarter. Improve faster.</p>
+    </div>
+
+    <h2 class="section-title">Subjects</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Mathematics</h3>
+            <p>Practice Maths questions</p>
+        </div>
+
+        <div class="card">
+            <h3>Reasoning</h3>
+            <p>Practice Reasoning questions</p>
+        </div>
+
+        <div class="card">
+            <h3>English</h3>
+            <p>Improve English skills</p>
+        </div>
+
+        <div class="card">
+            <h3>GK / GS</h3>
+            <p>General Awareness practice</p>
+        </div>
+
+    </div>
+
+    <h2 class="section-title">Tests</h2>
+
+    <div class="grid">
+
+        <div class="card mock">
+            <h3>Mock Tests</h3>
+            <p>Attempt full SSC CGL tests</p>
+        </div>
+
+        <div class="card">
+            <h3>PYQ</h3>
+            <p>Practice previous year questions</p>
+        </div>
+
+        <div class="card">
+            <h3>Practice</h3>
+            <p>Topic-wise questions</p>
+        </div>
+
+        <div class="card">
+            <h3>Performance</h3>
+            <p>Check your progress</p>
+        </div>
+
+    </div>
+
+    <div class="bottom">
+        <div>Home</div>
+        <div>Tests</div>
+        <div>PYQ</div>
+        <div>Profile</div>
+    </div>
+
+</div>
 
 </body>
-</html>
+    </html>
