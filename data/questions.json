@@ -1,1 +1,82 @@
-
+[
+  {
+    "id": 1,
+    "exam": "SSC CGL",
+    "subject": "General Awareness",
+    "topic": "History",
+    "year": 2024,
+    "question": "Who was the first Governor-General of independent India?",
+    "options": [
+      "Lord Mountbatten",
+      "C. Rajagopalachari",
+      "Warren Hastings",
+      "Lord Canning"
+    ],
+    "answer": 0,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "exam": "SSC CGL",
+    "subject": "Mathematics",
+    "topic": "Percentage",
+    "year": 2024,
+    "question": "If the price of an article is increased by 20%, what is the percentage increase in its price?",
+    "options": [
+      "10%",
+      "15%",
+      "20%",
+      "25%"
+    ],
+    "answer": 2,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 3,
+    "exam": "SSC CGL",
+    "subject": "Reasoning",
+    "topic": "Analogy",
+    "year": 2023,
+    "question": "Book is related to Reading in the same way as Food is related to:",
+    "options": [
+      "Cooking",
+      "Eating",
+      "Kitchen",
+      "Taste"
+    ],
+    "answer": 1,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 4,
+    "exam": "SSC CGL",
+    "subject": "English",
+    "topic": "Vocabulary",
+    "year": 2023,
+    "question": "Choose the synonym of 'Rapid'.",
+    "options": [
+      "Slow",
+      "Quick",
+      "Weak",
+      "Late"
+    ],
+    "answer": 1,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 5,
+    "exam": "SSC CGL",
+    "subject": "General Awareness",
+    "topic": "Polity",
+    "year": 2022,
+    "question": "How many Fundamental Rights are currently guaranteed by the Constitution of India?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": 1,
+    "difficulty": "Medium"
+  }
+]
