@@ -1,1661 +1,1665 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#263bc7">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#293fd0">
 
 <title>TEST ME — By Vivek Singh</title>
 
 <style>
 
+/* =====================================================
+   TEST ME — MAIN APP
+   By Vivek Singh
+===================================================== */
+
 :root{
---bg:#f3f5fb;
---white:#ffffff;
---text:#172033;
---muted:#6d7485;
---blue:#2946d8;
---purple:#6528d8;
---green:#079668;
---gold:#f2ad16;
---pink:#df397d;
---line:#dfe4ef;
---shadow:0 7px 22px rgba(28,42,86,.09);
+
+    --bg:#f3f5fb;
+    --white:#ffffff;
+    --text:#172033;
+    --muted:#70788a;
+
+    --blue:#2946d8;
+    --purple:#6428d8;
+    --green:#079668;
+    --gold:#f2ad16;
+    --pink:#df397d;
+
+    --line:#dfe4ef;
+
+    --shadow:
+    0 7px 22px rgba(28,42,86,.09);
+
 }
 
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:var(--bg);
-color:var(--text);
-padding-bottom:75px;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    padding-bottom:78px;
+
 }
 
 button{
-font:inherit;
-border:0;
-cursor:pointer;
+
+    font:inherit;
+
+    border:0;
+
+    cursor:pointer;
+
 }
 
 .app{
-width:100%;
-max-width:1100px;
-margin:auto;
+
+    width:100%;
+
+    max-width:1100px;
+
+    margin:auto;
+
 }
 
 
-/* =========================
-TOP HEADER
-========================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .top-strip{
 
-min-height:88px;
+    min-height:88px;
 
-padding:10px 18px;
+    padding:10px 18px;
 
-color:white;
+    color:white;
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1fr 1.2fr 1fr;
+    grid-template-columns:
+    1fr 1.2fr 1fr;
 
-align-items:center;
+    align-items:center;
 
-gap:12px;
+    gap:12px;
 
-background:
+    background:
 
-radial-gradient(
-circle at 10% 10%,
-rgba(255,255,255,.18),
-transparent 25%
-),
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(255,255,255,.18),
+        transparent 25%
+    ),
 
-radial-gradient(
-circle at 90% 20%,
-rgba(0,211,255,.15),
-transparent 28%
-),
+    radial-gradient(
+        circle at 90% 20%,
+        rgba(0,211,255,.15),
+        transparent 28%
+    ),
 
-linear-gradient(
-110deg,
-#3d20d2,
-#293fc8,
-#17429f
-);
+    linear-gradient(
+        110deg,
+        #3d20d2,
+        #293fc8,
+        #17429f
+    );
 
-box-shadow:
-0 8px 24px rgba(39,49,160,.22);
+    box-shadow:
+    0 8px 24px rgba(39,49,160,.22);
+
 }
 
 
 .top-left{
 
-font-size:13px;
+    font-size:13px;
 
-font-weight:800;
+    font-weight:800;
 
-white-space:nowrap;
+    line-height:1.35;
 
-overflow:hidden;
-
-text-overflow:ellipsis;
 }
 
-.top-left span{
 
-font-size:25px;
+.top-left .cap{
 
-margin-right:7px;
+    font-size:24px;
 
-vertical-align:middle;
+    margin-right:6px;
+
 }
 
 
 .brand{
 
-text-align:center;
+    text-align:center;
 
-line-height:1;
+    line-height:1;
+
 }
+
 
 .brand h1{
 
-font-size:39px;
+    font-size:39px;
 
-letter-spacing:-1.5px;
+    letter-spacing:-1.5px;
 
-font-weight:950;
+    font-weight:950;
+
 }
+
 
 .brand h1 span{
 
-color:#ffd21b;
+    color:#ffd21b;
+
 }
+
 
 .brand small{
 
-display:block;
+    display:block;
 
-margin-top:5px;
+    margin-top:6px;
 
-font-size:11px;
+    font-size:11px;
 
-font-weight:700;
+    font-weight:700;
 
-opacity:.92;
 }
 
 
 .top-right{
 
-display:flex;
+    display:flex;
 
-justify-content:flex-end;
+    justify-content:flex-end;
 
-gap:8px;
+    gap:8px;
+
 }
+
 
 .info-pill{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:6px;
+    gap:6px;
 
-border:1px solid rgba(255,255,255,.42);
+    border:
+    1px solid
+    rgba(255,255,255,.42);
 
-border-radius:11px;
+    border-radius:11px;
 
-padding:8px 10px;
+    padding:8px 10px;
 
-font-size:11px;
+    font-size:11px;
 
-font-weight:700;
+    font-weight:700;
 
-white-space:nowrap;
+    white-space:nowrap;
+
 }
 
 
-/* =========================
-MAIN
-========================= */
+.info-pill b{
+
+    display:block;
+
+    margin-top:2px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 main{
 
-padding:13px 14px;
+    padding:13px 14px;
+
+}
+
+
+.panel{
+
+    display:none;
+
+}
+
+
+.panel.active{
+
+    display:block;
+
 }
 
 
 .strip{
 
-background:white;
+    background:white;
 
-border:1px solid var(--line);
+    border:
+    1px solid
+    var(--line);
 
-border-radius:17px;
+    border-radius:17px;
 
-box-shadow:var(--shadow);
+    box-shadow:var(--shadow);
 
-margin-bottom:13px;
+    margin-bottom:13px;
+
 }
 
 
-/* =========================
-MOTIVATION
-========================= */
+/* =====================================================
+   MOTIVATION
+===================================================== */
 
 .motivation{
 
-min-height:53px;
+    min-height:53px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-gap:13px;
+    gap:13px;
 
-padding:8px 15px;
+    padding:8px 15px;
 
-background:
-linear-gradient(
-90deg,
-#fff9dc,
-#fff,
-#fff9dc
-);
+    background:
+    linear-gradient(
+        90deg,
+        #fff9dc,
+        #ffffff,
+        #fff9dc
+    );
+
 }
+
 
 .motivation strong{
 
-font-size:18px;
+    font-size:18px;
 
-white-space:nowrap;
+    white-space:nowrap;
 
-background:
-linear-gradient(
-90deg,
-#d11d72,
-#4d30d9,
-#1765d7
-);
+    background:
+    linear-gradient(
+        90deg,
+        #d11d72,
+        #4d30d9,
+        #1765d7
+    );
 
--webkit-background-clip:text;
+    -webkit-background-clip:text;
 
-background-clip:text;
+    background-clip:text;
 
-color:transparent;
+    color:transparent;
+
 }
+
 
 .motivation span{
 
-font-size:20px;
+    font-size:20px;
+
 }
 
 
-/* =========================
-STUDENT INFO
-========================= */
+/* =====================================================
+   STUDENT INFORMATION
+===================================================== */
 
 .student-row{
 
-display:flex;
+    display:flex;
 
-gap:8px;
+    gap:8px;
 
-overflow-x:auto;
+    overflow-x:auto;
 
-scrollbar-width:none;
+    scrollbar-width:none;
 
-padding:8px;
+    padding:8px;
+
 }
+
 
 .student-row::-webkit-scrollbar{
 
-display:none;
+    display:none;
+
 }
 
 
 .info-card{
 
-flex:0 0 auto;
+    flex:0 0 auto;
 
-min-width:190px;
+    min-width:190px;
 
-height:52px;
+    height:52px;
 
-padding:7px 12px;
+    padding:7px 12px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:9px;
+    gap:9px;
 
-border:1px solid var(--line);
+    border:
+    1px solid
+    var(--line);
 
-border-radius:13px;
+    border-radius:13px;
 
-background:
-linear-gradient(
-135deg,
-#fff,
-#f7f8ff
-);
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f7f8ff
+    );
+
 }
+
 
 .info-card .icon{
 
-font-size:22px;
+    font-size:22px;
+
 }
+
 
 .info-card b{
 
-font-size:12px;
+    display:block;
 
-display:block;
+    font-size:12px;
+
 }
+
 
 .info-card small{
 
-font-size:10px;
+    display:block;
 
-color:var(--muted);
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-top:3px;
+
 }
 
 
-/* =========================
-TEST SECTIONS
-========================= */
+/* =====================================================
+   TEST SECTION
+===================================================== */
 
 .section{
 
-padding:0 9px 11px;
+    padding:
+    0 9px
+    11px;
 
-margin-bottom:13px;
+    margin-bottom:14px;
 
-background:
-rgba(255,255,255,.52);
+    background:
+    rgba(255,255,255,.58);
 
-border:1px dashed #aab3c6;
+    border:
+    1px dashed
+    #aab3c6;
 
-border-radius:19px;
+    border-radius:19px;
+
 }
 
 
 .section-title{
 
-position:relative;
+    position:relative;
 
-top:-10px;
+    top:-10px;
 
-width:max-content;
+    width:max-content;
 
-max-width:90%;
+    max-width:90%;
 
-margin:0 auto -2px;
+    margin:
+    0 auto
+    -2px;
 
-padding:7px 22px;
+    padding:
+    7px 22px;
 
-border-radius:20px;
+    border-radius:20px;
 
-color:white;
+    color:white;
 
-font-size:18px;
+    font-size:18px;
 
-font-weight:900;
+    font-weight:900;
 
-box-shadow:
-0 6px 14px rgba(35,49,135,.15);
+    box-shadow:
+    0 6px 14px
+    rgba(35,49,135,.15);
+
 }
 
 
 .mock .section-title{
 
-background:
-linear-gradient(
-90deg,
-#7422dd,
-#522bd1
-);
+    background:
+    linear-gradient(
+        90deg,
+        #7422dd,
+        #522bd1
+    );
+
 }
+
 
 .pyq .section-title{
 
-background:
-linear-gradient(
-90deg,
-#2469dd,
-#1959c5
-);
+    background:
+    linear-gradient(
+        90deg,
+        #2469dd,
+        #1959c5
+    );
+
 }
+
 
 .sectional .section-title{
 
-background:
-linear-gradient(
-90deg,
-#079668,
-#0b9c77
-);
+    background:
+    linear-gradient(
+        90deg,
+        #079668,
+        #0b9c77
+    );
+
 }
 
 
 .exam-row{
 
-display:flex;
+    display:flex;
 
-gap:9px;
+    gap:9px;
 
-overflow-x:auto;
+    overflow-x:auto;
 
-scrollbar-width:none;
+    scrollbar-width:none;
 
-padding:1px;
+    padding:1px;
+
 }
+
 
 .exam-row::-webkit-scrollbar{
 
-display:none;
+    display:none;
+
 }
 
 
 .exam-box{
 
-flex:1 0 150px;
+    flex:
+    0 0
+    150px;
 
-min-height:100px;
+    min-height:100px;
 
-border:1px solid #d8deeb;
+    border:
+    1px solid
+    #d8deeb;
 
-border-radius:15px;
+    border-radius:15px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-gap:8px;
+    flex-direction:column;
 
-flex-direction:column;
+    gap:8px;
 
-box-shadow:
-0 4px 12px rgba(30,45,90,.05);
+    box-shadow:
+    0 4px 12px
+    rgba(30,45,90,.05);
 
-transition:.18s;
+    transition:.18s;
+
 }
+
 
 .exam-box:active{
 
-transform:scale(.97);
+    transform:scale(.96);
+
 }
+
 
 .exam-box .eicon{
 
-font-size:31px;
+    font-size:31px;
+
 }
+
 
 .exam-box b{
 
-font-size:14px;
+    font-size:14px;
+
 }
+
 
 .ssc{
 
-background:#f2eeff;
+    background:#f2eeff;
+
 }
+
 
 .rail{
 
-background:#edf6ff;
+    background:#edf6ff;
+
 }
+
 
 .bank{
 
-background:#edfff6;
+    background:#edfff6;
+
 }
+
 
 .state{
 
-background:#fff5e7;
+    background:#fff5e7;
+
 }
+
 
 .more{
 
-background:#fff0f7;
-}
-
-
-/* =========================
-PANELS
-========================= */
-
-.panel{
-
-display:none;
-
-animation:in .2s ease;
-}
-
-.panel.active{
-
-display:block;
-}
-
-@keyframes in{
-
-from{
-
-opacity:.4;
-
-transform:translateY(4px);
+    background:#fff0f7;
 
 }
 
-to{
 
-opacity:1;
-
-transform:none;
-
-}
-
-}
-
+/* =====================================================
+   SUB PAGES
+===================================================== */
 
 .subpage{
 
-background:white;
+    background:white;
 
-border:1px solid var(--line);
+    border:
+    1px solid
+    var(--line);
 
-border-radius:20px;
+    border-radius:20px;
 
-padding:18px;
+    padding:18px;
 
-box-shadow:var(--shadow);
+    box-shadow:var(--shadow);
+
 }
 
 
 .page-head{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-gap:12px;
+    gap:12px;
 
-margin-bottom:12px;
+    margin-bottom:15px;
+
 }
 
-.subpage h2{
 
-font-size:25px;
+.page-head h2{
+
+    font-size:25px;
+
 }
+
 
 .desc{
 
-color:var(--muted);
+    color:var(--muted);
 
-font-size:13px;
+    font-size:13px;
 
-margin:6px 0 18px;
+    margin-top:6px;
+
 }
 
 
 .head-badge{
 
-padding:7px 10px;
+    padding:7px 10px;
 
-border-radius:9px;
+    border-radius:9px;
 
-background:#eeeaff;
+    background:#eeeaff;
 
-color:#5527c8;
+    color:#5527c8;
 
-font-size:9px;
+    font-size:9px;
 
-font-weight:900;
+    font-weight:900;
 
-white-space:nowrap;
 }
 
 
-/* =========================
-CALCULATION
-========================= */
+/* =====================================================
+   CALCULATOR
+===================================================== */
 
 .quick-tools{
 
-display:flex;
+    display:flex;
 
-gap:8px;
+    gap:8px;
 
-overflow-x:auto;
+    overflow-x:auto;
 
-margin-bottom:15px;
+    margin-bottom:15px;
+
 }
+
 
 .quick{
 
-flex:0 0 110px;
+    flex:
+    0 0
+    110px;
 
-padding:12px 8px;
+    padding:12px 8px;
 
-border:1px solid var(--line);
+    border:
+    1px solid
+    var(--line);
 
-border-radius:13px;
+    border-radius:13px;
 
-background:#f8f9fc;
+    background:#f8f9fc;
 
-color:#4c5568;
+    color:#4c5568;
 
-font-weight:800;
+    font-weight:800;
 
-font-size:18px;
+    font-size:18px;
+
 }
+
 
 .quick span{
 
-display:block;
+    display:block;
 
-font-size:10px;
+    font-size:10px;
 
-margin-top:4px;
+    margin-top:4px;
+
 }
+
 
 .quick.active{
 
-background:#eceaff;
+    background:#eceaff;
 
-color:#4b29c5;
+    color:#4b29c5;
 
-border-color:#cfc7ff;
-}
+    border-color:#cfc7ff;
 
-
-.calc-tool{
-
-display:none;
-}
-
-.calc-tool.active{
-
-display:block;
 }
 
 
 .calc{
 
-max-width:430px;
+    max-width:430px;
 
-margin:auto;
+    margin:auto;
+
 }
+
 
 .display{
 
-background:#10182e;
+    background:#10182e;
 
-color:white;
+    color:white;
 
-min-height:75px;
+    min-height:75px;
 
-border-radius:15px;
+    border-radius:15px;
 
-padding:18px;
+    padding:18px;
 
-text-align:right;
+    text-align:right;
 
-font-size:31px;
+    font-size:31px;
 
-overflow:auto;
+    overflow:auto;
 
-margin-bottom:10px;
+    margin-bottom:10px;
+
 }
 
 
 .calc-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(4,1fr);
+    grid-template-columns:
+    repeat(4,1fr);
 
-gap:8px;
+    gap:8px;
+
 }
+
 
 .calc-grid button{
 
-padding:16px 6px;
+    padding:16px 6px;
 
-border-radius:12px;
+    border-radius:12px;
 
-background:#eef1f7;
+    background:#eef1f7;
 
-font-weight:800;
+    font-weight:800;
+
 }
+
 
 .calc-grid .op{
 
-background:#e9eaff;
+    background:#e9eaff;
 
-color:#402bbd;
+    color:#402bbd;
+
 }
+
 
 .calc-grid .eq{
 
-background:#2946d8;
+    background:#2946d8;
 
-color:white;
+    color:white;
+
 }
+
 
 .calc-grid .danger{
 
-background:#ffe8ed;
+    background:#ffe8ed;
 
-color:#c51c47;
+    color:#c51c47;
+
 }
 
 
-.utility-box{
-
-max-width:560px;
-
-margin:auto;
-
-background:#f8f9fc;
-
-border:1px solid var(--line);
-
-border-radius:17px;
-
-padding:18px;
-}
-
-.utility-box h3{
-
-font-size:19px;
-}
-
-.utility-box p{
-
-font-size:12px;
-
-color:var(--muted);
-
-margin:4px 0 13px;
-}
-
-.utility-box input{
-
-width:100%;
-
-padding:13px;
-
-border:1px solid #d6dce8;
-
-border-radius:11px;
-
-outline:0;
-
-background:white;
-}
-
-.two-inputs{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:9px;
-}
-
-.two-buttons{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:9px;
-
-margin-top:9px;
-}
-
-.utility-btn{
-
-margin-top:9px;
-
-padding:12px;
-
-border-radius:11px;
-
-background:#2946d8;
-
-color:white;
-
-font-weight:800;
-
-width:100%;
-}
-
-.result-box{
-
-margin-top:10px;
-
-padding:13px;
-
-border-radius:11px;
-
-background:white;
-
-border:1px dashed #cbd2df;
-
-color:#4c5568;
-
-font-weight:750;
-
-min-height:45px;
-}
-
-
-/* =========================
-PDF
-========================= */
+/* =====================================================
+   PDF
+===================================================== */
 
 .pdf-tabs{
 
-display:flex;
+    display:flex;
 
-gap:7px;
+    gap:7px;
 
-overflow-x:auto;
+    overflow-x:auto;
 
-margin-bottom:13px;
+    margin-bottom:14px;
+
 }
+
 
 .pdf-tab{
 
-flex:0 0 auto;
+    flex:0 0 auto;
 
-padding:8px 14px;
+    padding:8px 14px;
 
-border-radius:20px;
+    border-radius:20px;
 
-background:#f0f2f7;
+    background:#f0f2f7;
 
-color:#596174;
+    color:#596174;
 
-font-size:11px;
+    font-size:11px;
 
-font-weight:800;
+    font-weight:800;
+
 }
+
 
 .pdf-tab.active{
 
-background:#2946d8;
+    background:#2946d8;
 
-color:white;
+    color:white;
+
 }
 
 
 .pdf-list{
 
-display:grid;
+    display:grid;
 
-gap:9px;
+    gap:9px;
+
 }
 
 
 .pdf-card{
 
-width:100%;
+    width:100%;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:11px;
+    gap:11px;
 
-padding:12px;
+    padding:12px;
 
-border:1px solid var(--line);
+    border:
+    1px solid
+    var(--line);
 
-border-radius:14px;
+    border-radius:14px;
 
-background:white;
+    background:white;
 
-text-align:left;
+    text-align:left;
+
 }
+
 
 .pdf-icon{
 
-width:42px;
+    width:42px;
 
-height:42px;
+    height:42px;
 
-display:grid;
+    display:grid;
 
-place-items:center;
+    place-items:center;
 
-border-radius:11px;
+    border-radius:11px;
 
-background:#eef1ff;
+    background:#eef1ff;
 
-font-size:23px;
+    font-size:23px;
+
 }
+
 
 .pdf-info{
 
-flex:1;
+    flex:1;
+
 }
+
 
 .pdf-info b{
 
-display:block;
+    display:block;
 
-font-size:13px;
+    font-size:13px;
+
 }
+
 
 .pdf-info small{
 
-display:block;
+    display:block;
 
-color:var(--muted);
+    color:var(--muted);
 
-font-size:10px;
+    font-size:10px;
 
-margin-top:3px;
-}
+    margin-top:3px;
 
-.pdf-arrow{
-
-font-size:24px;
-
-color:#9aa2b2;
-}
-
-.pdf-note{
-
-display:flex;
-
-gap:10px;
-
-align-items:center;
-
-margin-top:13px;
-
-padding:12px;
-
-border-radius:14px;
-
-background:#fff8df;
-
-border:1px solid #f1d78a;
 }
 
 
-/* =========================
-SCORE
-========================= */
+/* =====================================================
+   SCORE
+===================================================== */
 
 .score-summary{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(4,1fr);
+    grid-template-columns:
+    repeat(4,1fr);
 
-gap:8px;
+    gap:8px;
 
-margin:14px 0;
+    margin:14px 0;
+
 }
 
 
 .score-card{
 
-border-radius:15px;
+    border-radius:15px;
 
-padding:13px;
+    padding:13px;
 
-color:white;
+    color:white;
 
-min-height:90px;
+    min-height:90px;
+
 }
+
 
 .score-card span{
 
-font-size:10px;
+    font-size:10px;
 
-font-weight:800;
+    font-weight:800;
+
 }
+
 
 .score-card strong{
 
-display:block;
+    display:block;
 
-font-size:25px;
+    font-size:25px;
 
-margin:4px 0;
+    margin:4px 0;
+
 }
+
 
 .score-card small{
 
-font-size:9px;
+    font-size:9px;
+
 }
+
 
 .purple-card{
 
-background:
-linear-gradient(
-135deg,
-#6b29d8,
-#4d29b7
-);
+    background:
+    linear-gradient(
+        135deg,
+        #6b29d8,
+        #4d29b7
+    );
+
 }
+
 
 .blue-card{
 
-background:
-linear-gradient(
-135deg,
-#2c68dc,
-#2151b8
-);
+    background:
+    linear-gradient(
+        135deg,
+        #2c68dc,
+        #2151b8
+    );
+
 }
+
 
 .green-card{
 
-background:
-linear-gradient(
-135deg,
-#0b9b6a,
-#087e59
-);
+    background:
+    linear-gradient(
+        135deg,
+        #0b9b6a,
+        #087e59
+    );
+
 }
+
 
 .gold-card{
 
-background:
-linear-gradient(
-135deg,
-#e7a51c,
-#c77d0b
-);
+    background:
+    linear-gradient(
+        135deg,
+        #e7a51c,
+        #c77d0b
+    );
+
 }
 
 
-.analysis-box{
-
-margin-top:10px;
-
-padding:15px;
-
-border:1px solid var(--line);
-
-border-radius:15px;
-
-background:#f9faff;
-}
-
-.analysis-head{
-
-display:flex;
-
-justify-content:space-between;
-
-font-size:13px;
-
-margin-bottom:8px;
-}
-
-.progress{
-
-height:11px;
-
-background:#e8ebf3;
-
-border-radius:20px;
-
-overflow:hidden;
-}
-
-.progress i{
-
-display:block;
-
-width:0%;
-
-height:100%;
-
-background:
-linear-gradient(
-90deg,
-#6328d9,
-#2472db
-);
-
-border-radius:20px;
-}
-
-.analysis-note{
-
-font-size:10px;
-
-color:var(--muted);
-
-margin-top:9px;
-}
-
-
-.subject-analysis{
-
-margin-top:15px;
-
-padding:15px;
-
-border:1px solid var(--line);
-
-border-radius:15px;
-}
-
-.subject-analysis h3{
-
-font-size:16px;
-
-margin-bottom:12px;
-}
-
-.subject-line{
-
-display:grid;
-
-grid-template-columns:
-1fr 40px;
-
-gap:5px;
-
-margin:12px 0;
-
-font-size:11px;
-}
-
-.subject-line b{
-
-text-align:right;
-}
-
-.subject-line>div{
-
-grid-column:1/-1;
-
-height:7px;
-
-background:#e9ecf3;
-
-border-radius:10px;
-
-overflow:hidden;
-}
-
-.subject-line>div i{
-
-display:block;
-
-height:100%;
-
-background:
-linear-gradient(
-90deg,
-#6029d3,
-#2772dc
-);
-
-border-radius:10px;
-}
-
-
-/* =========================
-PROFILE
-========================= */
+/* =====================================================
+   PROFILE
+===================================================== */
 
 .profile-cover{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:12px;
+    gap:12px;
 
-padding:15px;
+    padding:15px;
 
-border-radius:17px;
+    border-radius:17px;
 
-background:
-linear-gradient(
-110deg,
-#eef0ff,
-#f4f8ff
-);
+    background:
+    linear-gradient(
+        110deg,
+        #eef0ff,
+        #f4f8ff
+    );
 
-margin-bottom:15px;
-}
+    margin-bottom:15px;
 
-.profile-cover h2{
-
-font-size:22px;
-}
-
-.profile-cover p{
-
-font-size:11px;
-
-color:var(--muted);
-
-margin-top:3px;
 }
 
 
 .avatar{
 
-width:58px;
+    width:58px;
 
-height:58px;
+    height:58px;
 
-border-radius:50%;
+    border-radius:50%;
 
-display:grid;
+    display:grid;
 
-place-items:center;
+    place-items:center;
 
-color:white;
+    color:white;
 
-font-size:27px;
+    font-size:27px;
 
-background:
-linear-gradient(
-135deg,
-#6428d8,
-#2370dc
-);
+    background:
+    linear-gradient(
+        135deg,
+        #6428d8,
+        #2370dc
+    );
+
+}
+
+
+.profile-cover h2{
+
+    font-size:22px;
+
+}
+
+
+.profile-cover p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:3px;
+
 }
 
 
 .profile-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-1fr 1fr;
+    grid-template-columns:
+    1fr 1fr;
 
-gap:4px 12px;
+    gap:
+    4px 12px;
+
 }
+
 
 .field{
 
-margin:10px 0;
+    margin:10px 0;
+
 }
+
 
 .field label{
 
-display:block;
+    display:block;
 
-font-weight:750;
+    font-weight:750;
 
-font-size:13px;
+    font-size:13px;
 
-margin-bottom:5px;
+    margin-bottom:5px;
+
 }
+
 
 .field input,
 .field select{
 
-width:100%;
+    width:100%;
 
-padding:12px;
+    padding:12px;
 
-border:1px solid #d8deea;
+    border:
+    1px solid
+    #d8deea;
 
-border-radius:11px;
+    border-radius:11px;
 
-outline:0;
+    outline:0;
+
 }
+
 
 .save{
 
-padding:12px 18px;
+    padding:
+    12px 18px;
 
-border-radius:11px;
+    border-radius:11px;
 
-background:#2946d8;
+    background:#2946d8;
 
-color:white;
+    color:white;
 
-font-weight:800;
+    font-weight:800;
+
 }
 
 
-/* =========================
-BOTTOM NAV
-========================= */
+/* =====================================================
+   BOTTOM NAVIGATION
+===================================================== */
 
 .bottom{
 
-position:fixed;
+    position:fixed;
 
-z-index:80;
+    z-index:80;
 
-bottom:0;
+    bottom:0;
 
-left:0;
+    left:0;
 
-right:0;
+    right:0;
 
-background:
-rgba(255,255,255,.96);
+    background:
+    rgba(255,255,255,.97);
 
-backdrop-filter:blur(14px);
+    backdrop-filter:blur(14px);
 
-border-top:1px solid var(--line);
+    border-top:
+    1px solid
+    var(--line);
 
-box-shadow:
-0 -6px 20px rgba(30,45,90,.08);
+    box-shadow:
+    0 -6px 20px
+    rgba(30,45,90,.08);
+
 }
+
 
 .bottom-inner{
 
-max-width:1100px;
+    max-width:1100px;
 
-margin:auto;
+    margin:auto;
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(5,1fr);
+    grid-template-columns:
+    repeat(5,1fr);
+
 }
+
 
 .nav{
 
-background:transparent;
+    background:transparent;
 
-color:#697184;
+    color:#697184;
 
-padding:7px 2px 6px;
+    padding:
+    7px 2px 6px;
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-align-items:center;
+    align-items:center;
 
-gap:2px;
+    gap:2px;
 
-font-weight:750;
+    font-weight:750;
+
 }
+
 
 .nav .ni{
 
-font-size:22px;
+    font-size:22px;
 
-line-height:22px;
+    line-height:22px;
+
 }
+
 
 .nav span:last-child{
 
-font-size:10px;
+    font-size:10px;
+
 }
+
 
 .nav.active{
 
-color:#3926c9;
+    color:#3926c9;
+
 }
 
 
-/* =========================
-MODAL
-========================= */
+/* =====================================================
+   MODAL
+===================================================== */
 
 .modal{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:
-rgba(10,16,35,.55);
+    background:
+    rgba(10,16,35,.58);
 
-display:none;
+    display:none;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-padding:18px;
+    padding:18px;
 
-z-index:100;
+    z-index:100;
+
 }
+
 
 .modal.show{
 
-display:flex;
+    display:flex;
+
 }
+
 
 .modal-box{
 
-width:min(440px,100%);
+    width:
+    min(440px,100%);
 
-background:white;
+    background:white;
 
-border-radius:20px;
+    border-radius:22px;
 
-padding:21px;
+    padding:22px;
 
-box-shadow:
-0 25px 70px rgba(0,0,0,.25);
+    box-shadow:
+    0 25px 70px
+    rgba(0,0,0,.25);
+
 }
+
 
 .modal-box h3{
 
-font-size:21px;
+    font-size:22px;
+
 }
+
 
 .modal-box p{
 
-color:var(--muted);
+    color:var(--muted);
 
-font-size:13px;
+    font-size:14px;
 
-line-height:1.5;
+    line-height:1.5;
 
-margin-top:7px;
+    margin-top:8px;
+
 }
+
 
 .modal-actions{
 
-display:flex;
+    display:flex;
 
-gap:8px;
+    gap:9px;
 
-margin-top:17px;
+    margin-top:18px;
+
 }
+
 
 .modal-actions button{
 
-flex:1;
+    flex:1;
 
-padding:12px;
+    padding:13px;
 
-border-radius:11px;
+    border-radius:12px;
 
-font-weight:800;
+    font-weight:800;
+
 }
+
 
 .close{
 
-background:#edf0f5;
+    background:#edf0f5;
+
 }
+
 
 .primary{
 
-background:#2946d8;
+    background:#2946d8;
 
-color:white;
+    color:white;
+
 }
 
 
-/* =========================
-MOBILE
-========================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:650px){
 
-.top-strip{
+    .top-strip{
 
-min-height:70px;
+        min-height:70px;
 
-padding:8px 9px;
+        padding:
+        8px 9px;
 
-grid-template-columns:
-.9fr 1.15fr 1fr;
+        grid-template-columns:
+        .9fr 1.15fr 1fr;
 
-gap:5px;
+        gap:5px;
+
+    }
+
+    .top-left{
+
+        font-size:8px;
+
+    }
+
+    .top-left .cap{
+
+        font-size:17px;
+
+    }
+
+    .brand h1{
+
+        font-size:28px;
+
+    }
+
+    .brand small{
+
+        font-size:8px;
+
+        margin-top:4px;
+
+    }
+
+    .top-right{
+
+        gap:4px;
+
+    }
+
+    .info-pill{
+
+        padding:
+        6px 5px;
+
+        font-size:8px;
+
+        border-radius:8px;
+
+    }
+
+    .info-pill b{
+
+        font-size:7px;
+
+    }
+
+    main{
+
+        padding:
+        10px 7px;
+
+    }
+
+    .motivation{
+
+        min-height:45px;
+
+        padding:
+        7px 8px;
+
+        gap:7px;
+
+    }
+
+    .motivation strong{
+
+        font-size:12px;
+
+    }
+
+    .motivation span{
+
+        font-size:15px;
+
+    }
+
+    .student-row{
+
+        padding:6px;
+
+    }
+
+    .info-card{
+
+        min-width:155px;
+
+        height:45px;
+
+    }
+
+    .info-card .icon{
+
+        font-size:19px;
+
+    }
+
+    .info-card b{
+
+        font-size:10px;
+
+    }
+
+    .info-card small{
+
+        font-size:8px;
+
+    }
+
+    .section{
+
+        padding:
+        0 6px 9px;
+
+        border-radius:15px;
+
+    }
+
+    .section-title{
+
+        font-size:13px;
+
+        padding:
+        6px 15px;
+
+    }
+
+    .exam-box{
+
+        flex:
+        0 0
+        112px;
+
+        min-height:80px;
+
+        border-radius:12px;
+
+        gap:5px;
+
+    }
+
+    .exam-box .eicon{
+
+        font-size:24px;
+
+    }
+
+    .exam-box b{
+
+        font-size:11px;
+
+    }
+
+    .score-summary{
+
+        grid-template-columns:
+        repeat(4,120px);
+
+        overflow-x:auto;
+
+    }
+
+    .profile-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
 }
 
-.top-left{
 
-font-size:8px;
-}
+/* =====================================================
+   SMALL PHONES
+===================================================== */
 
-.top-left span{
+@media(max-width:380px){
 
-font-size:18px;
+    .brand h1{
 
-margin-right:3px;
-}
+        font-size:24px;
 
-.brand h1{
+    }
 
-font-size:28px;
-}
+    .exam-box{
 
-.brand small{
+        flex-basis:105px;
 
-font-size:8px;
-
-margin-top:3px;
-}
-
-.top-right{
-
-gap:4px;
-}
-
-.info-pill{
-
-padding:6px 5px;
-
-font-size:8px;
-
-border-radius:8px;
-}
-
-.info-pill b{
-
-display:none;
-}
-
-main{
-
-padding:10px 7px;
-}
-
-.motivation{
-
-min-height:45px;
-
-padding:7px 8px;
-
-gap:7px;
-}
-
-.motivation strong{
-
-font-size:12px;
-}
-
-.motivation span{
-
-font-size:15px;
-}
-
-.student-row{
-
-padding:6px;
-}
-
-.info-card{
-
-min-width:155px;
-
-height:45px;
-}
-
-.info-card .icon{
-
-font-size:19px;
-}
-
-.info-card b{
-
-font-size:10px;
-}
-
-.info-card small{
-
-font-size:8px;
-}
-
-.section{
-
-padding:0 6px 9px;
-
-border-radius:15px;
-}
-
-.section-title{
-
-font-size:13px;
-
-padding:6px 15px;
-}
-
-.exam-box{
-
-flex:0 0 112px;
-
-min-height:80px;
-
-border-radius:12px;
-
-gap:5px;
-}
-
-.exam-box .eicon{
-
-font-size:24px;
-}
-
-.exam-box b{
-
-font-size:11px;
-}
-
-.score-summary{
-
-grid-template-columns:
-repeat(4,120px);
-
-overflow-x:auto;
-}
-
-.profile-grid{
-
-grid-template-columns:1fr;
-}
+    }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="app">
 
 
-<!-- =================================
-TOP HEADER
-================================= -->
+<!-- =================================================
+     HEADER
+================================================= -->
 
 <header class="top-strip">
 
+
 <div class="top-left">
 
-<span>🎓</span>
+<span class="cap">🎓</span>
 
 Exam/Subscription<br>
+
 Name.
 
 </div>
@@ -1676,13 +1680,19 @@ By – Vivek Singh.
 
 <div class="top-right">
 
+
 <div class="info-pill">
 
 📅
 
 <span>
+
 Date
-<b id="date">--/--/----</b>
+
+<b id="date">
+--/--/----
+</b>
+
 </span>
 
 </div>
@@ -1693,11 +1703,17 @@ Date
 ◷
 
 <span>
+
 Validity
-<b>Left day.</b>
+
+<b>
+Left day.
+</b>
+
 </span>
 
 </div>
+
 
 </div>
 
@@ -1708,9 +1724,9 @@ Validity
 <main>
 
 
-<!-- =================================
-HOME
-================================= -->
+<!-- =================================================
+     HOME
+================================================= -->
 
 <section
 id="home"
@@ -1733,8 +1749,7 @@ Daily Motivation Quotes Updated.
 </div>
 
 
-
-<!-- STUDENT ROW -->
+<!-- STUDENT INFORMATION -->
 
 <div class="strip student-row">
 
@@ -1763,7 +1778,6 @@ Profile
 </button>
 
 
-
 <button
 class="info-card"
 onclick="go('score')"
@@ -1788,7 +1802,6 @@ Performance
 </button>
 
 
-
 <button
 class="info-card"
 onclick="go('score')"
@@ -1811,7 +1824,6 @@ Analysis
 </span>
 
 </button>
-
 
 
 <button
@@ -1842,11 +1854,12 @@ Revision
 
 
 
-<!-- =================================
-FULL MOCK
-================================= -->
+<!-- =================================================
+     FULL MOCK TEST
+================================================= -->
 
 <section class="section mock">
+
 
 <h2 class="section-title">
 
@@ -1858,9 +1871,11 @@ FULL MOCK
 <div class="exam-row">
 
 
+<!-- SSC -->
+
 <button
 class="exam-box ssc"
-onclick="selectTest('SSC Full Mock Test')"
+onclick="openExam('SSC CGL Full Mock Test','ssc_cgl')"
 >
 
 <span class="eicon">
@@ -1874,9 +1889,11 @@ SSC
 </button>
 
 
+<!-- RAILWAY -->
+
 <button
 class="exam-box rail"
-onclick="selectTest('Railways Full Mock Test')"
+onclick="openExam('Railway Full Mock Test','railway_full')"
 >
 
 <span class="eicon">
@@ -1890,9 +1907,11 @@ Railways
 </button>
 
 
+<!-- BANKING -->
+
 <button
 class="exam-box bank"
-onclick="selectTest('Banking Full Mock Test')"
+onclick="openExam('Banking Full Mock Test','banking_full')"
 >
 
 <span class="eicon">
@@ -1906,9 +1925,11 @@ Banking
 </button>
 
 
+<!-- STATE -->
+
 <button
 class="exam-box state"
-onclick="selectTest('State Full Mock Test')"
+onclick="openExam('State Full Mock Test','state_full')"
 >
 
 <span class="eicon">
@@ -1922,9 +1943,11 @@ State
 </button>
 
 
+<!-- MORE -->
+
 <button
 class="exam-box more"
-onclick="message('More exams will be added here.')"
+onclick="showMessage('More exams will be added soon.')"
 >
 
 <span class="eicon">
@@ -1944,11 +1967,12 @@ More.
 
 
 
-<!-- =================================
-FULL PYQ
-================================= -->
+<!-- =================================================
+     FULL PYQ TEST
+================================================= -->
 
 <section class="section pyq">
+
 
 <h2 class="section-title">
 
@@ -1962,7 +1986,7 @@ FULL PYQ
 
 <button
 class="exam-box ssc"
-onclick="selectTest('SSC Full PYQ')"
+onclick="openExam('SSC CGL Full PYQ Test','ssc_cgl_pyq')"
 >
 
 <span class="eicon">
@@ -1978,7 +2002,7 @@ SSC
 
 <button
 class="exam-box rail"
-onclick="selectTest('Railways Full PYQ')"
+onclick="openExam('Railway Full PYQ Test','railway_pyq')"
 >
 
 <span class="eicon">
@@ -1994,7 +2018,7 @@ Railways
 
 <button
 class="exam-box bank"
-onclick="selectTest('Banking Full PYQ')"
+onclick="openExam('Banking Full PYQ Test','banking_pyq')"
 >
 
 <span class="eicon">
@@ -2010,7 +2034,7 @@ Banking
 
 <button
 class="exam-box state"
-onclick="selectTest('State Full PYQ')"
+onclick="openExam('State Full PYQ Test','state_pyq')"
 >
 
 <span class="eicon">
@@ -2026,7 +2050,7 @@ State
 
 <button
 class="exam-box more"
-onclick="message('More PYQ exams will be added here.')"
+onclick="showMessage('More PYQ exams will be added soon.')"
 >
 
 <span class="eicon">
@@ -2046,11 +2070,12 @@ More.
 
 
 
-<!-- =================================
-SECTIONAL PYQ
-================================= -->
+<!-- =================================================
+     SECTIONAL PYQ
+================================================= -->
 
 <section class="section sectional">
+
 
 <h2 class="section-title">
 
@@ -2064,7 +2089,7 @@ SECTIONAL PYQ
 
 <button
 class="exam-box ssc"
-onclick="selectTest('SSC Sectional PYQ')"
+onclick="openExam('SSC CGL Sectional PYQ','ssc_cgl_sectional')"
 >
 
 <span class="eicon">
@@ -2080,7 +2105,7 @@ SSC
 
 <button
 class="exam-box rail"
-onclick="selectTest('Railways Sectional PYQ')"
+onclick="openExam('Railway Sectional PYQ','railway_sectional')"
 >
 
 <span class="eicon">
@@ -2096,7 +2121,7 @@ Railways
 
 <button
 class="exam-box bank"
-onclick="selectTest('Banking Sectional PYQ')"
+onclick="openExam('Banking Sectional PYQ','banking_sectional')"
 >
 
 <span class="eicon">
@@ -2112,7 +2137,7 @@ Banking
 
 <button
 class="exam-box state"
-onclick="selectTest('State Sectional PYQ')"
+onclick="openExam('State Sectional PYQ','state_sectional')"
 >
 
 <span class="eicon">
@@ -2128,7 +2153,7 @@ State
 
 <button
 class="exam-box more"
-onclick="message('More sectional exams will be added here.')"
+onclick="showMessage('More sectional exams will be added soon.')"
 >
 
 <span class="eicon">
@@ -2151,14 +2176,15 @@ More.
 
 
 
-<!-- =================================
-CALCULATION
-================================= -->
+<!-- =================================================
+     CALCULATION
+================================================= -->
 
 <section
 id="calculation"
 class="panel"
 >
+
 
 <div class="subpage">
 
@@ -2172,7 +2198,7 @@ class="panel"
 </h2>
 
 <p class="desc">
-Fast calculation tools for SSC and other competitive exams.
+Fast calculation tools for competitive exams.
 </p>
 
 </div>
@@ -2184,13 +2210,12 @@ QUICK TOOLS
 </div>
 
 
-
 <div class="quick-tools">
 
 
 <button
 class="quick active"
-onclick="showCalcTool('calculator',this)"
+onclick="calcTool('calculator',this)"
 >
 
 🧮
@@ -2204,10 +2229,10 @@ Calculator
 
 <button
 class="quick"
-onclick="showCalcTool('percent',this)"
+onclick="calcTool('percentage',this)"
 >
 
-％
+%
 
 <span>
 Percentage
@@ -2218,7 +2243,7 @@ Percentage
 
 <button
 class="quick"
-onclick="showCalcTool('square',this)"
+onclick="calcTool('square',this)"
 >
 
 ²√
@@ -2232,7 +2257,7 @@ Square / Root
 
 <button
 class="quick"
-onclick="showCalcTool('ratio',this)"
+onclick="calcTool('ratio',this)"
 >
 
 a:b
@@ -2247,12 +2272,10 @@ Ratio
 </div>
 
 
-
 <!-- CALCULATOR -->
 
 <div
-id="calculatorTool"
-class="calc-tool active"
+id="calculator"
 >
 
 <div class="calc">
@@ -2365,7 +2388,7 @@ onclick="inputCalc('+')"
 
 <button
 class="eq"
-onclick="resultCalc()"
+onclick="calculate()"
 >
 =
 </button>
@@ -2378,168 +2401,148 @@ onclick="resultCalc()"
 </div>
 
 
-
 <!-- PERCENTAGE -->
 
 <div
-id="percentTool"
-class="calc-tool"
+id="percentage"
+style="display:none"
 >
 
-<div class="utility-box">
+<div class="subpage">
 
 <h3>
 Percentage Calculator
 </h3>
 
-<p>
-Find X% of Y.
-</p>
-
-
-<div class="two-inputs">
+<br>
 
 <input
-id="percentX"
+id="percentValue"
 type="number"
-placeholder="Percentage X"
+placeholder="Value"
+style="width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;"
 >
+
+<br><br>
 
 <input
-id="percentY"
+id="percentRate"
 type="number"
-placeholder="Number Y"
+placeholder="Percentage"
+style="width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;"
 >
 
-</div>
-
+<br>
 
 <button
-class="utility-btn"
+class="save"
+style="margin-top:10px;width:100%;"
 onclick="percentageCalc()"
 >
 Calculate
 </button>
 
-
 <div
 id="percentResult"
-class="result-box"
+style="margin-top:12px;font-weight:800;"
 >
-Result will appear here.
 </div>
 
 </div>
 
 </div>
-
 
 
 <!-- SQUARE -->
 
 <div
-id="squareTool"
-class="calc-tool"
+id="square"
+style="display:none"
 >
 
-<div class="utility-box">
+<div class="subpage">
 
 <h3>
 Square / Square Root
 </h3>
 
-<p>
-Quickly calculate square and square root.
-</p>
-
+<br>
 
 <input
-id="squareNumber"
+id="squareValue"
 type="number"
-placeholder="Enter a number"
+placeholder="Enter number"
+style="width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;"
 >
 
-
-<div class="two-buttons">
+<br>
 
 <button
-class="utility-btn"
+class="save"
+style="margin-top:10px;width:100%;"
 onclick="squareCalc()"
 >
-x²
+Calculate
 </button>
-
-<button
-class="utility-btn"
-onclick="rootCalc()"
->
-√x
-</button>
-
-</div>
-
 
 <div
 id="squareResult"
-class="result-box"
+style="margin-top:12px;font-weight:800;"
 >
-Result will appear here.
 </div>
 
 </div>
 
 </div>
-
 
 
 <!-- RATIO -->
 
 <div
-id="ratioTool"
-class="calc-tool"
+id="ratio"
+style="display:none"
 >
 
-<div class="utility-box">
+<div class="subpage">
 
 <h3>
 Ratio Simplifier
 </h3>
 
-<p>
-Enter two numbers to get the simplest ratio.
-</p>
+<br>
 
-
-<div class="two-inputs">
+<div
+style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"
+>
 
 <input
 id="ratioA"
 type="number"
 placeholder="A"
+style="padding:13px;border:1px solid #ddd;border-radius:10px;"
 >
 
 <input
 id="ratioB"
 type="number"
 placeholder="B"
+style="padding:13px;border:1px solid #ddd;border-radius:10px;"
 >
 
 </div>
 
-
 <button
-class="utility-btn"
+class="save"
+style="margin-top:10px;width:100%;"
 onclick="ratioCalc()"
 >
 Simplify Ratio
 </button>
 
-
 <div
 id="ratioResult"
-class="result-box"
+style="margin-top:12px;font-weight:800;"
 >
-Result will appear here.
 </div>
 
 </div>
@@ -2553,9 +2556,9 @@ Result will appear here.
 
 
 
-<!-- =================================
-PDF
-================================= -->
+<!-- =================================================
+     PDF
+================================================= -->
 
 <section
 id="pdf"
@@ -2564,23 +2567,22 @@ class="panel"
 
 <div class="subpage">
 
-
 <div class="page-head">
 
 <div>
 
 <h2>
-📄 PDF Library
+📄 PDF
 </h2>
 
 <p class="desc">
-Notes, syllabus and previous-year papers.
+Study material and exam PDFs.
 </p>
 
 </div>
 
 <span class="head-badge">
-STUDY
+STUDY MATERIAL
 </span>
 
 </div>
@@ -2588,41 +2590,31 @@ STUDY
 
 <div class="pdf-tabs">
 
-
 <button
 class="pdf-tab active"
-onclick="filterPDF('all',this)"
->
-All
-</button>
-
-
-<button
-class="pdf-tab"
-onclick="filterPDF('ssc',this)"
 >
 SSC
 </button>
 
-
 <button
 class="pdf-tab"
-onclick="filterPDF('up',this)"
->
-UP Exams
-</button>
-
-
-<button
-class="pdf-tab"
-onclick="filterPDF('railway',this)"
 >
 Railway
 </button>
 
+<button
+class="pdf-tab"
+>
+Banking
+</button>
+
+<button
+class="pdf-tab"
+>
+State
+</button>
 
 </div>
-
 
 
 <div class="pdf-list">
@@ -2630,146 +2622,89 @@ Railway
 
 <button
 class="pdf-card"
-data-category="ssc"
-onclick="openPDF('SSC Syllabus')"
+onclick="showMessage('SSC CGL PDF section ready.')"
 >
 
-<span class="pdf-icon">
-📘
-</span>
-
-<span class="pdf-info">
-
-<b>
-SSC Syllabus
-</b>
-
-<small>
-CGL • CHSL • MTS • CPO
-</small>
-
-</span>
-
-<span class="pdf-arrow">
-›
-</span>
-
-</button>
-
-
-
-<button
-class="pdf-card"
-data-category="ssc"
-onclick="openPDF('SSC PYQ Papers')"
->
-
-<span class="pdf-icon">
-📚
-</span>
-
-<span class="pdf-info">
-
-<b>
-SSC PYQ Papers
-</b>
-
-<small>
-Year-wise previous questions
-</small>
-
-</span>
-
-<span class="pdf-arrow">
-›
-</span>
-
-</button>
-
-
-
-<button
-class="pdf-card"
-data-category="up"
-onclick="openPDF('UP Exams')"
->
-
-<span class="pdf-icon">
-🏛️
-</span>
-
-<span class="pdf-info">
-
-<b>
-UP Exams
-</b>
-
-<small>
-PET • UP SI • UP Constable • Group C/D
-</small>
-
-</span>
-
-<span class="pdf-arrow">
-›
-</span>
-
-</button>
-
-
-
-<button
-class="pdf-card"
-data-category="railway"
-onclick="openPDF('Railway Papers')"
->
-
-<span class="pdf-icon">
-🚆
-</span>
-
-<span class="pdf-info">
-
-<b>
-Railway
-</b>
-
-<small>
-NTPC • Group D
-</small>
-
-</span>
-
-<span class="pdf-arrow">
-›
-</span>
-
-</button>
-
-
+<div class="pdf-icon">
+📕
 </div>
 
+<div class="pdf-info">
 
-<div class="pdf-note">
+<b>
+SSC CGL Notes
+</b>
 
-<span>
-💡
-</span>
+<small>
+GK • Maths • Reasoning • English
+</small>
+
+</div>
 
 <div>
+›
+</div>
+
+</button>
+
+
+<button
+class="pdf-card"
+onclick="showMessage('SSC PYQ PDF section ready.')"
+>
+
+<div class="pdf-icon">
+📘
+</div>
+
+<div class="pdf-info">
 
 <b>
-Question Bank अलग रहेगा
+SSC Previous Year Questions
 </b>
 
-<p>
-Questions app code के अंदर नहीं रखे जाएंगे।
-</p>
+<small>
+PYQ Study Material
+</small>
 
 </div>
 
+<div>
+›
 </div>
 
+</button>
+
+
+<button
+class="pdf-card"
+onclick="showMessage('More PDFs will be added soon.')"
+>
+
+<div class="pdf-icon">
+📚
+</div>
+
+<div class="pdf-info">
+
+<b>
+More Study Material
+</b>
+
+<small>
+Coming soon
+</small>
+
+</div>
+
+<div>
+›
+</div>
+
+</button>
+
+
+</div>
 
 </div>
 
@@ -2777,9 +2712,9 @@ Questions app code के अंदर नहीं रखे जाएंगे
 
 
 
-<!-- =================================
-SCORE
-================================= -->
+<!-- =================================================
+     SCORE
+================================================= -->
 
 <section
 id="score"
@@ -2788,27 +2723,25 @@ class="panel"
 
 <div class="subpage">
 
-
 <div class="page-head">
 
 <div>
 
 <h2>
-📊 Score & Analysis
+📊 Score
 </h2>
 
 <p class="desc">
-Your test history and preparation analysis.
+Your test performance.
 </p>
 
 </div>
 
 <span class="head-badge">
-ANALYSIS
+PERFORMANCE
 </span>
 
 </div>
-
 
 
 <div class="score-summary">
@@ -2817,15 +2750,15 @@ ANALYSIS
 <div class="score-card purple-card">
 
 <span>
-Tests
+TESTS
 </span>
 
-<strong id="attempts">
+<strong id="totalTests">
 0
 </strong>
 
 <small>
-Attempted
+Completed
 </small>
 
 </div>
@@ -2834,15 +2767,15 @@ Attempted
 <div class="score-card blue-card">
 
 <span>
-Best
+BEST
 </span>
 
-<strong id="best">
-0%
+<strong id="bestScore">
+0
 </strong>
 
 <small>
-Best Score
+Score
 </small>
 
 </div>
@@ -2851,7 +2784,7 @@ Best Score
 <div class="score-card green-card">
 
 <span>
-Accuracy
+ACCURACY
 </span>
 
 <strong id="accuracy">
@@ -2868,15 +2801,15 @@ Overall
 <div class="score-card gold-card">
 
 <span>
-Streak
+LAST
 </span>
 
-<strong>
+<strong id="lastScore">
 0
 </strong>
 
 <small>
-Days
+Score
 </small>
 
 </div>
@@ -2885,122 +2818,30 @@ Days
 </div>
 
 
-
-<div class="analysis-box">
-
-<div class="analysis-head">
-
-<b>
-Overall Progress
-</b>
-
-<span id="progressText">
-0%
-</span>
-
-</div>
-
-
-<div class="progress">
-
-<i
-id="progress"
-style="width:0%"
->
-</i>
-
-</div>
-
-
-<p class="analysis-note">
-
-Your performance will update automatically
-after real tests are connected.
-
-</p>
-
-</div>
-
-
-
-<div class="subject-analysis">
+<div class="subpage">
 
 <h3>
-Subject Analysis
+Performance Analysis
 </h3>
 
+<br>
 
-<div class="subject-line">
+<p class="desc">
+Complete tests will appear here automatically.
+</p>
 
-<span>
-🧮 Mathematics
-</span>
+<div
+style="
+margin-top:15px;
+padding:15px;
+background:#f8f9fc;
+border-radius:14px;
+"
+>
 
-<b>
-0%
-</b>
-
-<div>
-<i style="width:0%">
-</i>
-</div>
-
-</div>
-
-
-<div class="subject-line">
-
-<span>
-🧠 Reasoning
-</span>
-
-<b>
-0%
-</b>
-
-<div>
-<i style="width:0%">
-</i>
-</div>
+No test submitted yet.
 
 </div>
-
-
-<div class="subject-line">
-
-<span>
-🔤 English
-</span>
-
-<b>
-0%
-</b>
-
-<div>
-<i style="width:0%">
-</i>
-</div>
-
-</div>
-
-
-<div class="subject-line">
-
-<span>
-🌍 GK / GS
-</span>
-
-<b>
-0%
-</b>
-
-<div>
-<i style="width:0%">
-</i>
-</div>
-
-</div>
-
 
 </div>
 
@@ -3010,9 +2851,9 @@ Subject Analysis
 
 
 
-<!-- =================================
-PROFILE
-================================= -->
+<!-- =================================================
+     PROFILE
+================================================= -->
 
 <section
 id="profile"
@@ -3035,13 +2876,12 @@ Student Profile
 </h2>
 
 <p>
-Personalize your preparation dashboard.
+Your TEST ME account
 </p>
 
 </div>
 
 </div>
-
 
 
 <div class="profile-grid">
@@ -3054,12 +2894,40 @@ Student Name
 </label>
 
 <input
-id="name"
+id="studentName"
 placeholder="Enter your name"
 >
 
 </div>
 
+
+<div class="field">
+
+<label>
+Exam
+</label>
+
+<select id="studentExam">
+
+<option>
+SSC
+</option>
+
+<option>
+Railway
+</option>
+
+<option>
+Banking
+</option>
+
+<option>
+State Exams
+</option>
+
+</select>
+
+</div>
 
 
 <div class="field">
@@ -3068,102 +2936,32 @@ placeholder="Enter your name"
 Target Exam
 </label>
 
-<select id="target">
-
-<option>
-SSC CGL
-</option>
-
-<option>
-SSC CHSL
-</option>
-
-<option>
-SSC MTS
-</option>
-
-<option>
-SSC CPO
-</option>
-
-<option>
-UPSSSC PET
-</option>
-
-<option>
-UP Police
-</option>
-
-<option>
-UP SI
-</option>
-
-<option>
-Railway NTPC
-</option>
-
-<option>
-Railway Group D
-</option>
-
-</select>
+<input
+id="targetExam"
+placeholder="Example: SSC CGL"
+>
 
 </div>
-
 
 
 <div class="field">
 
 <label>
-Preparation Mode
+Preparation Level
 </label>
 
-<select id="mode">
+<select id="level">
 
 <option>
-Full Preparation
+Beginner
 </option>
 
 <option>
-Revision
+Intermediate
 </option>
 
 <option>
-PYQ Practice
-</option>
-
-<option>
-Mock Test Focus
-</option>
-
-</select>
-
-</div>
-
-
-
-<div class="field">
-
-<label>
-Daily Study Target
-</label>
-
-<select id="studyHours">
-
-<option>
-4 Hours
-</option>
-
-<option>
-6 Hours
-</option>
-
-<option>
-8 Hours
-</option>
-
-<option>
-10+ Hours
+Advanced
 </option>
 
 </select>
@@ -3189,22 +2987,21 @@ Save Profile
 
 </main>
 
-</div>
 
-
-
-<!-- =================================
-BOTTOM NAVIGATION
-================================= -->
+<!-- =================================================
+     BOTTOM NAV
+================================================= -->
 
 <nav class="bottom">
+
 
 <div class="bottom-inner">
 
 
 <button
 class="nav active"
-onclick="go('home',this)"
+data-page="home"
+onclick="go('home')"
 >
 
 <span class="ni">
@@ -3220,7 +3017,8 @@ Home
 
 <button
 class="nav"
-onclick="go('calculation',this)"
+data-page="calculation"
+onclick="go('calculation')"
 >
 
 <span class="ni">
@@ -3236,11 +3034,12 @@ Calculation
 
 <button
 class="nav"
-onclick="go('pdf',this)"
+data-page="pdf"
+onclick="go('pdf')"
 >
 
 <span class="ni">
-PDF
+▤
 </span>
 
 <span>
@@ -3252,7 +3051,8 @@ PDF
 
 <button
 class="nav"
-onclick="go('score',this)"
+data-page="score"
+onclick="go('score')"
 >
 
 <span class="ni">
@@ -3268,7 +3068,8 @@ Score
 
 <button
 class="nav"
-onclick="go('profile',this)"
+data-page="profile"
+onclick="go('profile')"
 >
 
 <span class="ni">
@@ -3276,7 +3077,7 @@ onclick="go('profile',this)"
 </span>
 
 <span>
-Profil
+Profile
 </span>
 
 </button>
@@ -3287,28 +3088,34 @@ Profil
 </nav>
 
 
+</div>
 
-<!-- =================================
-MODAL
-================================= -->
+
+
+<!-- =================================================
+     EXAM MODAL
+================================================= -->
 
 <div
 id="modal"
 class="modal"
-onclick="closeModal(event)"
 >
+
 
 <div class="modal-box">
 
-<h3 id="modalTitle">
+
+<h3>
 TEST ME
 </h3>
+
 
 <p id="modalText">
 </p>
 
 
 <div class="modal-actions">
+
 
 <button
 class="close"
@@ -3317,12 +3124,14 @@ onclick="closeModal()"
 Close
 </button>
 
+
 <button
 class="primary"
-onclick="demoStart()"
+onclick="startExam()"
 >
 Continue
 </button>
+
 
 </div>
 
@@ -3334,662 +3143,563 @@ Continue
 
 <script>
 
-/* =========================
-NAVIGATION
-========================= */
+/* =====================================================
+   DATE
+===================================================== */
 
-function go(id,btn){
+function setDate(){
 
-document
-.querySelectorAll(".panel")
-.forEach(
-p=>p.classList.remove("active")
-);
+    const d = new Date();
 
-document
-.getElementById(id)
-.classList.add("active");
+    const day =
+    String(d.getDate()).padStart(2,"0");
 
+    const month =
+    String(d.getMonth()+1).padStart(2,"0");
 
-document
-.querySelectorAll(".nav")
-.forEach(
-n=>n.classList.remove("active")
-);
+    const year =
+    d.getFullYear();
 
-if(btn){
-
-btn.classList.add("active");
+    document.getElementById("date").textContent =
+    day + "/" + month + "/" + year;
 
 }
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
+setDate();
 
 
-/* =========================
-TEST SELECTION
-========================= */
 
-let selectedTest="";
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
 
+function go(page){
 
-function selectTest(name){
+    document
+    .querySelectorAll(".panel")
+    .forEach(function(panel){
 
-selectedTest=name;
+        panel.classList.remove("active");
 
-message(
-name+
-" selected. Question Bank will be connected separately."
-);
-
-}
+    });
 
 
-function message(text){
+    const target =
+    document.getElementById(page);
 
-document
-.getElementById("modalTitle")
-.textContent="TEST ME";
+    if(target){
 
-document
-.getElementById("modalText")
-.textContent=text;
+        target.classList.add("active");
 
-document
-.getElementById("modal")
-.classList.add("show");
-
-}
+    }
 
 
-function demoStart(){
+    document
+    .querySelectorAll(".nav")
+    .forEach(function(nav){
 
-closeModal();
+        nav.classList.remove("active");
 
-message(
-selectedTest+
-" is ready for Question Bank."
-);
+    });
+
+
+    const activeNav =
+    document.querySelector(
+        '.nav[data-page="' + page + '"]'
+    );
+
+    if(activeNav){
+
+        activeNav.classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
-function closeModal(e){
 
-if(
-!e ||
-e.target===
-document.getElementById("modal")
-){
+/* =====================================================
+   EXAM SELECTION
+===================================================== */
 
-document
-.getElementById("modal")
-.classList.remove("show");
+let selectedExamId = "";
 
-}
-
-}
+let selectedExamName = "";
 
 
-/* =========================
-DATE
-========================= */
+function openExam(name,id){
 
-const now=new Date();
+    selectedExamName = name;
 
-document
-.getElementById("date")
-.textContent=
-
-String(
-now.getDate()
-).padStart(2,"0")
-+
-"/"
-+
-String(
-now.getMonth()+1
-).padStart(2,"0")
-+
-"/"
-+
-now.getFullYear();
+    selectedExamId = id;
 
 
-/* =========================
-CALCULATOR
-========================= */
-
-let calc="";
+    document.getElementById("modalText").textContent =
+    name +
+    " selected. Continue to start the test.";
 
 
-function inputCalc(v){
-
-if(calc.length<35){
-
-calc+=v;
+    document
+    .getElementById("modal")
+    .classList.add("show");
 
 }
 
-document
-.getElementById("display")
-.textContent=
-calc||"0";
+
+
+/* =====================================================
+   START TEST
+===================================================== */
+
+function startExam(){
+
+    if(!selectedExamId){
+
+        return;
+
+    }
+
+
+    /*
+       IMPORTANT
+
+       test.html receives:
+
+       ?exam=ssc_cgl
+
+    */
+
+    window.location.href =
+    "test.html?exam=" +
+    encodeURIComponent(selectedExamId);
+
+}
+
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+function closeModal(){
+
+    document
+    .getElementById("modal")
+    .classList.remove("show");
+
+}
+
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(message){
+
+    document.getElementById("modalText").textContent =
+    message;
+
+    document
+    .getElementById("modal")
+    .classList.add("show");
+
+}
+
+
+
+/* =====================================================
+   CALCULATOR
+===================================================== */
+
+let calcExpression = "";
+
+
+function inputCalc(value){
+
+    calcExpression += value;
+
+    document.getElementById("display").textContent =
+    calcExpression || "0";
 
 }
 
 
 function clearCalc(){
 
-calc="";
+    calcExpression = "";
 
-document
-.getElementById("display")
-.textContent="0";
+    document.getElementById("display").textContent =
+    "0";
 
 }
 
 
 function backCalc(){
 
-calc=
-calc.slice(0,-1);
+    calcExpression =
+    calcExpression.slice(0,-1);
 
-document
-.getElementById("display")
-.textContent=
-calc||"0";
+    document.getElementById("display").textContent =
+    calcExpression || "0";
 
 }
 
 
-function resultCalc(){
+function calculate(){
 
-try{
+    try{
 
-if(
-!/^[0-9+\-*/().\s]+$/
-.test(calc)
-){
+        /*
+          Only mathematical characters
+        */
 
-throw Error();
+        if(!/^[0-9+\-*/().\s]+$/.test(calcExpression)){
 
-}
+            throw new Error();
 
-const result=
-Function(
-'"use strict";return ('+
-calc+
-')'
-)();
+        }
 
 
-if(!Number.isFinite(result)){
+        const result =
+        Function(
+            '"use strict";return (' +
+            calcExpression +
+            ')'
+        )();
 
-throw Error();
 
-}
+        calcExpression =
+        String(result);
 
+        document.getElementById("display").textContent =
+        calcExpression;
 
-calc=
-String(
-Math.round(
-result*100000000
-)/100000000
-);
+    }
 
-document
-.getElementById("display")
-.textContent=
-calc;
+    catch{
 
-}
+        document.getElementById("display").textContent =
+        "Error";
 
-catch{
+        calcExpression = "";
 
-calc="";
-
-document
-.getElementById("display")
-.textContent=
-"Error";
-
-}
+    }
 
 }
 
 
-/* =========================
-CALCULATION TOOLS
-========================= */
 
-function showCalcTool(tool,btn){
+/* =====================================================
+   CALCULATION TOOLS
+===================================================== */
 
-document
-.querySelectorAll(".calc-tool")
-.forEach(
-x=>x.classList.remove("active")
-);
+function calcTool(tool,button){
 
-document
-.getElementById(
-tool+"Tool"
-)
-.classList.add("active");
+    [
+        "calculator",
+        "percentage",
+        "square",
+        "ratio"
+    ]
+    .forEach(function(id){
+
+        const el =
+        document.getElementById(id);
+
+        if(el){
+
+            el.style.display =
+            id === tool
+            ? "block"
+            : "none";
+
+        }
+
+    });
 
 
-document
-.querySelectorAll(".quick")
-.forEach(
-x=>x.classList.remove("active")
-);
+    document
+    .querySelectorAll(".quick")
+    .forEach(function(btn){
 
-btn.classList.add("active");
+        btn.classList.remove("active");
+
+    });
+
+
+    if(button){
+
+        button.classList.add("active");
+
+    }
 
 }
 
+
+
+/* =====================================================
+   PERCENTAGE
+===================================================== */
 
 function percentageCalc(){
 
-const x=
-parseFloat(
-document
-.getElementById("percentX")
-.value
-);
+    const value =
+    Number(
+        document.getElementById("percentValue").value
+    );
 
-const y=
-parseFloat(
-document
-.getElementById("percentY")
-.value
-);
+    const rate =
+    Number(
+        document.getElementById("percentRate").value
+    );
 
-if(
-Number.isFinite(x) &&
-Number.isFinite(y)
-){
 
-document
-.getElementById("percentResult")
-.textContent=
-x+
-"% of "+
-y+
-" = "+
-roundSmart(
-x*y/100
-);
+    if(
+        !Number.isFinite(value) ||
+        !Number.isFinite(rate)
+    ){
 
-}
+        document.getElementById("percentResult").textContent =
+        "Enter valid values.";
 
-else{
+        return;
 
-document
-.getElementById("percentResult")
-.textContent=
-"Enter valid numbers.";
+    }
+
+
+    const answer =
+    value * rate / 100;
+
+
+    document.getElementById("percentResult").textContent =
+    rate + "% of " + value + " = " + answer;
 
 }
 
-}
 
+
+/* =====================================================
+   SQUARE
+===================================================== */
 
 function squareCalc(){
 
-const n=
-parseFloat(
-document
-.getElementById("squareNumber")
-.value
-);
-
-if(Number.isFinite(n)){
-
-document
-.getElementById("squareResult")
-.textContent=
-n+
-"² = "+
-roundSmart(n*n);
-
-}
-
-else{
-
-document
-.getElementById("squareResult")
-.textContent=
-"Enter a valid number.";
-
-}
-
-}
+    const value =
+    Number(
+        document.getElementById("squareValue").value
+    );
 
 
-function rootCalc(){
+    if(!Number.isFinite(value)){
 
-const n=
-parseFloat(
-document
-.getElementById("squareNumber")
-.value
-);
+        document.getElementById("squareResult").textContent =
+        "Enter a valid number.";
 
-if(
-Number.isFinite(n) &&
-n>=0
-){
+        return;
 
-document
-.getElementById("squareResult")
-.textContent=
-"√"+
-n+
-" = "+
-roundSmart(
-Math.sqrt(n)
-);
+    }
+
+
+    const square =
+    value * value;
+
+
+    const root =
+    Math.sqrt(value);
+
+
+    document.getElementById("squareResult").innerHTML =
+    "Square = " +
+    square +
+    "<br>Square Root = " +
+    root.toFixed(4);
 
 }
 
-else{
 
-document
-.getElementById("squareResult")
-.textContent=
-"Enter a valid number.";
 
-}
-
-}
-
+/* =====================================================
+   RATIO
+===================================================== */
 
 function ratioCalc(){
 
-const a=
-parseInt(
-document
-.getElementById("ratioA")
-.value
-);
+    let a =
+    Number(
+        document.getElementById("ratioA").value
+    );
 
-const b=
-parseInt(
-document
-.getElementById("ratioB")
-.value
-);
-
-if(
-!Number.isInteger(a) ||
-!Number.isInteger(b) ||
-a===0 ||
-b===0
-){
-
-document
-.getElementById("ratioResult")
-.textContent=
-"Enter two non-zero whole numbers.";
-
-return;
-
-}
-
-const g=
-gcd(
-Math.abs(a),
-Math.abs(b)
-);
-
-document
-.getElementById("ratioResult")
-.textContent=
-"Simplest ratio = "+
-a/g+
-":"+
-b/g;
-
-}
+    let b =
+    Number(
+        document.getElementById("ratioB").value
+    );
 
 
-function gcd(a,b){
+    if(
+        !Number.isFinite(a) ||
+        !Number.isFinite(b) ||
+        a === 0 ||
+        b === 0
+    ){
 
-while(b){
+        document.getElementById("ratioResult").textContent =
+        "Enter valid values.";
 
-[
-a,
-b
-]=[
-b,
-a%b
-];
+        return;
 
-}
+    }
 
-return a;
+
+    function gcd(x,y){
+
+        x = Math.abs(x);
+
+        y = Math.abs(y);
+
+        while(y){
+
+            let temp = y;
+
+            y = x % y;
+
+            x = temp;
+
+        }
+
+        return x;
+
+    }
+
+
+    const g = gcd(a,b);
+
+
+    document.getElementById("ratioResult").textContent =
+    "Simplified Ratio = " +
+    (a/g) +
+    " : " +
+    (b/g);
 
 }
 
 
-function roundSmart(n){
 
-return Math.round(
-n*100000000
-)/100000000;
-
-}
-
-
-/* =========================
-PDF
-========================= */
-
-function filterPDF(category,btn){
-
-document
-.querySelectorAll(".pdf-tab")
-.forEach(
-x=>x.classList.remove("active")
-);
-
-btn.classList.add("active");
-
-
-document
-.querySelectorAll(".pdf-card")
-.forEach(card=>{
-
-card.style.display=
-(
-category==="all" ||
-card.dataset.category===category
-)
-?
-"flex"
-:
-"none";
-
-});
-
-}
-
-
-function openPDF(name){
-
-message(
-name+
-" selected. Add the PDF file to the project to connect it here."
-);
-
-}
-
-
-/* =========================
-PROFILE
-========================= */
+/* =====================================================
+   PROFILE
+===================================================== */
 
 function saveProfile(){
 
-localStorage.setItem(
-"testme_name",
-document
-.getElementById("name")
-.value
-.trim()
-);
+    const data = {
 
-localStorage.setItem(
-"testme_target",
-document
-.getElementById("target")
-.value
-);
+        name:
+        document.getElementById("studentName").value,
 
-localStorage.setItem(
-"testme_mode",
-document
-.getElementById("mode")
-.value
-);
+        exam:
+        document.getElementById("studentExam").value,
 
-localStorage.setItem(
-"testme_hours",
-document
-.getElementById("studyHours")
-.value
-);
+        target:
+        document.getElementById("targetExam").value,
+
+        level:
+        document.getElementById("level").value
+
+    };
 
 
-message(
-"Profile saved successfully."
-);
+    localStorage.setItem(
+        "testMeProfile",
+        JSON.stringify(data)
+    );
+
+
+    alert("Profile saved successfully.");
 
 }
 
 
-(function(){
 
-const n=
-localStorage.getItem(
-"testme_name"
-);
+/* =====================================================
+   LOAD PROFILE
+===================================================== */
 
-const t=
-localStorage.getItem(
-"testme_target"
-);
+function loadProfile(){
 
-const m=
-localStorage.getItem(
-"testme_mode"
-);
-
-const h=
-localStorage.getItem(
-"testme_hours"
-);
+    const saved =
+    localStorage.getItem("testMeProfile");
 
 
-if(n){
+    if(!saved){
 
-document
-.getElementById("name")
-.value=n;
+        return;
 
-}
+    }
 
-if(t){
 
-document
-.getElementById("target")
-.value=t;
+    try{
 
-}
+        const data =
+        JSON.parse(saved);
 
-if(m){
 
-document
-.getElementById("mode")
-.value=m;
+        document.getElementById("studentName").value =
+        data.name || "";
 
-}
 
-if(h){
+        document.getElementById("studentExam").value =
+        data.exam || "SSC";
 
-document
-.getElementById("studyHours")
-.value=h;
+
+        document.getElementById("targetExam").value =
+        data.target || "";
+
+
+        document.getElementById("level").value =
+        data.level || "Beginner";
+
+    }
+
+    catch{
+
+        console.log(
+            "Profile data could not be loaded."
+        );
+
+    }
 
 }
 
-})();
+
+loadProfile();
 
 
-/* =========================
-SCORE DATA
-========================= */
 
-(function(){
+/* =====================================================
+   MODAL OUTSIDE CLICK
+===================================================== */
 
-const attempts=
-Number(
-localStorage.getItem(
-"testme_attempts"
-) || 0
+document
+.getElementById("modal")
+.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+
+            closeModal();
+
+        }
+
+    }
 );
 
-const best=
-Number(
-localStorage.getItem(
-"testme_best"
-) || 0
-);
-
-const accuracy=
-Number(
-localStorage.getItem(
-"testme_accuracy"
-) || 0
-);
-
-
-document
-.getElementById("attempts")
-.textContent=
-attempts;
-
-document
-.getElementById("best")
-.textContent=
-best+
-"%";
-
-document
-.getElementById("accuracy")
-.textContent=
-accuracy+
-"%";
-
-document
-.getElementById("progress")
-style.width=
-accuracy+
-"%";
-
-document
-.getElementById("progressText")
-.textContent=
-accuracy+
-"%";
-
-})();
 
 </script>
 
