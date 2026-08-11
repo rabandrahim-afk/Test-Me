@@ -1,82 +1,214 @@
-[
-  {
-    "id": 1,
-    "exam": "SSC CGL",
-    "subject": "General Awareness",
-    "topic": "History",
-    "year": 2024,
-    "question": "Who was the first Governor-General of independent India?",
-    "options": [
-      "Lord Mountbatten",
-      "C. Rajagopalachari",
-      "Warren Hastings",
-      "Lord Canning"
-    ],
-    "answer": 0,
-    "difficulty": "Easy"
+{
+  "ssc_cgl": {
+    "name": "SSC CGL",
+    "category": "SSC",
+    "questionFile": "cgl.json",
+    "questions": 100,
+    "duration": 60,
+    "negativeMarking": 0.5,
+    "sections": [
+      {
+        "name": "General Intelligence & Reasoning",
+        "questions": 25
+      },
+      {
+        "name": "General Awareness",
+        "questions": 25
+      },
+      {
+        "name": "Quantitative Aptitude",
+        "questions": 25
+      },
+      {
+        "name": "English Comprehension",
+        "questions": 25
+      }
+    ]
   },
-  {
-    "id": 2,
-    "exam": "SSC CGL",
-    "subject": "Mathematics",
-    "topic": "Percentage",
-    "year": 2024,
-    "question": "If the price of an article is increased by 20%, what is the percentage increase in its price?",
-    "options": [
-      "10%",
-      "15%",
-      "20%",
-      "25%"
-    ],
-    "answer": 2,
-    "difficulty": "Easy"
+
+  "ssc_chsl": {
+    "name": "SSC CHSL",
+    "category": "SSC",
+    "questionFile": "chsl.json",
+    "questions": 100,
+    "duration": 60,
+    "sections": [
+      {
+        "name": "General Intelligence",
+        "questions": 25
+      },
+      {
+        "name": "General Awareness",
+        "questions": 25
+      },
+      {
+        "name": "Quantitative Aptitude",
+        "questions": 25
+      },
+      {
+        "name": "English Language",
+        "questions": 25
+      }
+    ]
   },
-  {
-    "id": 3,
-    "exam": "SSC CGL",
-    "subject": "Reasoning",
-    "topic": "Analogy",
-    "year": 2023,
-    "question": "Book is related to Reading in the same way as Food is related to:",
-    "options": [
-      "Cooking",
-      "Eating",
-      "Kitchen",
-      "Taste"
-    ],
-    "answer": 1,
-    "difficulty": "Easy"
+
+  "ssc_mts": {
+    "name": "SSC MTS",
+    "category": "SSC",
+    "questionFile": "mts.json",
+    "sessions": [
+      {
+        "name": "Session-I",
+        "questions": 40,
+        "duration": 45
+      },
+      {
+        "name": "Session-II",
+        "questions": 50,
+        "duration": 45
+      }
+    ]
   },
-  {
-    "id": 4,
-    "exam": "SSC CGL",
-    "subject": "English",
-    "topic": "Vocabulary",
-    "year": 2023,
-    "question": "Choose the synonym of 'Rapid'.",
-    "options": [
-      "Slow",
-      "Quick",
-      "Weak",
-      "Late"
-    ],
-    "answer": 1,
-    "difficulty": "Easy"
+
+  "ssc_cpo": {
+    "name": "SSC CPO",
+    "category": "SSC",
+    "questionFile": "cpo.json",
+    "questions": 200,
+    "duration": 120,
+    "sections": [
+      {
+        "name": "General Intelligence & Reasoning",
+        "questions": 50
+      },
+      {
+        "name": "General Knowledge & General Awareness",
+        "questions": 50
+      },
+      {
+        "name": "Quantitative Aptitude",
+        "questions": 50
+      },
+      {
+        "name": "English Comprehension",
+        "questions": 50
+      }
+    ]
   },
-  {
-    "id": 5,
-    "exam": "SSC CGL",
-    "subject": "General Awareness",
-    "topic": "Polity",
-    "year": 2022,
-    "question": "How many Fundamental Rights are currently guaranteed by the Constitution of India?",
-    "options": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ],
-    "answer": 1,
-    "difficulty": "Medium"
+
+  "upsssc_pet": {
+    "name": "UPSSSC PET",
+    "category": "UP State",
+    "questionFile": "pet.json",
+    "questions": 100,
+    "duration": 120,
+    "sections": [
+      {
+        "name": "General Awareness",
+        "questions": 100
+      }
+    ]
+  },
+
+  "upsi": {
+    "name": "UP Police SI",
+    "category": "UP Police",
+    "questionFile": "upsi.json",
+    "questions": 160,
+    "duration": 120,
+    "sections": [
+      {
+        "name": "General Hindi",
+        "questions": 40
+      },
+      {
+        "name": "Law & Constitution",
+        "questions": 40
+      },
+      {
+        "name": "Numerical & Mental Ability",
+        "questions": 40
+      },
+      {
+        "name": "Mental Aptitude / Intelligence / Reasoning",
+        "questions": 40
+      }
+    ]
+  },
+
+  "up_constable": {
+    "name": "UP Police Constable",
+    "category": "UP Police",
+    "questionFile": "up_constable.json",
+    "questions": 150,
+    "duration": 120,
+    "sections": [
+      {
+        "name": "General Knowledge",
+        "questions": 38
+      },
+      {
+        "name": "General Hindi",
+        "questions": 37
+      },
+      {
+        "name": "Numerical & Mental Ability",
+        "questions": 38
+      },
+      {
+        "name": "Mental Aptitude / Intelligence / Reasoning",
+        "questions": 37
+      }
+    ]
+  },
+
+  "rrb_ntpc": {
+    "name": "RRB NTPC",
+    "category": "Railway",
+    "questionFile": "ntpc.json",
+    "questions": 100,
+    "duration": 90,
+    "negativeMarking": 0.33,
+    "sections": [
+      {
+        "name": "General Awareness",
+        "questions": 40
+      },
+      {
+        "name": "Mathematics",
+        "questions": 30
+      },
+      {
+        "name": "General Intelligence & Reasoning",
+        "questions": 30
+      }
+    ]
+  },
+
+  "rrb_group_d": {
+    "name": "RRB Group D",
+    "category": "Railway",
+    "questionFile": "group_d.json",
+    "questions": 100,
+    "duration": 90,
+    "negativeMarking": 0.33,
+    "sections": [
+      {
+        "name": "General Science",
+        "questions": 25
+      },
+      {
+        "name": "Mathematics",
+        "questions": 25
+      },
+      {
+        "name": "General Intelligence & Reasoning",
+        "questions": 30
+      },
+      {
+        "name": "General Awareness & Current Affairs",
+        "questions": 20
+      }
+    ]
   }
-]
+      }
