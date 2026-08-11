@@ -1,804 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173b8f">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>TEST ME — Exam Preparation App</title>
+<title>TEST ME - Exam Preparation</title>
 
 <style>
-
-/* =========================
-   BASIC RESET
-========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
 }
 
 body{
-    background:#f5f7fb;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f6fb;
     color:#172033;
-    max-width:480px;
-    margin:auto;
 }
 
-/* =========================
-   APP
-========================= */
+button{
+    border:0;
+    cursor:pointer;
+    font-family:inherit;
+}
 
 .app{
+    max-width:760px;
+    margin:auto;
     min-height:100vh;
-    padding-bottom:85px;
+    padding-bottom:80px;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .header{
-
-    background:
-    linear-gradient(
-        135deg,
-        #3047ff,
-        #7048ff
-    );
-
+    background:linear-gradient(135deg,#173b8f,#34208f);
     color:white;
-
-    padding:22px 18px 28px;
-
-    border-radius:
-    0 0 28px 28px;
+    padding:24px 18px 30px;
+    border-radius:0 0 28px 28px;
 }
-
-.top{
-
-    display:flex;
-
-    justify-content:
-    space-between;
-
-    align-items:center;
-}
-
-/* LOGO */
 
 .logo{
-
-    font-size:24px;
-
+    font-size:30px;
     font-weight:900;
-
-    letter-spacing:.5px;
+    letter-spacing:1px;
 }
 
 .logo span{
-
-    color:#ffd84d;
+    color:#ffd43b;
 }
 
-/* PROFILE */
-
-.profile{
-
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-
-    background:white;
-
-    color:#4052ff;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-weight:900;
-}
-
-/* GREETING */
-
-.greeting{
-
-    margin-top:25px;
-}
-
-.greeting small{
-
-    opacity:.75;
-}
-
-.greeting h1{
-
-    font-size:25px;
-
-    margin-top:6px;
-
-    line-height:1.2;
-}
-
-/* =========================
-   SEARCH
-========================= */
-
-.search{
-
-    margin-top:20px;
-
-    background:white;
-
-    border-radius:14px;
-
-    padding:13px 15px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-}
-
-.search input{
-
-    width:100%;
-
-    border:none;
-
-    outline:none;
-
+.tagline{
+    margin-top:7px;
     font-size:14px;
+    opacity:.9;
 }
 
-/* =========================
-   CONTENT
-========================= */
+/* CONTAINER */
 
-.content{
-
-    padding:20px 16px;
+.container{
+    padding:17px;
 }
 
-/* =========================
-   SECTION TITLE
-========================= */
+/* SCREEN */
+
+.screen{
+    display:none;
+}
+
+.screen.active{
+    display:block;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:19px;
+    margin-bottom:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+/* HERO */
+
+.hero{
+    margin-top:0;
+}
+
+.hero h2{
+    font-size:25px;
+    margin-bottom:7px;
+}
+
+.muted{
+    color:#667085;
+    line-height:1.5;
+}
+
+/* SECTION */
 
 .section-title{
-
-    display:flex;
-
-    justify-content:
-    space-between;
-
-    align-items:center;
-
-    margin-bottom:13px;
+    font-size:21px;
+    margin:23px 0 12px;
 }
 
-.section-title h2{
+/* GRID */
 
-    font-size:18px;
-}
-
-.section-title span{
-
-    color:#4052ff;
-
-    font-size:12px;
-
-    font-weight:700;
-}
-
-/* =========================
-   STATS
-========================= */
-
-.stats{
-
+.grid{
     display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:11px;
+}
 
-    grid-template-columns:
-    repeat(3,1fr);
+/* TILE */
 
+.tile{
+    background:white;
+    border-radius:17px;
+    padding:17px;
+    min-height:120px;
+    text-align:left;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+
+.tile:active{
+    transform:scale(.98);
+}
+
+.tile.primary{
+    background:#173b8f;
+    color:white;
+}
+
+.icon{
+    font-size:28px;
+    margin-bottom:9px;
+}
+
+.tile h3{
+    font-size:17px;
+    margin-bottom:5px;
+}
+
+.tile p{
+    color:#667085;
+    font-size:13px;
+    line-height:1.4;
+}
+
+.tile.primary p{
+    color:#dbe5ff;
+}
+
+/* BUTTON */
+
+.btn{
+    width:100%;
+    padding:14px;
+    border-radius:13px;
+    margin-top:10px;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.btn-primary{
+    background:#173b8f;
+    color:white;
+}
+
+.btn-light{
+    background:#eef2ff;
+    color:#173b8f;
+}
+
+.btn-danger{
+    background:#fff0f0;
+    color:#b42318;
+}
+
+/* BACK */
+
+.back{
+    background:transparent;
+    color:#173b8f;
+    font-weight:bold;
+    padding:5px 0;
+    margin-bottom:12px;
+}
+
+/* TITLE */
+
+.page-title{
+    font-size:27px;
+    margin-bottom:6px;
+}
+
+.page-subtitle{
+    color:#667085;
+    margin-bottom:17px;
+}
+
+/* EXAM CARD */
+
+.exam-card{
+    background:white;
+    padding:17px;
+    border-radius:18px;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.exam-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
     gap:10px;
 }
 
-.stat{
-
-    background:white;
-
-    border-radius:16px;
-
-    padding:15px 8px;
-
-    text-align:center;
-
-    box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.04);
-}
-
-.stat strong{
-
-    display:block;
-
+.exam-header h3{
     font-size:18px;
 }
 
-.stat small{
+.badge{
+    background:#eef2ff;
+    color:#173b8f;
+    padding:6px 9px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:bold;
+}
 
-    color:#858b99;
+.exam-meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:13px;
+}
 
+.exam-meta div{
+    background:#f8f9fc;
+    padding:10px;
+    border-radius:10px;
+}
+
+.exam-meta small{
+    display:block;
+    color:#667085;
     font-size:11px;
 }
 
-/* =========================
-   CONTINUE PREPARATION
-========================= */
-
-.continue{
-
-    margin-top:25px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #101b3b,
-        #283f7d
-    );
-
-    color:white;
-
-    padding:20px;
-
-    border-radius:20px;
+.exam-meta strong{
+    display:block;
+    margin-top:3px;
+    font-size:14px;
 }
 
-.continue-top{
+/* SECTION ROW */
 
+.section-row{
+    background:white;
+    border-radius:14px;
+    padding:14px;
+    margin-bottom:9px;
     display:flex;
-
-    justify-content:
-    space-between;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
 
-.continue small{
-
-    opacity:.7;
+.section-row small{
+    display:block;
+    color:#667085;
+    margin-top:4px;
 }
 
-.continue h3{
+/* TEST BAR */
 
-    margin-top:5px;
+.test-bar{
+    background:white;
+    border-radius:16px;
+    padding:14px;
+    margin-bottom:12px;
+    display:flex;
+    justify-content:space-between;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
 
-    font-size:18px;
+.timer{
+    background:#fff0f0;
+    color:#b42318;
+    padding:7px 10px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+/* QUESTION */
+
+.question-card{
+    background:white;
+    border-radius:19px;
+    padding:19px;
+    box-shadow:0 3px 14px rgba(0,0,0,.06);
+}
+
+.question{
+    font-size:19px;
+    line-height:1.5;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+/* OPTIONS */
+
+.option{
+    width:100%;
+    text-align:left;
+    background:#f8f9fc;
+    border:2px solid #e4e7ec;
+    padding:14px;
+    border-radius:12px;
+    margin:9px 0;
+}
+
+.option.selected{
+    border-color:#173b8f;
+    background:#eef2ff;
+}
+
+/* PALETTE */
+
+.palette{
+    background:white;
+    border-radius:16px;
+    padding:14px;
+    margin-top:12px;
+}
+
+.palette-grid{
+    display:grid;
+    grid-template-columns:repeat(8,1fr);
+    gap:7px;
+    margin-top:10px;
+}
+
+.palette button{
+    background:#f2f4f7;
+    padding:8px 3px;
+    border-radius:8px;
+}
+
+.palette button.current{
+    background:#173b8f;
+    color:white;
+}
+
+.palette button.answered{
+    background:#dcfae6;
+    color:#067647;
+}
+
+/* RESULT */
+
+.result{
+    background:linear-gradient(135deg,#173b8f,#34208f);
+    color:white;
+    text-align:center;
+    padding:27px;
+    border-radius:21px;
+}
+
+.score{
+    font-size:48px;
+    font-weight:900;
+    margin:9px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:11px;
+    margin-top:13px;
+}
+
+.stat{
+    background:white;
+    border-radius:15px;
+    padding:17px;
+    text-align:center;
+}
+
+.stat strong{
+    display:block;
+    font-size:25px;
+}
+
+.stat span{
+    color:#667085;
+    font-size:13px;
+}
+
+/* TOPICS */
+
+.topic{
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+.topic small{
+    display:block;
+    color:#667085;
+    margin-top:4px;
+}
+
+.topic button{
+    background:#173b8f;
+    color:white;
+    padding:9px 12px;
+    border-radius:9px;
 }
 
 /* PROGRESS */
 
 .progress{
-
-    height:7px;
-
-    background:
-    rgba(255,255,255,.2);
-
-    border-radius:10px;
-
-    margin:
-    18px 0 8px;
-
-    overflow:hidden;
-}
-
-.progress div{
-
-    height:100%;
-
-    width:68%;
-
-    background:#ffd84d;
-
-    border-radius:10px;
-}
-
-.continue-bottom{
-
-    display:flex;
-
-    justify-content:
-    space-between;
-
-    align-items:center;
-
-    gap:10px;
-}
-
-.continue button{
-
-    border:none;
-
-    background:#ffd84d;
-
-    color:#172033;
-
-    padding:10px 16px;
-
-    border-radius:10px;
-
-    font-weight:800;
-}
-
-/* =========================
-   EXAM CATEGORIES
-========================= */
-
-.categories{
-
-    display:flex;
-
-    gap:12px;
-
-    overflow-x:auto;
-
-    padding-bottom:5px;
-}
-
-.categories::-webkit-scrollbar{
-
-    display:none;
-}
-
-.category{
-
-    min-width:120px;
-
-    background:white;
-
-    padding:17px 12px;
-
-    border-radius:18px;
-
-    box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.04);
-}
-
-.category-icon{
-
-    width:43px;
-    height:43px;
-
-    border-radius:13px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:21px;
-
-    margin-bottom:12px;
-}
-
-.ssc{
-
-    background:#e9edff;
-}
-
-.up{
-
-    background:#fff0d7;
-}
-
-.railway{
-
-    background:#e7f8ed;
-}
-
-.category h3{
-
-    font-size:14px;
-}
-
-.category p{
-
-    color:#858b99;
-
-    font-size:11px;
-
-    margin-top:4px;
-}
-
-/* =========================
-   QUICK PRACTICE
-========================= */
-
-.quick-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:12px;
-}
-
-.quick-card{
-
-    background:white;
-
-    padding:16px;
-
-    border-radius:17px;
-
-    box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.04);
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.quick-card:active{
-
-    transform:scale(.97);
-}
-
-.quick-icon{
-
-    font-size:25px;
-}
-
-.quick-card h3{
-
-    margin-top:10px;
-
-    font-size:14px;
-}
-
-.quick-card p{
-
-    margin-top:4px;
-
-    color:#858b99;
-
-    font-size:11px;
-}
-
-/* =========================
-   DAILY CHALLENGE
-========================= */
-
-.challenge{
-
-    margin-top:25px;
-
-    padding:21px;
-
-    border-radius:20px;
-
-    color:white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ff7651,
-        #ff4d82
-    );
-}
-
-.challenge h2{
-
-    font-size:19px;
-}
-
-.challenge p{
-
-    margin:
-    7px 0 15px;
-
-    font-size:12px;
-
-    opacity:.9;
-}
-
-.challenge button{
-
-    border:none;
-
-    background:white;
-
-    color:#f04d70;
-
-    padding:10px 17px;
-
-    border-radius:10px;
-
-    font-weight:800;
-}
-
-/* =========================
-   POPULAR EXAMS
-========================= */
-
-.exam-card{
-
-    background:white;
-
-    padding:15px;
-
-    border-radius:17px;
-
-    margin-bottom:11px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
-
-    box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.04);
-}
-
-.exam-logo{
-
-    width:48px;
-
-    height:48px;
-
-    border-radius:14px;
-
-    background:#eef0ff;
-
-    color:#4052ff;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:12px;
-
-    font-weight:900;
-}
-
-.exam-info{
-
-    flex:1;
-}
-
-.exam-info h3{
-
-    font-size:14px;
-}
-
-.exam-info p{
-
-    margin-top:4px;
-
-    color:#858b99;
-
-    font-size:11px;
-}
-
-.exam-card button{
-
-    border:none;
-
-    background:#eef0ff;
-
-    color:#4052ff;
-
-    padding:8px 11px;
-
+    height:9px;
+    background:#e4e7ec;
     border-radius:9px;
-
-    font-weight:700;
+    overflow:hidden;
+    margin-top:8px;
 }
 
-/* =========================
-   BOTTOM NAVIGATION
-========================= */
+.progress-bar{
+    height:100%;
+    background:#173b8f;
+}
+
+/* BOTTOM NAV */
 
 .bottom-nav{
-
     position:fixed;
-
     bottom:0;
-
-    left:50%;
-
-    transform:
-    translateX(-50%);
-
-    width:100%;
-
-    max-width:480px;
-
-    height:72px;
-
+    left:0;
+    right:0;
     background:white;
-
-    border-top:
-    1px solid #e9ebf1;
-
-    display:flex;
-
-    justify-content:
-    space-around;
-
-    align-items:center;
-
+    border-top:1px solid #e4e7ec;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:7px 4px;
     z-index:100;
 }
 
-.nav-item{
-
-    text-align:center;
-
-    color:#9298a7;
-
-    font-size:10px;
-
-    cursor:pointer;
+.bottom-nav button{
+    background:transparent;
+    color:#667085;
+    font-size:11px;
+    padding:5px;
 }
 
-.nav-item div{
-
-    font-size:21px;
-
-    margin-bottom:3px;
-}
-
-.nav-item.active{
-
-    color:#4052ff;
-
-    font-weight:700;
-}
-
-/* =========================
-   FLOATING BUTTON
-========================= */
-
-.fab{
-
-    position:fixed;
-
-    right:20px;
-
-    bottom:88px;
-
-    width:55px;
-
-    height:55px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#4052ff;
-
-    color:white;
-
-    font-size:25px;
-
-    box-shadow:
-    0 8px 20px
-    rgba(64,82,255,.35);
-
-    cursor:pointer;
-}
-
-/* =========================
-   PAGES
-========================= */
-
-.page{
-
-    display:none;
-}
-
-.page.active{
-
+.bottom-nav span{
     display:block;
+    font-size:21px;
+    margin-bottom:2px;
 }
 
-/* =========================
-   TEST PAGE
-========================= */
-
-.test-box{
-
-    background:white;
-
-    padding:20px;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.04);
+.bottom-nav .active{
+    color:#173b8f;
+    font-weight:bold;
 }
 
-.test-row{
+/* NOTE */
 
-    padding:14px 0;
-
-    border-bottom:
-    1px solid #eee;
-
-    display:flex;
-
-    justify-content:
-    space-between;
-}
-
-.start-test{
-
-    width:100%;
-
-    border:none;
-
-    background:#4052ff;
-
-    color:white;
-
-    padding:14px;
-
+.note{
+    background:#fff8e6;
+    border:1px solid #fedf89;
+    padding:12px;
     border-radius:12px;
-
-    margin-top:20px;
-
-    font-weight:800;
-
-    font-size:15px;
+    color:#7a2e0b;
+    font-size:13px;
+    line-height:1.4;
+    margin-bottom:13px;
 }
 
-/* =========================
-   PROFILE
-========================= */
+/* MOBILE */
 
-.profile-card{
+@media(max-width:430px){
 
-    background:white;
+    .container{
+        padding:14px;
+    }
 
-    padding:20px;
+    .grid{
+        gap:9px;
+    }
 
-    border-radius:20px;
+    .tile{
+        padding:14px;
+    }
 
-    box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.04);
-}
+    .palette-grid{
+        grid-template-columns:repeat(7,1fr);
+    }
 
-.profile-stat{
-
-    display:flex;
-
-    justify-content:
-    space-between;
-
-    padding:15px 0;
-
-    border-bottom:
-    1px solid #eee;
 }
 
 </style>
@@ -810,838 +521,188 @@ body{
 <div class="app">
 
 
-<!-- ==================================================
-     HOME PAGE
-================================================== -->
+<!-- =========================
+HOME
+========================= -->
 
-<div id="homePage" class="page active">
+<section id="home" class="screen active">
 
 <header class="header">
 
-    <div class="top">
+<div class="logo">
+TEST <span>ME</span>
+</div>
 
-        <div class="logo">
-            TEST <span>ME</span>
-        </div>
-
-        <div class="profile">
-            V
-        </div>
-
-    </div>
-
-
-    <div class="greeting">
-
-        <small>
-            Good Morning
-        </small>
-
-        <h1>
-            Ready to crack your exam?
-        </h1>
-
-    </div>
-
-
-    <div class="search">
-
-        🔍
-
-        <input
-        id="searchInput"
-        type="text"
-        placeholder="Search exam, subject or topic..."
-        >
-
-    </div>
+<div class="tagline">
+SSC • UP Exams • Railway
+</div>
 
 </header>
 
 
-<main class="content">
+<div class="container">
 
 
-<!-- ================= STATS ================= -->
+<div class="card hero">
 
-<div class="stats">
+<h2>
+Prepare Smarter
+</h2>
 
-    <div class="stat">
+<p class="muted">
 
-        <strong>
-            1,240
-        </strong>
+One platform for SSC, UP State Exams
+and Railway preparation.
 
-        <small>
-            Questions
-        </small>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>
-            84%
-        </strong>
-
-        <small>
-            Accuracy
-        </small>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>
-            17
-        </strong>
-
-        <small>
-            Tests
-        </small>
-
-    </div>
+</p>
 
 </div>
 
 
-<!-- ================= CONTINUE ================= -->
+<h2 class="section-title">
+Choose Your Exam
+</h2>
 
-<div class="section-title"
-style="margin-top:25px;">
 
-    <h2>
-        Continue Preparation
-    </h2>
+<div class="grid">
 
-</div>
 
+<button class="tile primary"
+onclick="openExam('cgl')">
 
-<div class="continue">
+<div class="icon">🎯</div>
 
-    <div class="continue-top">
+<h3>SSC CGL</h3>
 
-        <div>
+<p>
+Tier-I & Tier-II
+</p>
 
-            <small>
-                Currently Preparing
-            </small>
+</button>
 
-            <h3>
-                SSC CGL 2026
-            </h3>
 
-        </div>
+<button class="tile"
+onclick="openExam('chsl')">
 
-        <strong>
-            68%
-        </strong>
+<div class="icon">📘</div>
 
-    </div>
+<h3>SSC CHSL</h3>
 
+<p>
+Tier-I & Tier-II
+</p>
 
-    <div class="progress">
+</button>
 
-        <div></div>
 
-    </div>
+<button class="tile"
+onclick="openExam('mts')">
 
+<div class="icon">⚡</div>
 
-    <div class="continue-bottom">
+<h3>SSC MTS</h3>
 
-        <small>
-            Mathematics • 18/25 Topics
-        </small>
+<p>
+Session-I & Session-II
+</p>
 
-        <button
-        onclick="openTest('SSC CGL 2026')">
+</button>
 
-            Continue →
 
-        </button>
+<button class="tile"
+onclick="openExam('cpo')">
 
-    </div>
+<div class="icon">🛡️</div>
 
-</div>
+<h3>SSC CPO</h3>
 
+<p>
+Paper-I & Paper-II
+</p>
 
-<!-- ================= CATEGORIES ================= -->
+</button>
 
-<div class="section-title"
-style="margin-top:25px;">
 
-    <h2>
-        Exam Categories
-    </h2>
+<button class="tile"
+onclick="openExam('pet')">
 
-    <span>
-        View All
-    </span>
+<div class="icon">🏛️</div>
 
-</div>
+<h3>UPSSSC PET</h3>
 
+<p>
+Eligibility Test
+</p>
 
-<div class="categories">
+</button>
 
 
-<div class="category">
+<button class="tile"
+onclick="openExam('upsi')">
 
-    <div class="category-icon ssc">
-        📚
-    </div>
+<div class="icon">👮</div>
 
-    <h3>
-        SSC Exams
-    </h3>
+<h3>UP Police SI</h3>
 
-    <p>
-        CGL • CHSL • MTS • GD
-    </p>
+<p>
+Written Examination
+</p>
 
-</div>
+</button>
 
 
-<div class="category">
+<button class="tile"
+onclick="openExam('constable')">
 
-    <div class="category-icon up">
-        🏛️
-    </div>
+<div class="icon">🚔</div>
 
-    <h3>
-        UP Exams
-    </h3>
+<h3>UP Constable</h3>
 
-    <p>
-        PET • SI • Constable
-    </p>
+<p>
+Written / OMR
+</p>
 
-</div>
+</button>
 
 
-<div class="category">
+<button class="tile"
+onclick="openExam('ntpc')">
 
-    <div class="category-icon railway">
-        🚆
-    </div>
+<div class="icon">🚆</div>
 
-    <h3>
-        Railway
-    </h3>
+<h3>RRB NTPC</h3>
 
-    <p>
-        NTPC • Group D • ALP
-    </p>
+<p>
+CBT-1 & CBT-2
+</p>
 
-</div>
+</button>
 
 
-</div>
+<button class="tile"
+onclick="openExam('groupd')">
 
+<div class="icon">🛤️</div>
 
-<!-- ================= QUICK PRACTICE ================= -->
+<h3>RRB Group D</h3>
 
-<div class="section-title"
-style="margin-top:25px;">
+<p>
+CBT
+</p>
 
-    <h2>
-        Quick Practice
-    </h2>
+</button>
 
-    <span>
-        More
-    </span>
 
-</div>
+<button class="tile"
+onclick="showScreen('analysis')">
 
+<div class="icon">📊</div>
 
-<div class="quick-grid">
+<h3>My Analysis</h3>
 
-
-<div class="quick-card"
-onclick="openTest('Daily Quiz')">
-
-    <div class="quick-icon">
-        ⚡
-    </div>
-
-    <h3>
-        Daily Quiz
-    </h3>
-
-    <p>
-        10 Questions • 5 Min
-    </p>
-
-</div>
-
-
-<div class="quick-card"
-onclick="openTest('Weak Topics')">
-
-    <div class="quick-icon">
-        🎯
-    </div>
-
-    <h3>
-        Weak Topics
-    </h3>
-
-    <p>
-        Practice your mistakes
-    </p>
-
-</div>
-
-
-<div class="quick-card"
-onclick="openTest('Speed Test')">
-
-    <div class="quick-icon">
-        🔥
-    </div>
-
-    <h3>
-        Speed Test
-    </h3>
-
-    <p>
-        Improve your speed
-    </p>
-
-</div>
-
-
-<div class="quick-card"
-onclick="openTest('PYQ Challenge')">
-
-    <div class="quick-icon">
-        🧠
-    </div>
-
-    <h3>
-        PYQ Challenge
-    </h3>
-
-    <p>
-        Previous Year Questions
-    </p>
-
-</div>
-
-
-</div>
-
-
-<!-- ================= DAILY CHALLENGE ================= -->
-
-<div class="challenge">
-
-    <h2>
-        Today's Challenge
-    </h2>
-
-    <p>
-        Solve 20 questions and try to reach
-        90% accuracy.
-    </p>
-
-    <button
-    onclick="openTest('Daily Challenge')">
-
-        Start Challenge
-
-    </button>
-
-</div>
-
-
-<!-- ================= POPULAR EXAMS ================= -->
-
-<div class="section-title"
-style="margin-top:28px;">
-
-    <h2>
-        Popular Exams
-    </h2>
-
-    <span>
-        Explore
-    </span>
-
-</div>
-
-
-<!-- SSC CGL -->
-
-<div class="exam-card">
-
-    <div class="exam-logo">
-        CGL
-    </div>
-
-    <div class="exam-info">
-
-        <h3>
-            SSC CGL
-        </h3>
-
-        <p>
-            Mock Tests • PYQs • Practice
-        </p>
-
-    </div>
-
-    <button
-    onclick="openTest('SSC CGL')">
-
-        Open
-
-    </button>
-
-</div>
-
-
-<!-- CHSL -->
-
-<div class="exam-card">
-
-    <div class="exam-logo">
-        CHSL
-    </div>
-
-    <div class="exam-info">
-
-        <h3>
-            SSC CHSL
-        </h3>
-
-        <p>
-            Mock Tests • PYQs • Practice
-        </p>
-
-    </div>
-
-    <button
-    onclick="openTest('SSC CHSL')">
-
-        Open
-
-    </button>
-
-</div>
-
-
-<!-- PET -->
-
-<div class="exam-card">
-
-    <div class="exam-logo">
-        PET
-    </div>
-
-    <div class="exam-info">
-
-        <h3>
-            UPSSSC PET
-        </h3>
-
-        <p>
-            Mock Tests • PYQs • Practice
-        </p>
-
-    </div>
-
-    <button
-    onclick="openTest('UPSSSC PET')">
-
-        Open
-
-    </button>
-
-</div>
-
-
-<!-- UP POLICE -->
-
-<div class="exam-card">
-
-    <div class="exam-logo">
-        UP
-    </div>
-
-    <div class="exam-info">
-
-        <h3>
-            UP Police Constable
-        </h3>
-
-        <p>
-            Mock Tests • PYQs • Practice
-        </p>
-
-    </div>
-
-    <button
-    onclick="openTest('UP Police Constable')">
-
-        Open
-
-    </button>
-
-</div>
-
-
-<!-- RRB NTPC -->
-
-<div class="exam-card">
-
-    <div class="exam-logo">
-        NTPC
-    </div>
-
-    <div class="exam-info">
-
-        <h3>
-            RRB NTPC
-        </h3>
-
-        <p>
-            Mock Tests • PYQs • Practice
-        </p>
-
-    </div>
-
-    <button
-    onclick="openTest('RRB NTPC')">
-
-        Open
-
-    </button>
-
-</div>
-
-
-<!-- RRB GROUP D -->
-
-<div class="exam-card">
-
-    <div class="exam-logo">
-        GD
-    </div>
-
-    <div class="exam-info">
-
-        <h3>
-            RRB Group D
-        </h3>
-
-        <p>
-            Mock Tests • PYQs • Practice
-        </p>
-
-    </div>
-
-    <button
-    onclick="openTest('RRB Group D')">
-
-        Open
-
-    </button>
-
-</div>
-
-
-</main>
-
-</div>
-
-
-<!-- ==================================================
-     TEST PAGE
-================================================== -->
-
-<div id="testPage" class="page">
-
-<header class="header">
-
-    <div class="top">
-
-        <div class="logo">
-            TEST <span>ME</span>
-        </div>
-
-        <div>
-            TEST
-        </div>
-
-    </div>
-
-
-    <div class="greeting">
-
-        <small>
-            Practice Test
-        </small>
-
-        <h1 id="testTitle">
-            SSC CGL
-        </h1>
-
-    </div>
-
-</header>
-
-
-<main class="content">
-
-
-<div class="test-box">
-
-    <h2>
-        Test Instructions
-    </h2>
-
-
-    <div class="test-row">
-
-        <span>
-            Questions
-        </span>
-
-        <strong>
-            25
-        </strong>
-
-    </div>
-
-
-    <div class="test-row">
-
-        <span>
-            Time
-        </span>
-
-        <strong>
-            20 Minutes
-        </strong>
-
-    </div>
-
-
-    <div class="test-row">
-
-        <span>
-            Difficulty
-        </span>
-
-        <strong>
-            Mixed
-        </strong>
-
-    </div>
-
-
-    <div class="test-row">
-
-        <span>
-            Negative Marking
-        </span>
-
-        <strong>
-            Yes
-        </strong>
-
-    </div>
-
-
-    <button
-    class="start-test"
-    onclick="beginTest()">
-
-        START TEST
-
-    </button>
-
-</div>
-
-
-</main>
-
-</div>
-
-
-<!-- ==================================================
-     PROFILE PAGE
-================================================== -->
-
-<div id="profilePage" class="page">
-
-<header class="header">
-
-    <div class="top">
-
-        <div class="logo">
-            TEST <span>ME</span>
-        </div>
-
-    </div>
-
-
-    <div class="greeting">
-
-        <small>
-            Student Profile
-        </small>
-
-        <h1>
-            Vivek
-        </h1>
-
-    </div>
-
-</header>
-
-
-<main class="content">
-
-
-<div class="profile-card">
-
-    <h2>
-        My Performance
-    </h2>
-
-
-    <div class="profile-stat">
-
-        <span>
-            Tests Attempted
-        </span>
-
-        <strong>
-            17
-        </strong>
-
-    </div>
-
-
-    <div class="profile-stat">
-
-        <span>
-            Questions Solved
-        </span>
-
-        <strong>
-            1,240
-        </strong>
-
-    </div>
-
-
-    <div class="profile-stat">
-
-        <span>
-            Accuracy
-        </span>
-
-        <strong>
-            84%
-        </strong>
-
-    </div>
-
-
-    <div class="profile-stat">
-
-        <span>
-            Best Score
-        </span>
-
-        <strong>
-            91%
-        </strong>
-
-    </div>
-
-</div>
-
-
-</main>
-
-</div>
-
-
-<!-- ==================================================
-     BOTTOM NAVIGATION
-================================================== -->
-
-<nav class="bottom-nav">
-
-
-<div
-class="nav-item active"
-onclick="showPage('homePage',this)">
-
-    <div>
-        ⌂
-    </div>
-
-    Home
-
-</div>
-
-
-<div
-class="nav-item"
-onclick="showPage('testPage',this)">
-
-    <div>
-        📝
-    </div>
-
-    Tests
-
-</div>
-
-
-<div
-class="nav-item"
-onclick="showPage('homePage',this)">
-
-    <div>
-        📊
-    </div>
-
-    Analysis
-
-</div>
-
-
-<div
-class="nav-item"
-onclick="showPage('profilePage',this)">
-
-    <div>
-        👤
-    </div>
-
-    Profile
-
-</div>
-
-
-</nav>
-
-
-<!-- FLOATING BUTTON -->
-
-<button
-class="fab"
-onclick="openTest('Quick Test')">
-
-    +
+<p>
+Track preparation
+</p>
 
 </button>
 
@@ -1649,99 +710,1306 @@ onclick="openTest('Quick Test')">
 </div>
 
 
+<h2 class="section-title">
+Quick Practice
+</h2>
+
+
+<div class="grid">
+
+
+<button class="tile"
+onclick="openSubject('Mathematics')">
+
+<div class="icon">📐</div>
+
+<h3>Mathematics</h3>
+
+<p>
+Topic-wise practice
+</p>
+
+</button>
+
+
+<button class="tile"
+onclick="openSubject('Reasoning')">
+
+<div class="icon">🧠</div>
+
+<h3>Reasoning</h3>
+
+<p>
+Topic-wise practice
+</p>
+
+</button>
+
+
+<button class="tile"
+onclick="openSubject('English')">
+
+<div class="icon">📚</div>
+
+<h3>English</h3>
+
+<p>
+Topic-wise practice
+</p>
+
+</button>
+
+
+<button class="tile"
+onclick="openSubject('GK / GS')">
+
+<div class="icon">🌍</div>
+
+<h3>GK / GS</h3>
+
+<p>
+Topic-wise practice
+</p>
+
+</button>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+EXAM
+========================= -->
+
+<section id="exam" class="screen">
+
+<header class="header">
+
+<div class="logo">
+TEST <span>ME</span>
+</div>
+
+<div class="tagline">
+Exam Pattern Engine
+</div>
+
+</header>
+
+
+<div class="container">
+
+<button class="back"
+onclick="showScreen('home')">
+
+← Home
+
+</button>
+
+
+<h1 id="examTitle"
+class="page-title">
+Exam
+</h1>
+
+
+<p id="examSubtitle"
+class="page-subtitle">
+Exam details
+</p>
+
+
+<div id="examDetails"></div>
+
+
+<div class="note">
+
+Timing, questions, marks and negative
+marking are configured exam-wise.
+
+Always verify the latest official
+notification before the actual examination.
+
+</div>
+
+
+<h2 class="section-title">
+Available Tests
+</h2>
+
+
+<div id="stageList"></div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+STAGE
+========================= -->
+
+<section id="stage" class="screen">
+
+<header class="header">
+
+<div class="logo">
+TEST <span>ME</span>
+</div>
+
+<div class="tagline">
+Test Configuration
+</div>
+
+</header>
+
+
+<div class="container">
+
+<button class="back"
+onclick="showScreen('exam')">
+
+← Back
+
+</button>
+
+
+<h1 id="stageTitle"
+class="page-title">
+Test
+</h1>
+
+
+<p id="stageInfo"
+class="page-subtitle">
+</p>
+
+
+<div id="sectionList"></div>
+
+
+<button class="btn btn-primary"
+onclick="startConfiguredTest()">
+
+Start Test →
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+SUBJECT
+========================= -->
+
+<section id="subject" class="screen">
+
+<header class="header">
+
+<div class="logo">
+TEST <span>ME</span>
+</div>
+
+<div class="tagline">
+Topic Practice
+</div>
+
+</header>
+
+
+<div class="container">
+
+<button class="back"
+onclick="showScreen('home')">
+
+← Home
+
+</button>
+
+
+<h1 id="subjectTitle"
+class="page-title">
+Mathematics
+</h1>
+
+
+<p class="page-subtitle">
+Select a topic to practice.
+</p>
+
+
+<div id="topicList"></div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+TEST
+========================= -->
+
+<section id="test" class="screen">
+
+<div class="container">
+
+
+<div class="test-bar">
+
+<strong id="questionNumber">
+Question 1/10
+</strong>
+
+
+<span id="timer"
+class="timer">
+
+05:00
+
+</span>
+
+
+</div>
+
+
+
+<div class="question-card">
+
+
+<div id="questionText"
+class="question">
+
+Question
+
+</div>
+
+
+<div id="options"></div>
+
+
+<button class="btn btn-light"
+onclick="markReview()">
+
+⚑ Mark for Review
+
+</button>
+
+
+<button id="nextButton"
+class="btn btn-primary"
+onclick="nextQuestion()">
+
+Next Question →
+
+</button>
+
+
+</div>
+
+
+
+<div class="palette">
+
+<strong>
+Question Palette
+</strong>
+
+
+<div id="palette"
+class="palette-grid">
+</div>
+
+
+</div>
+
+
+<button class="btn btn-danger"
+onclick="submitConfirm()">
+
+Submit Test
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+RESULT
+========================= -->
+
+<section id="result" class="screen">
+
+<div class="container">
+
+
+<div class="result">
+
+<div>
+TEST COMPLETED
+</div>
+
+
+<div id="score"
+class="score">
+
+0/0
+
+</div>
+
+
+<div id="resultExam">
+Result
+</div>
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<strong id="correct">
+0
+</strong>
+
+<span>
+Correct
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong id="wrong">
+0
+</strong>
+
+<span>
+Wrong
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong id="skipped">
+0
+</strong>
+
+<span>
+Skipped
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong id="accuracy">
+0%
+</strong>
+
+<span>
+Accuracy
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="card"
+style="margin-top:14px">
+
+
+<p class="muted">
+Negative Marks
+</p>
+
+
+<h2 id="negativeMarks">
+0
+</h2>
+
+
+<p class="muted"
+style="margin-top:10px">
+
+Final Marks
+
+</p>
+
+
+<h2 id="finalMarks">
+0
+</h2>
+
+
+</div>
+
+
+
+<button class="btn btn-primary"
+onclick="showScreen('analysis')">
+
+View Analysis
+
+</button>
+
+
+<button class="btn btn-light"
+onclick="showScreen('home')">
+
+Back to Home
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+ANALYSIS
+========================= -->
+
+<section id="analysis"
+class="screen">
+
+
+<header class="header">
+
+<div class="logo">
+TEST <span>ME</span>
+</div>
+
+<div class="tagline">
+Performance Analysis
+</div>
+
+</header>
+
+
+
+<div class="container">
+
+
+<div class="card">
+
+<p class="muted">
+Tests Attempted
+</p>
+
+
+<h2 id="testsAttempted">
+0
+</h2>
+
+
+<p class="muted"
+style="margin-top:12px">
+
+Average Accuracy
+
+</p>
+
+
+<h2 id="averageAccuracy">
+0%
+</h2>
+
+
+</div>
+
+
+
+<h2 class="section-title">
+Subject Performance
+</h2>
+
+
+<div id="subjectPerformance"></div>
+
+
+<button class="btn btn-light"
+onclick="showScreen('home')">
+
+← Home
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+PROFILE
+========================= -->
+
+<section id="profile"
+class="screen">
+
+
+<header class="header">
+
+<div class="logo">
+TEST <span>ME</span>
+</div>
+
+<div class="tagline">
+Student Profile
+</div>
+
+</header>
+
+
+
+<div class="container">
+
+
+<div class="card"
+style="text-align:center">
+
+
+<div style="font-size:55px">
+👤
+</div>
+
+
+<h2>
+SSC / UP / Railway Aspirant
+</h2>
+
+
+<p class="muted">
+Your basic progress
+</p>
+
+
+</div>
+
+
+
+<div class="card">
+
+<p class="muted">
+Tests Attempted
+</p>
+
+
+<h2 id="profileTests">
+0
+</h2>
+
+
+<p class="muted"
+style="margin-top:10px">
+
+Average Accuracy
+
+</p>
+
+
+<h2 id="profileAccuracy">
+0%
+</h2>
+
+
+</div>
+
+
+<button class="btn btn-danger"
+onclick="resetData()">
+
+Reset Local Data
+
+</button>
+
+
+<button class="btn btn-light"
+onclick="showScreen('home')">
+
+← Home
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+BOTTOM NAV
+========================= -->
+
+<div class="bottom-nav">
+
+
+<button class="active"
+onclick="showScreen('home')">
+
+<span>⌂</span>
+Home
+
+</button>
+
+
+<button
+onclick="showScreen('home')">
+
+<span>🎯</span>
+Exams
+
+</button>
+
+
+<button
+onclick="showScreen('analysis')">
+
+<span>📊</span>
+Analysis
+
+</button>
+
+
+<button
+onclick="showScreen('profile')">
+
+<span>👤</span>
+Profile
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
 <script>
 
-/* ==========================================
-   PAGE NAVIGATION
-========================================== */
-
-function showPage(pageId, element){
-
-    document
-    .querySelectorAll(".page")
-    .forEach(function(page){
-
-        page.classList.remove("active");
-
-    });
+/* ======================================
+   EXAM CONFIGURATION
+====================================== */
 
 
-    document
-    .getElementById(pageId)
-    .classList.add("active");
+const exams = {
 
 
-    document
-    .querySelectorAll(".nav-item")
-    .forEach(function(item){
+cgl:{
 
-        item.classList.remove("active");
+name:"SSC CGL",
 
-    });
+subtitle:"Tier-I & Tier-II",
+
+stages:[
+
+{
+
+name:"Tier-I",
+
+questions:100,
+
+marks:200,
+
+time:60,
+
+negative:0.50,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["General Intelligence & Reasoning",25],
+
+["General Awareness",25],
+
+["Quantitative Aptitude",25],
+
+["English Comprehension",25]
+
+]
+
+},
 
 
-    if(element){
+{
 
-        element.classList.add("active");
+name:"Tier-II Paper-I Section-I",
 
-    }
+questions:60,
+
+marks:180,
+
+time:60,
+
+negative:1,
+
+mode:"CBT",
+
+sectional:true,
+
+sections:[
+
+["Mathematical Abilities",30],
+
+["Reasoning & General Intelligence",30]
+
+]
+
+},
 
 
-    window.scrollTo(0,0);
+{
+
+name:"Tier-II Paper-I Section-II",
+
+questions:60,
+
+marks:180,
+
+time:60,
+
+negative:1,
+
+mode:"CBT",
+
+sectional:true,
+
+sections:[
+
+["English Language & Comprehension",40],
+
+["General Awareness",20]
+
+]
+
+},
+
+
+{
+
+name:"Computer Knowledge Test",
+
+questions:20,
+
+marks:60,
+
+time:15,
+
+negative:0,
+
+mode:"CBT",
+
+sectional:true,
+
+sections:[
+
+["Computer Knowledge",20]
+
+]
 
 }
 
+]
 
-/* ==========================================
-   OPEN TEST
-========================================== */
-
-function openTest(testName){
-
-    document
-    .getElementById("testTitle")
-    .innerText = testName;
+},
 
 
-    showPage("testPage");
+
+chsl:{
+
+name:"SSC CHSL",
+
+subtitle:"Tier-I & Tier-II",
+
+stages:[
+
+{
+
+name:"Tier-I",
+
+questions:100,
+
+marks:200,
+
+time:60,
+
+negative:.50,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["English Language",25],
+
+["General Intelligence",25],
+
+["Quantitative Aptitude",25],
+
+["General Awareness",25]
+
+]
+
+},
+
+
+{
+
+name:"Tier-II Section-I",
+
+questions:60,
+
+marks:180,
+
+time:60,
+
+negative:1,
+
+mode:"CBT",
+
+sectional:true,
+
+sections:[
+
+["Mathematical Abilities",30],
+
+["Reasoning & General Intelligence",30]
+
+]
 
 }
 
+]
 
-/* ==========================================
-   START TEST
-========================================== */
+},
 
-function beginTest(){
 
-    alert(
-        "TEST ME Quiz Engine\n\n" +
-        "Next step: connect the real Question Bank."
-    );
+
+mts:{
+
+name:"SSC MTS",
+
+subtitle:"Session-I & Session-II",
+
+stages:[
+
+{
+
+name:"Session-I",
+
+questions:40,
+
+marks:120,
+
+time:45,
+
+negative:0,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["Numerical & Mathematical Ability",20],
+
+["Reasoning Ability & Problem Solving",20]
+
+]
+
+},
+
+
+{
+
+name:"Session-II",
+
+questions:50,
+
+marks:150,
+
+time:45,
+
+negative:1,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["General Awareness",25],
+
+["English Language & Comprehension",25]
+
+]
 
 }
 
+]
 
-/* ==========================================
-   SEARCH
-========================================== */
-
-document
-.getElementById("searchInput")
-.addEventListener(
-    "input",
-    function(){
-
-        console.log(
-            "Searching:",
-            this.value
-        );
-
-    }
-);
-
-</script>
+},
 
 
-</body>
-    </html>
+
+cpo:{
+
+name:"SSC CPO",
+
+subtitle:"Paper-I & Paper-II",
+
+stages:[
+
+{
+
+name:"Paper-I",
+
+questions:200,
+
+marks:200,
+
+time:120,
+
+negative:.25,
+
+mode:"CBT",
+
+sectional:true,
+
+sectionTime:30,
+
+sections:[
+
+["General Intelligence & Reasoning",50],
+
+["General Knowledge & General Awareness",50],
+
+["Quantitative Aptitude",50],
+
+["English Comprehension",50]
+
+]
+
+},
+
+
+{
+
+name:"Paper-II",
+
+questions:200,
+
+marks:200,
+
+time:120,
+
+negative:.25,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["English Language & Comprehension",200]
+
+]
+
+}
+
+]
+
+},
+
+
+
+pet:{
+
+name:"UPSSSC PET",
+
+subtitle:"Eligibility Test",
+
+stages:[
+
+{
+
+name:"Written Test",
+
+questions:100,
+
+marks:100,
+
+time:120,
+
+negative:.25,
+
+mode:"Objective",
+
+sectional:false,
+
+sections:[
+
+["General Awareness & Current Affairs",100]
+
+]
+
+}
+
+]
+
+},
+
+
+
+upsi:{
+
+name:"UP Police SI",
+
+subtitle:"Written Examination",
+
+stages:[
+
+{
+
+name:"Written Examination",
+
+questions:160,
+
+marks:400,
+
+time:120,
+
+negative:0,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["General Hindi",40],
+
+["Law / Constitution / GK",40],
+
+["Numerical & Mental Ability",40],
+
+["Mental Aptitude / Intelligence / Reasoning",40]
+
+]
+
+}
+
+]
+
+},
+
+
+
+constable:{
+
+name:"UP Police Constable",
+
+subtitle:"Written / OMR Examination",
+
+stages:[
+
+{
+
+name:"Written Examination",
+
+questions:150,
+
+marks:300,
+
+time:120,
+
+negative:0,
+
+mode:"OMR",
+
+sectional:false,
+
+sections:[
+
+["General Knowledge",38],
+
+["General Hindi",37],
+
+["Numerical & Mental Ability",38],
+
+["Mental Aptitude / Intelligence / Logical Ability",37]
+
+]
+
+}
+
+]
+
+},
+
+
+
+ntpc:{
+
+name:"RRB NTPC",
+
+subtitle:"CBT-1 & CBT-2",
+
+stages:[
+
+{
+
+name:"CBT-1",
+
+questions:100,
+
+marks:100,
+
+time:90,
+
+negative:1/3,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["General Awareness",40],
+
+["Mathematics",30],
+
+["General Intelligence & Reasoning",30]
+
+]
+
+},
+
+
+{
+
+name:"CBT-2",
+
+questions:120,
+
+marks:120,
+
+time:90,
+
+negative:1/3,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["General Awareness",50],
+
+["Mathematics",35],
+
+["General Intelligence & Reasoning",35]
+
+]
+
+}
+
+]
+
+},
+
+
+
+groupd:{
+
+name:"RRB Group D",
+
+subtitle:"CBT",
+
+stages:[
+
+{
+
+name:"CBT",
+
+questions:100,
+
+marks:100,
+
+time:90,
+
+negative:1/3,
+
+mode:"CBT",
+
+sectional:false,
+
+sections:[
+
+["General Science",25],
+
+["Mathematics",25],
+
+["General Intelligence & Reasoning",30],
+
+["General Awareness & Current Affairs",20]
+
+]
+
+}
+
+]
+
+}
+
+};
+
+
+/* ======================================
+   DEMO QUESTIONS
+====================================== */
+
+
+const questionsBank=[
+
+
+{
+
+question:
+"If the price of an article is increased by 20%, by what percentage should it be decr
