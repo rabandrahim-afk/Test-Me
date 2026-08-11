@@ -1,1 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>TEST ME | Test</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f3f5fb;
+    color:#172033;
+    padding-bottom:30px;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#3824c9,#145fd7);
+    color:white;
+    padding:16px 15px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 4px 18px rgba(0,0,0,.15);
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#ffd52a;
+}
+
+.exam-name{
+    font-size:13px;
+    margin-top:3px;
+    opacity:.9;
+}
+
+.timer{
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:12px;
+    padding:9px 13px;
+    font-weight:bold;
+    font-size:17px;
+}
+
+/* PROGRESS */
+.progress-box{
+    background:white;
+    padding:12px 15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.progress-text{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.progress{
+    width:100%;
+    height:7px;
+    background:#e4e7ef;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#5424d8,#1673e8);
+    transition:.3s;
+}
+
+/* QUESTION */
+.container{
+    padding:15px;
+    max-width:700px;
+    margin:auto;
+}
+
+.question-card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    margin-top:15px;
+}
+
+.question-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.question-number{
+    background:#eee9ff;
+    color:#4c24c7;
+    padding:8px 13px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.difficulty{
+    font-size:12px;
+    padding:7px 10px;
+    border-radius:20px;
+    background:#eaf8ef;
+    color:#168447;
+    font-weight:bold;
+}
+
+.question{
+    font-size:19px;
+    line-height:1.55;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+/* OPTIONS */
+.option{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    border:2px solid #e5e8ef;
+    border-radius:14px;
+    padding:14px;
+    margin:10px 0;
+    cursor:pointer;
+    transition:.2s;
+    background:#fff;
+}
+
+.option:hover{
+    border-color:#7051d8;
+    background:#f8f6ff;
+}
+
+.option.selected{
+    border-color:#4d29cc;
+    background:#eeeaff;
+}
+
+.option-letter{
+    width:32px;
+    height:32px;
+    min-width:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#eef0f5;
+    font-weight:bold;
+}
+
+.option.selected .option-letter{
+    background:#4d29cc;
+    color:white;
+}
+
+.option-text{
+    padding-top:5px;
+    line-height:1.4;
+}
+
+/* ACTIONS */
+.actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:18px;
+}
+
+.action-btn{
+    border:none;
+    border-radius:12px;
+    padding:12px;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.clear{
+    background:#fff0f0;
+    color:#d33;
+}
+
+.review{
+    background:#fff6df;
+    color:#b47700;
+}
+
+.review.active{
+    background:#ffbd22;
+    color:#111;
+}
+
+/* NAVIGATION */
+.navigation{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:10px;
+    margin-top:15px;
+}
+
+.nav-btn{
+    border:none;
+    border-radius:14px;
+    padding:15px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.previous{
+    background:#e8ebf3;
+    color:#293147;
+}
+
+.next{
+    background:linear-gradient(135deg,#4925cf,#176bdc);
+    color:white;
+}
+
+.submit{
+    width:100%;
+    margin-top:12px;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#12a36a;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* QUESTION PALETTE */
+.palette-card{
+    background:white;
+    border-radius:20px;
+    padding:18px;
+    margin-top:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.palette-title{
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.palette{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:8px;
+}
+
+.q-btn{
+    border:none;
+    min-height:40px;
+    border-radius:9px;
+    background:#edf0f5;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.q-btn.current{
+    background:#4d29cc;
+    color:white;
+}
+
+.q-btn.answered{
+    background:#18a66d;
+    color:white;
+}
+
+.q-btn.reviewed{
+    background:#f2a900;
+    color:white;
+}
+
+.q-btn.answered.reviewed{
+    background:linear-gradient(135deg,#18a66d 50%,#f2a900 50%);
+    color:white;
+}
+
+/* LEGEND */
+.legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:15px;
+    font-size:11px;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:3px;
+}
+
+.dot-grey{background:#edf0f5;}
+.dot-green{background:#18a66d;}
+.dot-yellow{background:#f2a900;}
+.dot-purple{background:#4d29cc;}
+
+/* RESULT */
+.result-screen{
+    display:none;
+    max-width:600px;
+    margin:auto;
+    padding:20px 15px;
+}
+
+.result-card{
+    background:white;
+    border-radius:22px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 25px rgba(0,0,0,.1);
+}
+
+.result-title{
+    font-size:28px;
+    font-weight:900;
+    color:#3824c9;
+}
+
+.score{
+    font-size:50px;
+    font-weight:900;
+    margin:20px 0;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+}
+
+.stat{
+    padding:15px 5px;
+    border-radius:12px;
+    background:#f5f6fa;
+}
+
+.stat strong{
+    display:block;
+    font-size:20px;
+}
+
+.stat small{
+    font-size:11px;
+    color:#777;
+}
+
+.restart{
+    margin-top:20px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#4925cf;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+}
+
+@media(max-width:380px){
+    .palette{
+        grid-template-columns:repeat(5,1fr);
+    }
+
+    .question{
+        font-size:17px;
+    }
+
+    .logo{
+        font-size:23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="header-top">
+
+        <div>
+            <div class="logo">
+                TEST <span>ME</span>
+            </div>
+
+            <div class="exam-name">
+                SSC • UP Exams • Railway
+            </div>
+        </div>
+
+        <div class="timer" id="timer">
+            60:00
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- PROGRESS -->
+<div class="progress-box">
+
+    <div class="progress-text">
+
+        <span id="progressText">
+            Question 1 of 100
+        </span>
+
+        <span id="answeredText">
+            0 Answered
+        </span>
+
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+</div>
+
+
+<!-- TEST AREA -->
+<main class="container" id="testArea">
+
+    <div class="question-card">
+
+        <div class="question-top">
+
+            <div class="question-number" id="questionNumber">
+                Q.1
+            </div>
+
+            <div class="difficulty" id="difficulty">
+                Easy
+            </div>
+
+        </div>
+
+
+        <div class="question" id="questionText">
+            Loading question...
+        </div>
+
+
+        <div id="optionsContainer">
+        </div>
+
+
+        <div class="actions">
+
+            <button
+                class="action-btn clear"
+                onclick="clearAnswer()">
+                Clear Response
+            </button>
+
+            <button
+                class="action-btn review"
+                id="reviewBtn"
+                onclick="toggleReview()">
+                Mark for Review
+            </button>
+
+        </div>
+
+
+        <div class="navigation">
+
+            <button
+                class="nav-btn previous"
+                onclick="previousQuestion()">
+                ← Previous
+            </button>
+
+            <button
+                class="nav-btn next"
+                onclick="nextQuestion()">
+                Next →
+            </button>
+
+        </div>
+
+
+        <button
+            class="submit"
+            onclick="submitTest()">
+            SUBMIT TEST
+        </button>
+
+    </div>
+
+
+    <!-- QUESTION PALETTE -->
+
+    <div class="palette-card">
+
+        <div class="palette-title">
+            Question Palette
+        </div>
+
+        <div
+            class="palette"
+            id="palette">
+        </div>
+
+
+        <div class="legend">
+
+            <div class="legend-item">
+                <span class="dot dot-grey"></span>
+                Not Visited
+            </div>
+
+            <div class="legend-item">
+                <span class="dot dot-green"></span>
+                Answered
+            </div>
+
+            <div class="legend-item">
+                <span class="dot dot-yellow"></span>
+                Review
+            </div>
+
+            <div class="legend-item">
+                <span class="dot dot-purple"></span>
+                Current
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- RESULT SCREEN -->
+
+<section
+    class="result-screen"
+    id="resultScreen">
+
+    <div class="result-card">
+
+        <div class="result-title">
+            Test Completed
+        </div>
+
+        <div class="score" id="finalScore">
+            0
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong id="correctCount">0</strong>
+                <small>Correct</small>
+            </div>
+
+            <div class="stat">
+                <strong id="wrongCount">0</strong>
+                <small>Wrong</small>
+            </div>
+
+            <div class="stat">
+                <strong id="unattemptedCount">0</strong>
+                <small>Unattempted</small>
+            </div>
+
+        </div>
+
+        <button
+            class="restart"
+            onclick="location.reload()">
+            TAKE TEST AGAIN
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ==========================================
+   TEST ME — TEST ENGINE
+   ========================================== */
+
+
+/* SETTINGS */
+
+let questions = [];
+
+let currentQuestion = 0;
+
+let userAnswers = [];
+
+let reviewQuestions = [];
+
+let timeLeft = 60 * 60;
+
+
+/* ==========================================
+   LOAD QUESTION BANK
+   ========================================== */
+
+async function loadQuestions(){
+
+    try{
+
+        const response =
+            await fetch("data/questions.json");
+
+        if(!response.ok){
+            throw new Error("Question bank not found");
+        }
+
+        questions =
+            await response.json();
+
+
+        if(!questions.length){
+            throw new Error("No questions available");
+        }
+
+
+        userAnswers =
+            new Array(questions.length).fill(null);
+
+        reviewQuestions =
+            new Array(questions.length).fill(false);
+
+
+        createPalette();
+
+        showQuestion();
+
+        updateProgress();
+
+        startTimer();
+
+
+    }catch(error){
+
+        document.getElementById("questionText").innerHTML =
+            "Question Bank load nahi ho pa raha. Please check data/questions.json";
+
+        console.error(error);
+
+    }
+
+}
+
+
+/* ==========================================
+   SHOW QUESTION
+   ========================================== */
+
+function showQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById("questionNumber").innerText =
+        "Q." + (currentQuestion + 1);
+
+
+    document.getElementById("questionText").innerText =
+        q.question;
+
+
+    document.getElementById("difficulty").innerText =
+        q.difficulty || "Normal";
+
+
+    const options =
+        document.getElementById("optionsContainer");
+
+
+    options.innerHTML = "";
+
+
+    q.options.forEach((option,index)=>{
+
+        const letters =
+            ["A","B","C","D","E"];
+
+
+        const div =
+            document.createElement("div");
+
+
+        div.className = "option";
+
+
+        if(userAnswers[currentQuestion] === index){
+
+            div.classList.add("selected");
+
+        }
+
+
+        div.innerHTML = `
+
+            <div class="option-letter">
+                ${letters[index]}
+            </div>
+
+            <div class="option-text">
+                ${option}
+            </div>
+
+        `;
+
+
+        div.onclick = function(){
+
+            selectAnswer(index);
+
+        };
+
+
+        options.appendChild(div);
+
+    });
+
+
+    updateReviewButton();
+
+    updatePalette();
+
+}
+
+
+/* ==========================================
+   SELECT ANSWER
+   ========================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+
+    showQuestion();
+
+    updateProgress();
+
+}
+
+
+/* ==========================================
+   CLEAR ANSWER
+   ========================================== */
+
+function clearAnswer(){
+
+    userAnswers[currentQuestion] =
+        null;
+
+    showQuestion();
+
+    updateProgress();
+
+}
+
+
+/* ==========================================
+   MARK FOR REVIEW
+   ========================================== */
+
+function toggleReview(){
+
+    reviewQuestions[currentQuestion] =
+        !reviewQuestions[currentQuestion];
+
+
+    updateReviewButton();
+
+    updatePalette();
+
+}
+
+
+function updateReviewButton(){
+
+    const btn =
+        document.getElementById("reviewBtn");
+
+
+    if(reviewQuestions[currentQuestion]){
+
+        btn.innerText =
+            "✓ Marked for Review";
+
+        btn.classList.add("active");
+
+    }else{
+
+        btn.innerText =
+            "Mark for Review";
+
+        btn.classList.remove("active");
+
+    }
+
+}
+
+
+/* ==========================================
+   NEXT QUESTION
+   ========================================== */
+
+function nextQuestion(){
+
+    if(currentQuestion < questions.length - 1){
+
+        currentQuestion++;
+
+        showQuestion();
+
+        updateProgress();
+
+    }else{
+
+        alert("This is the last question.");
+
+    }
+
+}
+
+
+/* ==========================================
+   PREVIOUS QUESTION
+   ========================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        showQuestion();
+
+        updateProgress();
+
+    }
+
+}
+
+
+/* ==========================================
+   QUESTION PALETTE
+   ========================================== */
+
+function createPalette(){
+
+    const palette =
+        document.getElementById("palette");
+
+
+    palette.innerHTML = "";
+
+
+    questions.forEach((q,index)=>{
+
+        const button =
+            document.createElement("button");
+
+
+        button.className =
+            "q-btn";
+
+
+        button.innerText =
+            index + 1;
+
+
+        button.onclick = function(){
+
+            currentQuestion =
+                index;
+
+            showQuestion();
+
+            updateProgress();
+
+        };
+
+
+        palette.appendChild(button);
+
+    });
+
+}
+
+
+function updatePalette(){
+
+    const buttons =
+        document.querySelectorAll(".q-btn");
+
+
+    buttons.forEach((button,index)=>{
+
+        button.className =
+            "q-btn";
+
+
+        if(index === currentQuestion){
+
+            button.classList.add("current");
+
+        }
+
+
+        if(userAnswers[index] !== null){
+
+            button.classList.add("answered");
+
+        }
+
+
+        if(reviewQuestions[index]){
+
+            button.classList.add("reviewed");
+
+        }
+
+    });
+
+}
+
+
+/* ==========================================
+   PROGRESS
+   ========================================== */
+
+function updateProgress(){
+
+    const total =
+        questions.length;
+
+
+    const answered =
+        userAnswers.filter(
+            answer => answer !== null
+        ).length;
+
+
+    const percentage =
+        ((currentQuestion + 1) / total) * 100;
+
+
+    document.getElementById(
+        "progressText"
+    ).innerText =
+        `Question ${currentQuestion + 1} of ${total}`;
+
+
+    document.getElementById(
+        "answeredText"
+    ).innerText =
+        `${answered} Answered`;
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        percentage + "%";
+
+}
+
+
+/* ==========================================
+   TIMER
+   ========================================== */
+
+function startTimer(){
+
+    const timer =
+        document.getElementById("timer");
+
+
+    const interval =
+        setInterval(()=>{
+
+            if(timeLeft <= 0){
+
+                clearInterval(interval);
+
+                submitTest(true);
+
+                return;
+
+            }
+
+
+            let minutes =
+                Math.floor(timeLeft / 60);
+
+
+            let seconds =
+                timeLeft % 60;
+
+
+            minutes =
+                String(minutes).padStart(2,"0");
+
+
+            seconds =
+                String(seconds).padStart(2,"0");
+
+
+            timer.innerText =
+                `${minutes}:${seconds}`;
+
+
+            if(timeLeft <= 300){
+
+                timer.style.background =
+                    "#e53935";
+
+            }
+
+
+            timeLeft--;
+
+        },1000);
+
+}
+
+
+/* ==========================================
+   SUBMIT TEST
+   ========================================== */
+
+function submitTest(autoSubmit = false){
+
+    const unanswered =
+        userAnswers.filter(
+            answer => answer === null
+        ).length;
+
+
+    if(!autoSubmit){
+
+        const confirmSubmit =
+            confirm(
+                `You have ${unanswered} unanswered questions.\n\nDo you really want to submit the test?`
+            );
+
+
+        if(!confirmSubmit){
+
+            return;
+
+        }
+
+    }
+
+
+    calculateResult();
+
+}
+
+
+/* ==========================================
+   RESULT CALCULATION
+   ========================================== */
+
+function calculateResult(){
+
+    let correct = 0;
+
+    let wrong = 0;
+
+    let unattempted = 0;
+
+
+    questions.forEach((q,index)=>{
+
+        const answer =
+            userAnswers[index];
+
+
+        if(answer === null){
+
+            unattempted++;
+
+        }
+
+        else if(answer === q.answer){
+
+            correct++;
+
+        }
+
+        else{
+
+            wrong++;
+
+        }
+
+    });
+
+
+    /*
+       Default SSC-style example:
+
+       Correct = +2
+       Wrong   = -0.50
+
+       Later we will make this
+       exam-specific.
+    */
+
+    const score =
+        (correct * 2) -
+        (wrong * 0.50);
+
+
+    showResult(
+        score,
+        correct,
+        wrong,
+        unattempted
+    );
+
+}
+
+
+/* ==========================================
+   SHOW RESULT
+   ========================================== */
+
+function showResult(
+    score,
+    correct,
+    wrong,
+    unattempted
+){
+
+    document.getElementById(
+        "testArea"
+    ).style.display = "none";
+
+
+    document.querySelector(
+        ".progress-box"
+    ).style.display = "none";
+
+
+    document.querySelector(
+        ".header"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "resultScreen"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "finalScore"
+    ).innerText =
+        score.toFixed(2);
+
+
+    document.getElementById(
+        "correctCount"
+    ).innerText =
+        correct;
+
+
+    document.getElementById(
+        "wrongCount"
+    ).innerText =
+        wrong;
+
+
+    document.getElementById(
+        "unattemptedCount"
+    ).innerText =
+        unattempted;
+
+}
+
+
+/* ==========================================
+   START
+   ========================================== */
+
+loadQuestions();
+
+</script>
+
+</body>
+  </html>
